@@ -1,0 +1,6 @@
+framework module Pods_AnimatedTextInput_Example {
+  umbrella header "Pods-AnimatedTextInput_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

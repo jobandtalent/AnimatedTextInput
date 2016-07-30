@@ -1,24 +1,70 @@
-//
-//  ViewController.swift
-//  AnimatedTextInput
-//
-//  Created by Victor Baro on 07/29/2016.
-//  Copyright (c) 2016 Victor Baro. All rights reserved.
-//
-
 import UIKit
+import AnimatedTextInput
 
 class ViewController: UIViewController {
 
+    @IBOutlet var textInputs: [AnimatedTextInput]!
+    private var isBlue = true
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        textInputs[0].placeHolderText = "Normal text"
+        
+        textInputs[1].placeHolderText = "Password"
+        textInputs[1].configureType(with: .password)
+
+        textInputs[2].placeHolderText = "Numeric"
+        textInputs[2].configureType(with: .numeric)
+
+        textInputs[3].placeHolderText = "Selection"
+        textInputs[3].configureType(with: .selection)
+        textInputs[3].tapAction = { [weak self] in
+            guard let strongself = self else { return }
+            strongself.tap()
+        }
+
+        textInputs[4].placeHolderText = "Multiline"
+        textInputs[4].configureType(with: .multiline)
+        textInputs[4].showCharacterCounterLabel(with: 160)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tap() {
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.blueColor()
+        presentViewController(vc, animated: true) {
+            if let text = self.textInputs[3].text where text.isEmpty { self.textInputs[3].set(text: "Some option the user did select") }
+            else { self.textInputs[3].set(text: nil) }
+            vc.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
+    @IBAction func showError(sender: AnyObject) {
+        textInputs[0].show(error: "You made an error!", placeholderText: "Type something")
+    }
+
+    @IBAction func toggleStyle(sender: AnyObject) {
+        isBlue ? textInputs[1].configureStyle(with: CustomTextInputStyle()) : textInputs[1].configureStyle(with: AnimatedTextInputStyleBlue())
+        isBlue = !isBlue
+    }
+
+    @IBAction func backgroundTap(sender: AnyObject) {
+        for input in textInputs {
+            input.resignFirstResponder()
+        }
+    }
 }
 
+struct CustomTextInputStyle: AnimatedTextInputStyle {
+
+    let activeColor = UIColor.orangeColor()
+    let inactiveColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
+    let errorColor = UIColor.redColor()
+    let textInputFont = UIFont.systemFontOfSize(14)
+    let textInputFontColor = UIColor.blackColor()
+    let placeholderMinFontSize: CGFloat = 9
+    let counterLabelFont: UIFont? = UIFont.systemFontOfSize(9)
+    let leftMargin: CGFloat = 25
+    let topMargin: CGFloat = 20
+    let rightMargin: CGFloat = 0
+    let bottomMargin: CGFloat = 10
+    let yHintPositionOffset: CGFloat = 7
+}

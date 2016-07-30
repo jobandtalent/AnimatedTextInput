@@ -1,0 +1,27 @@
+{
+  "name": "AnimatedTextInput",
+  "version": "0.1.0",
+  "summary": "A short description of AnimatedTextInput.",
+  "dependencies": {
+    "PureLayout": [
+
+    ]
+  },
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AnimatedTextInput",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Victor Baro": "fs.baro@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AnimatedTextInput.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AnimatedTextInput/Classes/**/*"
+}

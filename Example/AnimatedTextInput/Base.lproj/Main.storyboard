@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="AnimatedTextInput_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,10 +16,83 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="2H2-ZR-ivo" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="40" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="ED2-K4-0S3" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="168" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSK-Ud-hG2">
+                                <rect key="frame" x="172" y="449" width="256" height="30"/>
+                                <state key="normal" title="Toggle color style in second text field"/>
+                                <connections>
+                                    <action selector="toggleStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="miU-dZ-QCM"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="x9I-2w-m4z" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="232" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-RA-5je" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="104" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="18e-se-gd0" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="296" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="562-Pg-j6A">
+                                <rect key="frame" x="207" y="411" width="186" height="30"/>
+                                <state key="normal" title="Show error in first text field"/>
+                                <connections>
+                                    <action selector="showError:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wcy-bk-mrX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2H2-ZR-ivo" secondAttribute="trailing" id="0hV-hp-1kz"/>
+                            <constraint firstItem="562-Pg-j6A" firstAttribute="top" secondItem="18e-se-gd0" secondAttribute="bottom" constant="51" id="3Cs-uf-CTl"/>
+                            <constraint firstItem="2H2-ZR-ivo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5tb-4H-v7H"/>
+                            <constraint firstItem="BSK-Ud-hG2" firstAttribute="top" secondItem="562-Pg-j6A" secondAttribute="bottom" constant="8" id="6eW-H6-w8V"/>
+                            <constraint firstItem="562-Pg-j6A" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="6o2-Rd-6dY"/>
+                            <constraint firstItem="ED2-K4-0S3" firstAttribute="top" secondItem="tDF-RA-5je" secondAttribute="bottom" id="8Pe-h5-HAk"/>
+                            <constraint firstItem="tDF-RA-5je" firstAttribute="top" secondItem="2H2-ZR-ivo" secondAttribute="bottom" id="Enn-kU-JEA"/>
+                            <constraint firstAttribute="trailing" secondItem="tDF-RA-5je" secondAttribute="trailing" id="FaH-jU-SYY"/>
+                            <constraint firstAttribute="trailing" secondItem="x9I-2w-m4z" secondAttribute="trailing" id="MIu-iq-moL"/>
+                            <constraint firstItem="2H2-ZR-ivo" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="We0-cg-cpN"/>
+                            <constraint firstItem="x9I-2w-m4z" firstAttribute="top" secondItem="ED2-K4-0S3" secondAttribute="bottom" id="XZz-zE-2gt"/>
+                            <constraint firstItem="x9I-2w-m4z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="YG8-eX-b01"/>
+                            <constraint firstItem="18e-se-gd0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Zq7-t3-edI"/>
+                            <constraint firstItem="ED2-K4-0S3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="dCq-BD-VaO"/>
+                            <constraint firstAttribute="trailing" secondItem="18e-se-gd0" secondAttribute="trailing" id="eQz-0w-rH7"/>
+                            <constraint firstItem="tDF-RA-5je" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ih6-E8-7gr"/>
+                            <constraint firstItem="BSK-Ud-hG2" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="nhQ-gA-VQv"/>
+                            <constraint firstItem="18e-se-gd0" firstAttribute="top" secondItem="x9I-2w-m4z" secondAttribute="bottom" id="tjZ-Vd-ILh"/>
+                            <constraint firstAttribute="trailing" secondItem="ED2-K4-0S3" secondAttribute="trailing" id="y7Y-mD-Z6X"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tGJ-MW-HEm" appends="YES" id="Zyh-b3-Qur"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outletCollection property="textInputs" destination="2H2-ZR-ivo" collectionClass="NSMutableArray" id="inG-zk-ZZn"/>
+                        <outletCollection property="textInputs" destination="tDF-RA-5je" collectionClass="NSMutableArray" id="Wdb-cS-lWL"/>
+                        <outletCollection property="textInputs" destination="ED2-K4-0S3" collectionClass="NSMutableArray" id="gWc-mb-SsI"/>
+                        <outletCollection property="textInputs" destination="x9I-2w-m4z" collectionClass="NSMutableArray" id="9V1-O2-D5k"/>
+                        <outletCollection property="textInputs" destination="18e-se-gd0" collectionClass="NSMutableArray" id="LUS-6e-TNK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tGJ-MW-HEm">
+                    <connections>
+                        <action selector="backgroundTap:" destination="vXZ-lx-hvc" id="gGf-je-FzP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

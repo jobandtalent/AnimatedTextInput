@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'AnimatedTextInput_Example' do
   pod 'AnimatedTextInput', :path => '../'
-
-  target 'AnimatedTextInput_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

@@ -1,0 +1,17 @@
+PODS:
+  - AnimatedTextInput (0.1.0):
+    - PureLayout
+  - PureLayout (3.0.2)
+
+DEPENDENCIES:
+  - AnimatedTextInput (from `../`)
+
+EXTERNAL SOURCES:
+  AnimatedTextInput:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AnimatedTextInput: 66887a1a63e09fda354bc410b32c5eca89c3bae4
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+
+COCOAPODS: 0.39.0
