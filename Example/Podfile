@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'AnimatedTextInput_Example' do
-  pod 'AnimatedTextInput', :path => '../'
+    pod 'AnimatedTextInput', :path => '../'
 end

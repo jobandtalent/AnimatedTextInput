@@ -20,9 +20,9 @@ DESC
 
   s.source_files = 'AnimatedTextInput/Classes/**/*'
 
-  # s.resource_bundles = {
-  #   'AnimatedTextInput' => ['AnimatedTextInput/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'AnimatedTextInput' => ['AnimatedTextInput/Assets/*.*']
+  }
 
   s.dependency 'PureLayout', '~> 3.0'
 end

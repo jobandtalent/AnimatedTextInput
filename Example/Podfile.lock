@@ -1,6 +1,6 @@
 PODS:
   - AnimatedTextInput (0.1.0):
-    - PureLayout
+    - PureLayout (~> 3.0)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
@@ -11,7 +11,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnimatedTextInput: 66887a1a63e09fda354bc410b32c5eca89c3bae4
+  AnimatedTextInput: 8c9d5e624f21d83b1d813a85227a37f622617800
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 2ce5d80fef54d8ef0d5ca0c7d754bae641726324
+
+COCOAPODS: 1.0.1

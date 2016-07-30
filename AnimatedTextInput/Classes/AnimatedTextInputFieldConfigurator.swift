@@ -46,8 +46,11 @@ private struct AnimatedTextInputPasswordConfigurator {
         textField.secureTextEntry = true
         let disclosureButton = UIButton(type: .Custom)
         disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
-        disclosureButton.setImage(UIImage(named: "cm_icon_input_eye_normal"), forState: .Normal)
-        disclosureButton.setImage(UIImage(named: "cm_icon_input_eye_selected"), forState: .Selected)
+        let bundle = NSBundle(path: NSBundle(forClass: AnimatedTextInput.self).pathForResource("AnimatedTextInput", ofType: "bundle")!)
+        let normalImage = UIImage(named: "cm_icon_input_eye_normal", inBundle: bundle, compatibleWithTraitCollection: nil)
+        let selectedImage = UIImage(named: "cm_icon_input_eye_selected", inBundle: bundle, compatibleWithTraitCollection: nil)
+        disclosureButton.setImage(normalImage, forState: .Normal)
+        disclosureButton.setImage(selectedImage, forState: .Selected)
         textField.add(disclosureButton: disclosureButton) {
             disclosureButton.selected = !disclosureButton.selected
             textField.resignFirstResponder()

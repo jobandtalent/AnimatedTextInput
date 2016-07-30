@@ -1,1946 +1,928 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>010BD048ABDE9836488D81142D1F6901</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>AnimatedTextInput.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>01B056FE48A821CA3D3818E32A4CFEDF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>PureLayout.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>03B68A44FAD38506A5FE32E741C4832C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AnimatedTextInput.framework</string>
-			<key>path</key>
-			<string>AnimatedTextInput.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>06C55A77AA51A4886E93250F38F2D195</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>DABC6694BAC9EA81F9B378A68577777D</string>
-			<key>remoteInfo</key>
-			<string>AnimatedTextInput</string>
-		</dict>
-		<key>0831CE2AD9722451A1F85A90116B6DA9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>81562E3615FEBB520A630B4BE7C50007</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0940515180FA2502726547A3C772BD56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1D968391D38387E5D89360F02E17A49D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0945F46C5783CD0A4F75E37FADFD93FD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>62FD488738DACC6BD28A4B8007AC9E22</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>09FE628D251A81F2E7C22CF719C39757</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedTextInputStyle.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0B54EFAA48AD46999A9F1A82270814A1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>010BD048ABDE9836488D81142D1F6901</string>
-				<string>3F41D560E470F266607922E515335339</string>
-				<string>1D968391D38387E5D89360F02E17A49D</string>
-				<string>667F56923F7D2B221A461D61F6851E10</string>
-				<string>2E891048A6FFFB9DF0AB57E246D97152</string>
-				<string>F517BB624C95F560FA1B54D802D4255B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>Example/Pods/Target Support Files/AnimatedTextInput</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0CAC99FBB526DAC16DE0B5C93109AF03</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2E891048A6FFFB9DF0AB57E246D97152</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>0E91FC3C1FF3B9054D234F8038AF2DC6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>10DE1947DAC0ED28F6C0A9F9BD75D546</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>14B66D8E5210FDA5BC551301E5F9646B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>3F41D560E470F266607922E515335339</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/AnimatedTextInput/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>AnimatedTextInput</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>187E9EDDEA2FB09BDFEEED4003B509D5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedTextField.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>189E945107DD058A529C2EC1A68E6C81</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6C5CF630166BA68DC44BA664DCFACC5F</string>
-				<string>187E9EDDEA2FB09BDFEEED4003B509D5</string>
-				<string>81562E3615FEBB520A630B4BE7C50007</string>
-				<string>77DA66F00441A192AFACEF662B85FA22</string>
-				<string>09FE628D251A81F2E7C22CF719C39757</string>
-				<string>44FA387670E2C1CD81EB2F599907CC44</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Classes</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>19EF8A93BFA354390CCBA0D728F0C273</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7090ABFAA2D67236E7B5F03FE2B9A343</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1D968391D38387E5D89360F02E17A49D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AnimatedTextInput-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>20A5E480D5F8924E756E834D5ECE59EE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>91340E144CBFCD86598EA520824FE931</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>249938C44B3C707521E098F2C5086AD9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PureLayout.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>256CB866D56B919DA6C9ABF2C32B4D37</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSArray+PureLayout.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/NSArray+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>261FA9EFC65F5CA2F5CE7AF0D3ACE209</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PureLayout.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2D0D48D26F82F7721BC1C5405C803342</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PureLayout.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>2D31BC6EEE62992743366A96883B6547</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5B859CA7D3A83073EE3A0EFE2138F31B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>552D02D5BA751AC2E8790D2811D496CA</string>
-				<string>10DE1947DAC0ED28F6C0A9F9BD75D546</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2E891048A6FFFB9DF0AB57E246D97152</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AnimatedTextInput-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2F7CB2F8AA04108B4168449AFCA94214</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DC48A19E2AA264922693A9C30BC30743</string>
-				<string>249938C44B3C707521E098F2C5086AD9</string>
-				<string>01B056FE48A821CA3D3818E32A4CFEDF</string>
-				<string>808D9E17BE044F47037C6ABD6F65EE32</string>
-				<string>6D986837FA46C6AB4A8D72FCAA1B4454</string>
-				<string>6EFEA95188E08BEB23065B2AB052E7BC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/PureLayout</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2F7D472071E15F7DC98E66B5980E1549</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSLayoutConstraint+PureLayout.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>301C21DF8D198124481498079077D394</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CAC99FBB526DAC16DE0B5C93109AF03</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3622B7B25BFD4FA645BA301ABE00A69D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D87500AA33CA4A933595B88AD6CA26C8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3BAC10AE641799E0459E1553461F5FCD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3DCEAE226183EEDE1F37164017E275AC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3EB8C86457A810F25F50DE6260C1985E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>51217EF509D2926DD10601D0F194014E</string>
-				<string>AA9DC807524111AC53B4059F6A57C332</string>
-				<string>0940515180FA2502726547A3C772BD56</string>
-				<string>0831CE2AD9722451A1F85A90116B6DA9</string>
-				<string>AC3CBEB5C0657ECE57ABC51BB00875D7</string>
-				<string>42073B368C66D098561EC4E4A17B654C</string>
-				<string>B9A84F1E7C41132565C09FC5A25B8122</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3F41D560E470F266607922E515335339</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>AnimatedTextInput.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F6990C47F02B6691DD4DA9D4504A36B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ALView+PureLayout.m</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/ALView+PureLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>42073B368C66D098561EC4E4A17B654C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>09FE628D251A81F2E7C22CF719C39757</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>44FA387670E2C1CD81EB2F599907CC44</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedTextView.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>454C8D43168A849B5BBA778BF4FCAEBE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3F6990C47F02B6691DD4DA9D4504A36B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45C46D5E45FE63C338B8C4E59E3B89EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AA654F86E857710B01965E96AC15F25C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>48F3D3327B543A4C069F388D48313A3E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>454C8D43168A849B5BBA778BF4FCAEBE</string>
-				<string>3622B7B25BFD4FA645BA301ABE00A69D</string>
-				<string>0945F46C5783CD0A4F75E37FADFD93FD</string>
-				<string>8A02B94B76AFEF130496133072FCEF0C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>49E3374F33B8B8E42A5371AF536649FE</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>01B056FE48A821CA3D3818E32A4CFEDF</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/PureLayout/PureLayout-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/PureLayout/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/PureLayout/PureLayout.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>PureLayout</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>4A3F27B0FA73A405B9F384105B40CAC2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>49E3374F33B8B8E42A5371AF536649FE</string>
-				<string>C355D32C557CB95FD4676C7FA539DD6B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>4DE413313F9A87B33300D7406CCDFA14</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F18C1659D3E3978C699B1809E85DEE23</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5FA112259DD8908ED98FB94D1EB4356F</string>
-				<string>20A5E480D5F8924E756E834D5ECE59EE</string>
-				<string>7BF35B610F0297B145A5F597CA6D52CC</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>9A1F84091BAA2BCB02FABBAD66691300</string>
-				<string>7DFC6E705CB5F8B3782A51CD13509D9C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-AnimatedTextInput_Example</string>
-			<key>productName</key>
-			<string>Pods-AnimatedTextInput_Example</string>
-			<key>productReference</key>
-			<string>B5802BA86CC670AD37827ECF3BD281A4</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>4F9C25DBD56FDA6B5313D575A22E2392</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E8698826DBA82B5FF84BA0FACB68CA86</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>51217EF509D2926DD10601D0F194014E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6C5CF630166BA68DC44BA664DCFACC5F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>54A218C8BD1345B2C2F6890A20D414D0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DF222C7FF3B3F01BA62C4EA9BE57DEF2</string>
-				<string>0B54EFAA48AD46999A9F1A82270814A1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AnimatedTextInput</string>
-			<key>path</key>
-			<string>../..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>552D02D5BA751AC2E8790D2811D496CA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>56F901B3AC8F97D5558A25BCBDFD2F63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E8698826DBA82B5FF84BA0FACB68CA86</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5786DF0B2E233910A99077F7DAFB8F2E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>587433B6EB83A6E1593660FE563AD729</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>3F41D560E470F266607922E515335339</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/AnimatedTextInput/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>AnimatedTextInput</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5B859CA7D3A83073EE3A0EFE2138F31B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PureLayoutDefines.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/PureLayoutDefines.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5FA112259DD8908ED98FB94D1EB4356F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>19EF8A93BFA354390CCBA0D728F0C273</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>60C5E5E421C657647BE68713D45DA086</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C37EE2A47BD592BB62E8AA1B918C0C50</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>615CF89927C59FE215C8C1A7887A22EC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>587433B6EB83A6E1593660FE563AD729</string>
-				<string>14B66D8E5210FDA5BC551301E5F9646B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>62FD488738DACC6BD28A4B8007AC9E22</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSLayoutConstraint+PureLayout.m</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>667F56923F7D2B221A461D61F6851E10</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AnimatedTextInput-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6A10AE2068A331042A546B4C21299410</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F3D3F05D324772E907DB1D4DA2C89AA2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6C5CF630166BA68DC44BA664DCFACC5F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedLine.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6D986837FA46C6AB4A8D72FCAA1B4454</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PureLayout-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6EFEA95188E08BEB23065B2AB052E7BC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PureLayout-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7090ABFAA2D67236E7B5F03FE2B9A343</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>77DA66F00441A192AFACEF662B85FA22</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedTextInputFieldConfigurator.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BF35B610F0297B145A5F597CA6D52CC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B5B518F56F67C3A9E6FC6590B4C2E349</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>E60BAC67395707BB923F5EA3A901B144</string>
-				<string>8D0D6CB064A91576911FCC680FC2C1D9</string>
-				<string>A2FDD832DA64F35B104DD4C55A31BF8E</string>
-				<string>A09B9DBA77F91EBE64EAB22DE9A42A75</string>
-				<string>60C5E5E421C657647BE68713D45DA086</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DFC6E705CB5F8B3782A51CD13509D9C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>PureLayout</string>
-			<key>target</key>
-			<string>C8E8D5BB6DA29724F65BA3B2286B6B65</string>
-			<key>targetProxy</key>
-			<string>C5A9A980082FC394E494F51847F097E4</string>
-		</dict>
-		<key>808D9E17BE044F47037C6ABD6F65EE32</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PureLayout-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>81562E3615FEBB520A630B4BE7C50007</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AnimatedTextInput.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8A02B94B76AFEF130496133072FCEF0C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>808D9E17BE044F47037C6ABD6F65EE32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8D0D6CB064A91576911FCC680FC2C1D9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2D0D48D26F82F7721BC1C5405C803342</string>
-				<string>F8FE80DD95FD6012100708963DD646B0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E41103C91A1B156D6A3E8966115A8CD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>256CB866D56B919DA6C9ABF2C32B4D37</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>8FCC78514EB495049E4646AD42B65325</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6EFEA95188E08BEB23065B2AB052E7BC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>91340E144CBFCD86598EA520824FE931</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E8698826DBA82B5FF84BA0FACB68CA86</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92F05F9182541BBE2CA61D527DF68BFE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93A34DF8F3A447A2F09365EF6F7530C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>56F901B3AC8F97D5558A25BCBDFD2F63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>9A1F84091BAA2BCB02FABBAD66691300</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>AnimatedTextInput</string>
-			<key>target</key>
-			<string>DABC6694BAC9EA81F9B378A68577777D</string>
-			<key>targetProxy</key>
-			<string>06C55A77AA51A4886E93250F38F2D195</string>
-		</dict>
-		<key>9C6F93A5AE4A9293598494393460DF93</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F3D3F05D324772E907DB1D4DA2C89AA2</string>
-				<string>3F6990C47F02B6691DD4DA9D4504A36B</string>
-				<string>256CB866D56B919DA6C9ABF2C32B4D37</string>
-				<string>D87500AA33CA4A933595B88AD6CA26C8</string>
-				<string>2F7D472071E15F7DC98E66B5980E1549</string>
-				<string>62FD488738DACC6BD28A4B8007AC9E22</string>
-				<string>261FA9EFC65F5CA2F5CE7AF0D3ACE209</string>
-				<string>AA654F86E857710B01965E96AC15F25C</string>
-				<string>5B859CA7D3A83073EE3A0EFE2138F31B</string>
-				<string>2F7CB2F8AA04108B4168449AFCA94214</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>PureLayout</string>
-			<key>path</key>
-			<string>PureLayout</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A09B9DBA77F91EBE64EAB22DE9A42A75</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>03B68A44FAD38506A5FE32E741C4832C</string>
-				<string>B5802BA86CC670AD37827ECF3BD281A4</string>
-				<string>B0C8511B8B1464240EAB53751E5210A3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0AAF699F5577D3522E03E0F0E8C5AD0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>5786DF0B2E233910A99077F7DAFB8F2E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-AnimatedTextInput_Example/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-AnimatedTextInput_Example/Pods-AnimatedTextInput_Example.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_AnimatedTextInput_Example</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A2FDD832DA64F35B104DD4C55A31BF8E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9C6F93A5AE4A9293598494393460DF93</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A3AB0ED2BE42BE1AE204A1EFFF407B28</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4F9C25DBD56FDA6B5313D575A22E2392</string>
-				<string>ADC48D47566A30A0ACE4F023EB1C9EF6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AA654F86E857710B01965E96AC15F25C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PureLayout+Internal.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/PureLayout+Internal.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AA9DC807524111AC53B4059F6A57C332</key>
-		<dict>
-			<key>fileRef</key>
-			<string>187E9EDDEA2FB09BDFEEED4003B509D5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AC3CBEB5C0657ECE57ABC51BB00875D7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>77DA66F00441A192AFACEF662B85FA22</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>ADC48D47566A30A0ACE4F023EB1C9EF6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2D0D48D26F82F7721BC1C5405C803342</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B0C8511B8B1464240EAB53751E5210A3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>PureLayout.framework</string>
-			<key>path</key>
-			<string>PureLayout.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B5802BA86CC670AD37827ECF3BD281A4</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_AnimatedTextInput_Example.framework</string>
-			<key>path</key>
-			<string>Pods_AnimatedTextInput_Example.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B5B518F56F67C3A9E6FC6590B4C2E349</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BF6F5A1ADE8756D289044A9441DE9851</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>B9A84F1E7C41132565C09FC5A25B8122</key>
-		<dict>
-			<key>fileRef</key>
-			<string>44FA387670E2C1CD81EB2F599907CC44</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>BF6F5A1ADE8756D289044A9441DE9851</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C355D32C557CB95FD4676C7FA539DD6B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>01B056FE48A821CA3D3818E32A4CFEDF</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/PureLayout/PureLayout-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/PureLayout/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/PureLayout/PureLayout.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>PureLayout</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C37EE2A47BD592BB62E8AA1B918C0C50</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92F05F9182541BBE2CA61D527DF68BFE</string>
-				<string>3BAC10AE641799E0459E1553461F5FCD</string>
-				<string>E00A00DF80F158F156E580E8521FAB3E</string>
-				<string>DDEB4870CCC2BD1DBAD862FDF475E800</string>
-				<string>7090ABFAA2D67236E7B5F03FE2B9A343</string>
-				<string>F6A1E98DAD1E7F15B358ABA770178C66</string>
-				<string>0E91FC3C1FF3B9054D234F8038AF2DC6</string>
-				<string>BF6F5A1ADE8756D289044A9441DE9851</string>
-				<string>3DCEAE226183EEDE1F37164017E275AC</string>
-				<string>5786DF0B2E233910A99077F7DAFB8F2E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-AnimatedTextInput_Example</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-AnimatedTextInput_Example</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C3CBCCD67D5C8B3FBEFB385899F4CDEA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>261FA9EFC65F5CA2F5CE7AF0D3ACE209</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>C5A9A980082FC394E494F51847F097E4</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>C8E8D5BB6DA29724F65BA3B2286B6B65</string>
-			<key>remoteInfo</key>
-			<string>PureLayout</string>
-		</dict>
-		<key>C8E8D5BB6DA29724F65BA3B2286B6B65</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>4A3F27B0FA73A405B9F384105B40CAC2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>48F3D3327B543A4C069F388D48313A3E</string>
-				<string>93A34DF8F3A447A2F09365EF6F7530C1</string>
-				<string>ED199146F93652F3F215B09CAE0DA9DB</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PureLayout</string>
-			<key>productName</key>
-			<string>PureLayout</string>
-			<key>productReference</key>
-			<string>B0C8511B8B1464240EAB53751E5210A3</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0700</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>A09B9DBA77F91EBE64EAB22DE9A42A75</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>DABC6694BAC9EA81F9B378A68577777D</string>
-				<string>4DE413313F9A87B33300D7406CCDFA14</string>
-				<string>C8E8D5BB6DA29724F65BA3B2286B6B65</string>
-			</array>
-		</dict>
-		<key>D87500AA33CA4A933595B88AD6CA26C8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSArray+PureLayout.m</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/NSArray+PureLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DABC6694BAC9EA81F9B378A68577777D</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>615CF89927C59FE215C8C1A7887A22EC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3EB8C86457A810F25F50DE6260C1985E</string>
-				<string>A3AB0ED2BE42BE1AE204A1EFFF407B28</string>
-				<string>301C21DF8D198124481498079077D394</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>EF28EC12C72EA173F9C150F932995EA0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>AnimatedTextInput</string>
-			<key>productName</key>
-			<string>AnimatedTextInput</string>
-			<key>productReference</key>
-			<string>03B68A44FAD38506A5FE32E741C4832C</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>DC48A19E2AA264922693A9C30BC30743</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DDEB4870CCC2BD1DBAD862FDF475E800</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DF222C7FF3B3F01BA62C4EA9BE57DEF2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>189E945107DD058A529C2EC1A68E6C81</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AnimatedTextInput</string>
-			<key>path</key>
-			<string>AnimatedTextInput</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E00A00DF80F158F156E580E8521FAB3E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E60BAC67395707BB923F5EA3A901B144</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>54A218C8BD1345B2C2F6890A20D414D0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Development Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E75E1612C23673181912CBF92EC0CA1C</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>3DCEAE226183EEDE1F37164017E275AC</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-AnimatedTextInput_Example/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.3</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-AnimatedTextInput_Example/Pods-AnimatedTextInput_Example.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_AnimatedTextInput_Example</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E8698826DBA82B5FF84BA0FACB68CA86</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>ED199146F93652F3F215B09CAE0DA9DB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6A10AE2068A331042A546B4C21299410</string>
-				<string>8E41103C91A1B156D6A3E8966115A8CD</string>
-				<string>EDB68DB69EAFD28DFE707F2D15D4807C</string>
-				<string>45C46D5E45FE63C338B8C4E59E3B89EF</string>
-				<string>8FCC78514EB495049E4646AD42B65325</string>
-				<string>C3CBCCD67D5C8B3FBEFB385899F4CDEA</string>
-				<string>2D31BC6EEE62992743366A96883B6547</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>EDB68DB69EAFD28DFE707F2D15D4807C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2F7D472071E15F7DC98E66B5980E1549</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>EF28EC12C72EA173F9C150F932995EA0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>PureLayout</string>
-			<key>target</key>
-			<string>C8E8D5BB6DA29724F65BA3B2286B6B65</string>
-			<key>targetProxy</key>
-			<string>F4DB14B557EA428FD2CF68468E6A8C97</string>
-		</dict>
-		<key>F18C1659D3E3978C699B1809E85DEE23</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E75E1612C23673181912CBF92EC0CA1C</string>
-				<string>A0AAF699F5577D3522E03E0F0E8C5AD0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F3D3F05D324772E907DB1D4DA2C89AA2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ALView+PureLayout.h</string>
-			<key>path</key>
-			<string>PureLayout/PureLayout/ALView+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F4DB14B557EA428FD2CF68468E6A8C97</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>C8E8D5BB6DA29724F65BA3B2286B6B65</string>
-			<key>remoteInfo</key>
-			<string>PureLayout</string>
-		</dict>
-		<key>F517BB624C95F560FA1B54D802D4255B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F6A1E98DAD1E7F15B358ABA770178C66</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-AnimatedTextInput_Example-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F8FE80DD95FD6012100708963DD646B0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E8698826DBA82B5FF84BA0FACB68CA86</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0369DE90E96BA602A2E9B40E4824AAFB /* Pods-AnimatedTextInput_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7090ABFAA2D67236E7B5F03FE2B9A343 /* Pods-AnimatedTextInput_Example-dummy.m */; };
+		18A38B535A2D457EB99866EC01AE1E46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */; };
+		19CCFBD61BD26A1037D95133162FC779 /* AnimatedTextInput-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7E1DEE54790A8DAF00141851741ED8 /* AnimatedTextInput-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2320C2A9FF84EF9E6257B19DB50F15 /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */; };
+		1E057FDC92EBC8B1D2FCBAB3774BFC3F /* cm_icon_input_eye_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */; };
+		2B1029984B6C7E4696DB2F5812F0E9D2 /* AnimatedTextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3184D877CC95C06A84C6261B83424BF0 /* AnimatedTextInputStyle.swift */; };
+		35B21B3D9D3D283C9F57ECBF26933B7F /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */; };
+		43A5BCCE981E72BB04490D28EE3B4562 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */; };
+		567BF4120CCE430671BF2362D44FE00B /* cm_icon_input_eye_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */; };
+		579FBCED8808183775D8159D3EFD5066 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4295AF10C14A8BD56B9F1F9A2CDBA30 /* AnimatedTextView.swift */; };
+		5ECA9D6BB6C4A9E8B6C6299107A9DD05 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CD468C44FBFE73F05BBCF9ABF600D5B /* AnimatedTextInputFieldConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271FFD0C298E581AF219EF0122DCFE73 /* AnimatedTextInputFieldConfigurator.swift */; };
+		7FB28E3DEB3F997E2CBB0E39B1D54931 /* AnimatedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8306CB1248142058A169F61F7E7B8 /* AnimatedTextInput.swift */; };
+		9154DB5533E5E09A8EDD482F4943ED4F /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		916E7D668AED6213FBCDA6A988D1CF4C /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */; };
+		936D3E99E3CD38325B4220BA448C4C94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */; };
+		963F998B665EF7C8CF4B34BA6F214C18 /* AnimatedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFE73225803B7216B179279A406B6 /* AnimatedLine.swift */; };
+		9951AD23D32460ADCFAB1793AC60ED79 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		996DA57406C0E8A37297F44BF8F5BC22 /* AnimatedTextInput-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5894C5237454A960FF9EAD8BCC49068 /* AnimatedTextInput-dummy.m */; };
+		9999AC45B3EB304408A2AD9E9EAFC776 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0D48D26F82F7721BC1C5405C803342 /* PureLayout.framework */; };
+		A718C6F7BC3BC5B089E414BB987AE663 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B97A7F22A6878342266F66CA8ED6F7D6 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB6142ABFC85DBD2611B94CEA5468C72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */; };
+		C1243DD0C2DDA9DD391619B9FF9D8E6C /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */; };
+		CD1F9FB1EA55037A4A6C744F7BFE5AB4 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69EF60E7F058F933BD8224383B4A159 /* AnimatedTextField.swift */; };
+		D88E1C6FDD82C223C1016745BD59AB84 /* Pods-AnimatedTextInput_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6F5A1ADE8756D289044A9441DE9851 /* Pods-AnimatedTextInput_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC28E9459A891E2B7F8B9742A3D4C8B6 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */; };
+		ECB98ED92D118799512BD2F73F4B66B7 /* AnimatedTextInput.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18CAA7A81C3D142498FFE220531FFB8A /* AnimatedTextInput.bundle */; };
+		F051BBB8F48E1BC6E3356D9005E107E7 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F307399AC48D6F7FB5359CE315729EB0 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		064B83217ACE9B9B647242E4974A4D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD27C0EE48602066181E78D14241267D;
+			remoteInfo = PureLayout;
+		};
+		3A764C75DFD02E336E1AF9020A60226B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E15BF84052FA6583D8B1A7575EF42B;
+			remoteInfo = AnimatedTextInput;
+		};
+		62A7568018213255D9832B13FEA3A1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD27C0EE48602066181E78D14241267D;
+			remoteInfo = PureLayout;
+		};
+		9495D5312777FDA76C79AE0D5DBC397D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 029661BDD914AB1A6D49C3F78EB75898;
+			remoteInfo = "AnimatedTextInput-AnimatedTextInput";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
+		0E91FC3C1FF3B9054D234F8038AF2DC6 /* Pods-AnimatedTextInput_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnimatedTextInput_Example-resources.sh"; sourceTree = "<group>"; };
+		16C03987E3D30A4B7B3893A7FFE269DA /* AnimatedTextInput-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedTextInput-prefix.pch"; sourceTree = "<group>"; };
+		16EAFE73225803B7216B179279A406B6 /* AnimatedLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedLine.swift; sourceTree = "<group>"; };
+		18CAA7A81C3D142498FFE220531FFB8A /* AnimatedTextInput.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedTextInput.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PureLayout.modulemap; sourceTree = "<group>"; };
+		256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		271FFD0C298E581AF219EF0122DCFE73 /* AnimatedTextInputFieldConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextInputFieldConfigurator.swift; sourceTree = "<group>"; };
+		2D0D48D26F82F7721BC1C5405C803342 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		2F7E1DEE54790A8DAF00141851741ED8 /* AnimatedTextInput-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnimatedTextInput-umbrella.h"; sourceTree = "<group>"; };
+		3184D877CC95C06A84C6261B83424BF0 /* AnimatedTextInputStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextInputStyle.swift; sourceTree = "<group>"; };
+		3BAC10AE641799E0459E1553461F5FCD /* Pods-AnimatedTextInput_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AnimatedTextInput_Example.modulemap"; sourceTree = "<group>"; };
+		3DCEAE226183EEDE1F37164017E275AC /* Pods-AnimatedTextInput_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimatedTextInput_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		522F1F516804F0A932588FE028F7EB8A /* AnimatedTextInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnimatedTextInput.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5786DF0B2E233910A99077F7DAFB8F2E /* Pods-AnimatedTextInput_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimatedTextInput_Example.release.xcconfig"; sourceTree = "<group>"; };
+		58F0589F4946BC6EAE60FEBAE2AA93E4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		665C0B40CF3C94A85643ABD47E0FF475 /* Pods_AnimatedTextInput_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimatedTextInput_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		6EF89A203BC332469BE5AD9F2D881B0E /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		7090ABFAA2D67236E7B5F03FE2B9A343 /* Pods-AnimatedTextInput_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AnimatedTextInput_Example-dummy.m"; sourceTree = "<group>"; };
+		808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_selected@3x.png"; sourceTree = "<group>"; };
+		92F05F9182541BBE2CA61D527DF68BFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A2B8306CB1248142058A169F61F7E7B8 /* AnimatedTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextInput.swift; sourceTree = "<group>"; };
+		AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		AC039385C608E0958C0DFB8B0A152F38 /* ResourceBundle-AnimatedTextInput-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-AnimatedTextInput-Info.plist"; sourceTree = "<group>"; };
+		B4295AF10C14A8BD56B9F1F9A2CDBA30 /* AnimatedTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
+		BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_normal@3x.png"; sourceTree = "<group>"; };
+		BF6F5A1ADE8756D289044A9441DE9851 /* Pods-AnimatedTextInput_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AnimatedTextInput_Example-umbrella.h"; sourceTree = "<group>"; };
+		C5894C5237454A960FF9EAD8BCC49068 /* AnimatedTextInput-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnimatedTextInput-dummy.m"; sourceTree = "<group>"; };
+		C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnimatedTextInput.xcconfig; sourceTree = "<group>"; };
+		D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_normal@2x.png"; sourceTree = "<group>"; };
+		D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		DC48A19E2AA264922693A9C30BC30743 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEB4870CCC2BD1DBAD862FDF475E800 /* Pods-AnimatedTextInput_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AnimatedTextInput_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E00A00DF80F158F156E580E8521FAB3E /* Pods-AnimatedTextInput_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AnimatedTextInput_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E0287343FB36C2D65AFF44C384606025 /* AnimatedTextInput.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AnimatedTextInput.modulemap; sourceTree = "<group>"; };
+		E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_selected@2x.png"; sourceTree = "<group>"; };
+		F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		F69EF60E7F058F933BD8224383B4A159 /* AnimatedTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
+		F6A1E98DAD1E7F15B358ABA770178C66 /* Pods-AnimatedTextInput_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnimatedTextInput_Example-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		147937E549733F8C758D867056601365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6142ABFC85DBD2611B94CEA5468C72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		327EA4519CD1D56659D970FF68E82E57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				936D3E99E3CD38325B4220BA448C4C94 /* Foundation.framework in Frameworks */,
+				9999AC45B3EB304408A2AD9E9EAFC776 /* PureLayout.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		946D0A03C92AA264E4AB572A09FC3C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C323C6558F8490BC4D96B6508EE08F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A38B535A2D457EB99866EC01AE1E46 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AB1DD557E2318B171E87FA536783D65 /* AnimatedTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				AEED118A7229F6DFC715E309AC5EC3B1 /* AnimatedTextInput */,
+				A34CCF941B2B514AEBD21C43D122902C /* Resources */,
+				6E34B625918459142FB7B2F32E2B66BC /* Support Files */,
+			);
+			name = AnimatedTextInput;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		254C4962D2948A125CB3A0712F0E0FE8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AB1DD557E2318B171E87FA536783D65 /* AnimatedTextInput */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC48A19E2AA264922693A9C30BC30743 /* Info.plist */,
+				249938C44B3C707521E098F2C5086AD9 /* PureLayout.modulemap */,
+				01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */,
+				808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */,
+				6D986837FA46C6AB4A8D72FCAA1B4454 /* PureLayout-prefix.pch */,
+				6EFEA95188E08BEB23065B2AB052E7BC /* PureLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PureLayout";
+			sourceTree = "<group>";
+		};
+		483A6020384B45162A10869C414277E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18CAA7A81C3D142498FFE220531FFB8A /* AnimatedTextInput.bundle */,
+				522F1F516804F0A932588FE028F7EB8A /* AnimatedTextInput.framework */,
+				665C0B40CF3C94A85643ABD47E0FF475 /* Pods_AnimatedTextInput_Example.framework */,
+				6EF89A203BC332469BE5AD9F2D881B0E /* PureLayout.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A9D63F198BC3E2EB88C0A24DE3B8435 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */,
+				BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */,
+				E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */,
+				8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		60C5E5E421C657647BE68713D45DA086 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C37EE2A47BD592BB62E8AA1B918C0C50 /* Pods-AnimatedTextInput_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6E34B625918459142FB7B2F32E2B66BC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0287343FB36C2D65AFF44C384606025 /* AnimatedTextInput.modulemap */,
+				C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */,
+				C5894C5237454A960FF9EAD8BCC49068 /* AnimatedTextInput-dummy.m */,
+				16C03987E3D30A4B7B3893A7FFE269DA /* AnimatedTextInput-prefix.pch */,
+				2F7E1DEE54790A8DAF00141851741ED8 /* AnimatedTextInput-umbrella.h */,
+				58F0589F4946BC6EAE60FEBAE2AA93E4 /* Info.plist */,
+				AC039385C608E0958C0DFB8B0A152F38 /* ResourceBundle-AnimatedTextInput-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AnimatedTextInput";
+			sourceTree = "<group>";
+		};
+		79ACC057B7E955A940556D6811A14F08 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				16EAFE73225803B7216B179279A406B6 /* AnimatedLine.swift */,
+				F69EF60E7F058F933BD8224383B4A159 /* AnimatedTextField.swift */,
+				A2B8306CB1248142058A169F61F7E7B8 /* AnimatedTextInput.swift */,
+				271FFD0C298E581AF219EF0122DCFE73 /* AnimatedTextInputFieldConfigurator.swift */,
+				3184D877CC95C06A84C6261B83424BF0 /* AnimatedTextInputStyle.swift */,
+				B4295AF10C14A8BD56B9F1F9A2CDBA30 /* AnimatedTextView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				254C4962D2948A125CB3A0712F0E0FE8 /* Development Pods */,
+				8D0D6CB064A91576911FCC680FC2C1D9 /* Frameworks */,
+				A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */,
+				483A6020384B45162A10869C414277E7 /* Products */,
+				60C5E5E421C657647BE68713D45DA086 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8D0D6CB064A91576911FCC680FC2C1D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D0D48D26F82F7721BC1C5405C803342 /* PureLayout.framework */,
+				D8D98B7718E92D9E21D3B7DF06AC25F9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C6F93A5AE4A9293598494393460DF93 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F3D3F05D324772E907DB1D4DA2C89AA2 /* ALView+PureLayout.h */,
+				3F6990C47F02B6691DD4DA9D4504A36B /* ALView+PureLayout.m */,
+				256CB866D56B919DA6C9ABF2C32B4D37 /* NSArray+PureLayout.h */,
+				D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */,
+				2F7D472071E15F7DC98E66B5980E1549 /* NSLayoutConstraint+PureLayout.h */,
+				62FD488738DACC6BD28A4B8007AC9E22 /* NSLayoutConstraint+PureLayout.m */,
+				261FA9EFC65F5CA2F5CE7AF0D3ACE209 /* PureLayout.h */,
+				AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */,
+				5B859CA7D3A83073EE3A0EFE2138F31B /* PureLayoutDefines.h */,
+				2F7CB2F8AA04108B4168449AFCA94214 /* Support Files */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C6F93A5AE4A9293598494393460DF93 /* PureLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A34CCF941B2B514AEBD21C43D122902C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C599952D366330ED87E990628F822049 /* AnimatedTextInput */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AEED118A7229F6DFC715E309AC5EC3B1 /* AnimatedTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				79ACC057B7E955A940556D6811A14F08 /* Classes */,
+			);
+			path = AnimatedTextInput;
+			sourceTree = "<group>";
+		};
+		C37EE2A47BD592BB62E8AA1B918C0C50 /* Pods-AnimatedTextInput_Example */ = {
+			isa = PBXGroup;
+			children = (
+				92F05F9182541BBE2CA61D527DF68BFE /* Info.plist */,
+				3BAC10AE641799E0459E1553461F5FCD /* Pods-AnimatedTextInput_Example.modulemap */,
+				E00A00DF80F158F156E580E8521FAB3E /* Pods-AnimatedTextInput_Example-acknowledgements.markdown */,
+				DDEB4870CCC2BD1DBAD862FDF475E800 /* Pods-AnimatedTextInput_Example-acknowledgements.plist */,
+				7090ABFAA2D67236E7B5F03FE2B9A343 /* Pods-AnimatedTextInput_Example-dummy.m */,
+				F6A1E98DAD1E7F15B358ABA770178C66 /* Pods-AnimatedTextInput_Example-frameworks.sh */,
+				0E91FC3C1FF3B9054D234F8038AF2DC6 /* Pods-AnimatedTextInput_Example-resources.sh */,
+				BF6F5A1ADE8756D289044A9441DE9851 /* Pods-AnimatedTextInput_Example-umbrella.h */,
+				3DCEAE226183EEDE1F37164017E275AC /* Pods-AnimatedTextInput_Example.debug.xcconfig */,
+				5786DF0B2E233910A99077F7DAFB8F2E /* Pods-AnimatedTextInput_Example.release.xcconfig */,
+			);
+			name = "Pods-AnimatedTextInput_Example";
+			path = "Target Support Files/Pods-AnimatedTextInput_Example";
+			sourceTree = "<group>";
+		};
+		C599952D366330ED87E990628F822049 /* AnimatedTextInput */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D63F198BC3E2EB88C0A24DE3B8435 /* Assets */,
+			);
+			path = AnimatedTextInput;
+			sourceTree = "<group>";
+		};
+		D8D98B7718E92D9E21D3B7DF06AC25F9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		190AB62528FDDFC8DA97E0DB2F44E597 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D88E1C6FDD82C223C1016745BD59AB84 /* Pods-AnimatedTextInput_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FAC3F7B894A1D2DC454612BDE9BDF2E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19CCFBD61BD26A1037D95133162FC779 /* AnimatedTextInput-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4A90E8C7DDE59DB99F38F2388CEB13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ECA9D6BB6C4A9E8B6C6299107A9DD05 /* ALView+PureLayout.h in Headers */,
+				9951AD23D32460ADCFAB1793AC60ED79 /* NSArray+PureLayout.h in Headers */,
+				A718C6F7BC3BC5B089E414BB987AE663 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				B97A7F22A6878342266F66CA8ED6F7D6 /* PureLayout+Internal.h in Headers */,
+				F307399AC48D6F7FB5359CE315729EB0 /* PureLayout-umbrella.h in Headers */,
+				9154DB5533E5E09A8EDD482F4943ED4F /* PureLayout.h in Headers */,
+				F051BBB8F48E1BC6E3356D9005E107E7 /* PureLayoutDefines.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		029661BDD914AB1A6D49C3F78EB75898 /* AnimatedTextInput-AnimatedTextInput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B5226312467257301F58B82AF2145B /* Build configuration list for PBXNativeTarget "AnimatedTextInput-AnimatedTextInput" */;
+			buildPhases = (
+				0180A839E9D219AC0698887E62DDDA8E /* Sources */,
+				946D0A03C92AA264E4AB572A09FC3C0A /* Frameworks */,
+				CE2CD9D5CE1D5BB91E80447D124D7C85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnimatedTextInput-AnimatedTextInput";
+			productName = "AnimatedTextInput-AnimatedTextInput";
+			productReference = 18CAA7A81C3D142498FFE220531FFB8A /* AnimatedTextInput.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5B5CFFF0379CA4529FD2C67E3DE804BA /* Pods-AnimatedTextInput_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC08CCE8D45890B9A8ED3FE67055ED47 /* Build configuration list for PBXNativeTarget "Pods-AnimatedTextInput_Example" */;
+			buildPhases = (
+				70D3518FC8D2A81C7A5B5E45F10E9274 /* Sources */,
+				147937E549733F8C758D867056601365 /* Frameworks */,
+				190AB62528FDDFC8DA97E0DB2F44E597 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C1276AFB116BEF9C8725F767D24FFA2 /* PBXTargetDependency */,
+				D4AC9E60546380FBFF47342254C5112E /* PBXTargetDependency */,
+			);
+			name = "Pods-AnimatedTextInput_Example";
+			productName = "Pods-AnimatedTextInput_Example";
+			productReference = 665C0B40CF3C94A85643ABD47E0FF475 /* Pods_AnimatedTextInput_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD27C0EE48602066181E78D14241267D /* PureLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3442D486EB205BEA25379371AB46E9F5 /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildPhases = (
+				5252431B0CAA80439C42A1D9271DBE83 /* Sources */,
+				D3C323C6558F8490BC4D96B6508EE08F /* Frameworks */,
+				CA4A90E8C7DDE59DB99F38F2388CEB13 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PureLayout;
+			productName = PureLayout;
+			productReference = 6EF89A203BC332469BE5AD9F2D881B0E /* PureLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3E15BF84052FA6583D8B1A7575EF42B /* AnimatedTextInput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0DF25C1F78DE09B5C19064CB124E3C /* Build configuration list for PBXNativeTarget "AnimatedTextInput" */;
+			buildPhases = (
+				FE874DFD9915B5C010EF524A6BD881F0 /* Sources */,
+				327EA4519CD1D56659D970FF68E82E57 /* Frameworks */,
+				52CC52AB84EC6EBF373AB8758D6B51C6 /* Resources */,
+				4FAC3F7B894A1D2DC454612BDE9BDF2E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03B5730064614DBEF26538716FF339A0 /* PBXTargetDependency */,
+				988B2935DF197E1E0417539C664B2496 /* PBXTargetDependency */,
+			);
+			name = AnimatedTextInput;
+			productName = AnimatedTextInput;
+			productReference = 522F1F516804F0A932588FE028F7EB8A /* AnimatedTextInput.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 483A6020384B45162A10869C414277E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3E15BF84052FA6583D8B1A7575EF42B /* AnimatedTextInput */,
+				029661BDD914AB1A6D49C3F78EB75898 /* AnimatedTextInput-AnimatedTextInput */,
+				5B5CFFF0379CA4529FD2C67E3DE804BA /* Pods-AnimatedTextInput_Example */,
+				BD27C0EE48602066181E78D14241267D /* PureLayout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52CC52AB84EC6EBF373AB8758D6B51C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECB98ED92D118799512BD2F73F4B66B7 /* AnimatedTextInput.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2CD9D5CE1D5BB91E80447D124D7C85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D2320C2A9FF84EF9E6257B19DB50F15 /* cm_icon_input_eye_normal@2x.png in Resources */,
+				567BF4120CCE430671BF2362D44FE00B /* cm_icon_input_eye_normal@3x.png in Resources */,
+				C1243DD0C2DDA9DD391619B9FF9D8E6C /* cm_icon_input_eye_selected@2x.png in Resources */,
+				1E057FDC92EBC8B1D2FCBAB3774BFC3F /* cm_icon_input_eye_selected@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0180A839E9D219AC0698887E62DDDA8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5252431B0CAA80439C42A1D9271DBE83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				916E7D668AED6213FBCDA6A988D1CF4C /* ALView+PureLayout.m in Sources */,
+				43A5BCCE981E72BB04490D28EE3B4562 /* NSArray+PureLayout.m in Sources */,
+				35B21B3D9D3D283C9F57ECBF26933B7F /* NSLayoutConstraint+PureLayout.m in Sources */,
+				DC28E9459A891E2B7F8B9742A3D4C8B6 /* PureLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D3518FC8D2A81C7A5B5E45F10E9274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0369DE90E96BA602A2E9B40E4824AAFB /* Pods-AnimatedTextInput_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE874DFD9915B5C010EF524A6BD881F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963F998B665EF7C8CF4B34BA6F214C18 /* AnimatedLine.swift in Sources */,
+				CD1F9FB1EA55037A4A6C744F7BFE5AB4 /* AnimatedTextField.swift in Sources */,
+				996DA57406C0E8A37297F44BF8F5BC22 /* AnimatedTextInput-dummy.m in Sources */,
+				7FB28E3DEB3F997E2CBB0E39B1D54931 /* AnimatedTextInput.swift in Sources */,
+				6CD468C44FBFE73F05BBCF9ABF600D5B /* AnimatedTextInputFieldConfigurator.swift in Sources */,
+				2B1029984B6C7E4696DB2F5812F0E9D2 /* AnimatedTextInputStyle.swift in Sources */,
+				579FBCED8808183775D8159D3EFD5066 /* AnimatedTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03B5730064614DBEF26538716FF339A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AnimatedTextInput-AnimatedTextInput";
+			target = 029661BDD914AB1A6D49C3F78EB75898 /* AnimatedTextInput-AnimatedTextInput */;
+			targetProxy = 9495D5312777FDA76C79AE0D5DBC397D /* PBXContainerItemProxy */;
+		};
+		2C1276AFB116BEF9C8725F767D24FFA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AnimatedTextInput;
+			target = E3E15BF84052FA6583D8B1A7575EF42B /* AnimatedTextInput */;
+			targetProxy = 3A764C75DFD02E336E1AF9020A60226B /* PBXContainerItemProxy */;
+		};
+		988B2935DF197E1E0417539C664B2496 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout;
+			target = BD27C0EE48602066181E78D14241267D /* PureLayout */;
+			targetProxy = 62A7568018213255D9832B13FEA3A1C4 /* PBXContainerItemProxy */;
+		};
+		D4AC9E60546380FBFF47342254C5112E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureLayout;
+			target = BD27C0EE48602066181E78D14241267D /* PureLayout */;
+			targetProxy = 064B83217ACE9B9B647242E4974A4D56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4322A520ACF90B8346F4529124BAE2B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		57DBA0D68FD7BD6F8F961CFD449D629D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7F90EF1F46489E010882F8A7F4FCA00D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DCEAE226183EEDE1F37164017E275AC /* Pods-AnimatedTextInput_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AnimatedTextInput_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AnimatedTextInput_Example/Pods-AnimatedTextInput_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AnimatedTextInput_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		DEAA3C1056C1117EAD6D954F4505CB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AnimatedTextInput";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/ResourceBundle-AnimatedTextInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		E4FA0B7DAA585390BDB3278568432B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AnimatedTextInput/AnimatedTextInput-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AnimatedTextInput/AnimatedTextInput.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EB8138C6B190C126DD9F00186E636BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AnimatedTextInput";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/AnimatedTextInput/ResourceBundle-AnimatedTextInput-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = AnimatedTextInput;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		EF099DCD4C4CFF9B44A7D489BEFCFE17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B056FE48A821CA3D3818E32A4CFEDF /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FADEE4A8A9C4E124C46ABEC50E5043CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5786DF0B2E233910A99077F7DAFB8F2E /* Pods-AnimatedTextInput_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AnimatedTextInput_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AnimatedTextInput_Example/Pods-AnimatedTextInput_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AnimatedTextInput_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C0DF25C1F78DE09B5C19064CB124E3C /* Build configuration list for PBXNativeTarget "AnimatedTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4322A520ACF90B8346F4529124BAE2B9 /* Debug */,
+				E4FA0B7DAA585390BDB3278568432B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B5226312467257301F58B82AF2145B /* Build configuration list for PBXNativeTarget "AnimatedTextInput-AnimatedTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8138C6B190C126DD9F00186E636BA7 /* Debug */,
+				DEAA3C1056C1117EAD6D954F4505CB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3442D486EB205BEA25379371AB46E9F5 /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF099DCD4C4CFF9B44A7D489BEFCFE17 /* Debug */,
+				57DBA0D68FD7BD6F8F961CFD449D629D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC08CCE8D45890B9A8ED3FE67055ED47 /* Build configuration list for PBXNativeTarget "Pods-AnimatedTextInput_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F90EF1F46489E010882F8A7F4FCA00D /* Debug */,
+				FADEE4A8A9C4E124C46ABEC50E5043CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
