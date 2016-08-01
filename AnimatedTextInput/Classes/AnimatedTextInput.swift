@@ -16,12 +16,21 @@ public class AnimatedTextInput: UIControl {
 
     public typealias AnimatedTextInputType = AnimatedTextInputFieldConfigurator.AnimatedTextInputType
 
-    public var placeHolderText = "Test" { didSet { placeholderLayer.string = placeHolderText } }
     public var tapAction: (Void -> Void)?
-    public var text: String? { return textInput.currentText }
     public  weak var delegate: AnimatedTextInputDelegate?
     public private(set) var textInputType: AnimatedTextInputType = .text
     public private(set) var isActive = false
+
+    public var placeHolderText = "Test" {
+        didSet {
+            placeholderLayer.string = placeHolderText
+        }
+    }
+
+    public var text: String? {
+        return textInput.currentText
+    }
+
 
     private let lineView = AnimatedLine()
     private let placeholderLayer = CATextLayer()

@@ -18,7 +18,9 @@ public final class AnimatedLine: UIView {
     }
 
     var fillType = FillType.leftToRight {
-        didSet { updatePath() }
+        didSet {
+            updatePath()
+        }
     }
 
     override init(frame: CGRect) {
@@ -96,9 +98,8 @@ public final class AnimatedLine: UIView {
     private func animateLine(to value: CGFloat) {
         let function = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         let duration = 0.2
-        transactionAnimation(with: animationDuration, timingFuncion: function) { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.lineLayer.strokeEnd = value
+        transactionAnimation(with: animationDuration, timingFuncion: function) {
+            self.lineLayer.strokeEnd = value
         }
     }
 }
