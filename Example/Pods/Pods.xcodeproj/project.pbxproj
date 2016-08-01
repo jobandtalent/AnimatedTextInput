@@ -31,6 +31,7 @@
 		B97A7F22A6878342266F66CA8ED6F7D6 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA654F86E857710B01965E96AC15F25C /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB6142ABFC85DBD2611B94CEA5468C72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6434676B1F4ADB3AC6F5BAA020EC95 /* Foundation.framework */; };
 		C1243DD0C2DDA9DD391619B9FF9D8E6C /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */; };
+		C71EF8A81D4FAEF300CB2622 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EF8A71D4FAEF300CB2622 /* UIViewExtensions.swift */; };
 		CD1F9FB1EA55037A4A6C744F7BFE5AB4 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69EF60E7F058F933BD8224383B4A159 /* AnimatedTextField.swift */; };
 		D88E1C6FDD82C223C1016745BD59AB84 /* Pods-AnimatedTextInput_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6F5A1ADE8756D289044A9441DE9851 /* Pods-AnimatedTextInput_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC28E9459A891E2B7F8B9742A3D4C8B6 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D9E17BE044F47037C6ABD6F65EE32 /* PureLayout-dummy.m */; };
@@ -109,6 +110,7 @@
 		BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_normal@3x.png"; sourceTree = "<group>"; };
 		BF6F5A1ADE8756D289044A9441DE9851 /* Pods-AnimatedTextInput_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AnimatedTextInput_Example-umbrella.h"; sourceTree = "<group>"; };
 		C5894C5237454A960FF9EAD8BCC49068 /* AnimatedTextInput-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnimatedTextInput-dummy.m"; sourceTree = "<group>"; };
+		C71EF8A71D4FAEF300CB2622 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		C731738D9AAD5A48429A668E9B98CAFC /* AnimatedTextInput.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnimatedTextInput.xcconfig; sourceTree = "<group>"; };
 		D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "cm_icon_input_eye_normal@2x.png"; sourceTree = "<group>"; };
 		D87500AA33CA4A933595B88AD6CA26C8 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				16EAFE73225803B7216B179279A406B6 /* AnimatedLine.swift */,
 				F69EF60E7F058F933BD8224383B4A159 /* AnimatedTextField.swift */,
 				A2B8306CB1248142058A169F61F7E7B8 /* AnimatedTextInput.swift */,
+				C71EF8A71D4FAEF300CB2622 /* UIViewExtensions.swift */,
 				271FFD0C298E581AF219EF0122DCFE73 /* AnimatedTextInputFieldConfigurator.swift */,
 				3184D877CC95C06A84C6261B83424BF0 /* AnimatedTextInputStyle.swift */,
 				B4295AF10C14A8BD56B9F1F9A2CDBA30 /* AnimatedTextView.swift */,
@@ -539,6 +542,7 @@
 				963F998B665EF7C8CF4B34BA6F214C18 /* AnimatedLine.swift in Sources */,
 				CD1F9FB1EA55037A4A6C744F7BFE5AB4 /* AnimatedTextField.swift in Sources */,
 				996DA57406C0E8A37297F44BF8F5BC22 /* AnimatedTextInput-dummy.m in Sources */,
+				C71EF8A81D4FAEF300CB2622 /* UIViewExtensions.swift in Sources */,
 				7FB28E3DEB3F997E2CBB0E39B1D54931 /* AnimatedTextInput.swift in Sources */,
 				6CD468C44FBFE73F05BBCF9ABF600D5B /* AnimatedTextInputFieldConfigurator.swift in Sources */,
 				2B1029984B6C7E4696DB2F5812F0E9D2 /* AnimatedTextInputStyle.swift in Sources */,

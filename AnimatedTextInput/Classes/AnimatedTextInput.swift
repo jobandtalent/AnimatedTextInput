@@ -159,14 +159,7 @@ public class AnimatedTextInput: UIControl {
     private func animatePlaceholder(to applyConfiguration: Void -> Void) {
         let duration = 0.2
         let function = CAMediaTimingFunction(controlPoints: 0.3, 0.0, 0.5, 0.95)
-        CATransaction.begin()
-        CATransaction.disableActions()
-        CATransaction.setAnimationDuration(duration)
-        CATransaction.setAnimationTimingFunction(function)
-
-        applyConfiguration()
-
-        CATransaction.commit()
+        transactionAnimation(with: duration, timingFuncion: function, animations: applyConfiguration)
     }
 
     //MARK: Behaviours
@@ -325,9 +318,7 @@ public protocol TextInputDelegate: class {
     func textInputShouldReturn(textInput: TextInput) -> Bool
 }
 
-public
-
-protocol TextInputError {
+public protocol TextInputError {
     func configureErrorState(with message: String?)
     func removeErrorHintMessage()
 }
