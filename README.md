@@ -71,10 +71,6 @@ textInput.configureStyle(with: CustomTextInputStyle())
 
 - You can use `AnimatedTextInput` as a replacement for either `UITextField` or `UITextView`. To retrieve the user's input text, use the `text` property.
 
-```swift
-print("User input: \(textInput.text)")
-```
-
 - To set your custom value in the text input, use the function `set(text:)`.
 
 - This control provides an easy way of setting a counter label. Just call the function `showCharacterCounterLabel(with:)` and give it a maximum number of characters.
