@@ -1,6 +1,8 @@
 # AnimatedTextInput
 iOS custom text input component used in Jobandtalent app.
 
+![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Src/general.gif)
+
 ## Installation
 Use cocoapods to install this custom control in your project.
 
