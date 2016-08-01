@@ -20,6 +20,7 @@
 		A668140B341209505D8111AD5CDCB1E6 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4295AF10C14A8BD56B9F1F9A2CDBA30 /* AnimatedTextView.swift */; };
 		AE2E18D9EA04491E2AEF9E988C452263 /* AnimatedTextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3184D877CC95C06A84C6261B83424BF0 /* AnimatedTextInputStyle.swift */; };
 		BD55397F45F44F631D7C64FA926E9A47 /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */; };
+		C71EF8AA1D4FD62C00CB2622 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EF8A71D4FAEF300CB2622 /* UIViewExtensions.swift */; };
 		C99AACB274D9DEE6062C820E120DC3E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		CF9DAE07D7BF5303FE54631B9B0A3660 /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */; };
 		E09850D56D4B7F03DF7211561014D3A1 /* AnimatedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8306CB1248142058A169F61F7E7B8 /* AnimatedTextInput.swift */; };
@@ -390,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71EF8AA1D4FD62C00CB2622 /* UIViewExtensions.swift in Sources */,
 				69BD7C25032730377D314AD6B4DAC7FC /* AnimatedLine.swift in Sources */,
 				7CD6D729225EDCBA451461C33E80356A /* AnimatedTextField.swift in Sources */,
 				1AB7F49E42D41C38A29DDEFD00317256 /* AnimatedTextInput-dummy.m in Sources */,
