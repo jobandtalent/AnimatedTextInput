@@ -8,7 +8,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         textInputs[0].placeHolderText = "Normal text"
-        
+
         textInputs[1].placeHolderText = "Password"
         textInputs[1].configureType(with: .password)
 
@@ -31,8 +31,11 @@ class ViewController: UIViewController {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.blueColor()
         presentViewController(vc, animated: true) {
-            if let text = self.textInputs[3].text where text.isEmpty { self.textInputs[3].set(text: "Some option the user did select") }
-            else { self.textInputs[3].set(text: nil) }
+            if let text = self.textInputs[3].text where text.isEmpty {
+                self.textInputs[3].set(text: "Some option the user did select")
+            } else {
+                self.textInputs[3].set(text: nil)
+            }
             vc.dismissViewControllerAnimated(true, completion: nil)
         }
     }
