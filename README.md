@@ -1,33 +1,33 @@
 # AnimatedTextInput
-iOS custom text input component used in Jobandtalent app.
+iOS custom text input component used in the [Jobandtalent app](https://itunes.apple.com/app/id665060895).
 
-![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Src/general.gif)
+![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Assets/general.gif)
 
 ## Installation
 Use cocoapods to install this custom control in your project.
 
 ```
-pod 'AnimatedTextInput'
+pod 'AnimatedTextInput', '~> 0.1.0'
 ```
 
 ## Usage
 
-Use the main class `AnimatedTextInput`. Create it either by code or draggin a new instance of `UIView` into your storyboard/nib file and setting its class in the identity inspector.
+Use the main class `AnimatedTextInput`. Create it either by code or dragging a new instance of `UIView` into your storyboard/nib file and setting its class in the identity inspector.
 
 ### Types
 Currently there are 6 different types, defined in `AnimatedTextInputType` enum.
 
-- Text: basic text input, same behaviour as UITextField
+- Text: basic text input, same behaviour as UITextField.
 
-- Password: secure text entry and `eye` button for revealing its content
+- Password: secure text entry and `eye` button for revealing its content.
 
-- Numeric: numeric text input
+- Numeric: numeric text input.
 
-- Selection: user inteaction for the text input is disabled. A `tapAction` is expected and called when the text input is pressed. Normally used to present a set of options and modify its state after one option is selected.
+- Selection: user interaction for the text input is disabled. A `tapAction` is expected and called when the text input is pressed. Normally used to present a set of options and modify its state after one option is selected.
 
 - Multiline: similar behaviour to UITextView with no scrolling. The `intrinsicContentSize` of the view will grow as the user types. If you need this behaviour and you use autolayout, pin either the bottom or the top, otherwise the view won't grow (like you would do with a `UILabel`).
 
-- Generic: expects a configured `TextInput`. Use this if you need a UITextField or UITextView with your custom behaviour. Check `TextInput` and `TextInputDelegate` protocols and create a class conforming them.
+- Generic: expects a configured `TextInput`. Use this if you need a UITextField or UITextView with your custom behaviour. Check `TextInput` and `TextInputDelegate` protocols and create a class conforming to them.
 
 To switch between types, call `configureType(with:)` using one of the above.
 
@@ -37,7 +37,7 @@ textInput.configureType(with: .numeric)
 
 ### Styles
 
-Creating a new visual style is as easy as creating a new `struct` that conforms to `AnimatedTextInputStyle` protocol. 
+Creating a new visual style is as easy as creating a new `struct` that conforms to `AnimatedTextInputStyle` protocol.
 
 For example:
 
@@ -64,12 +64,12 @@ Then just create and pass it to the `configureStyle(with:)` function.
 
 ```swift
 textInput.configureStyle(with: CustomTextInputStyle())
-``` 
+```
 
 
 ### Other considerations
 
-- You can use `AnimatedTextInput` as a replacement for either `UITextField` or `UITextView`. To gather the user's input text, use the property text.
+- You can use `AnimatedTextInput` as a replacement for either `UITextField` or `UITextView`. To retrieve the user's input text, use the `text` property.
 
 ```swift
 print("User input: \(textInput.text)")
@@ -79,12 +79,11 @@ print("User input: \(textInput.text)")
 
 - This control provides an easy way of setting a counter label. Just call the function `showCharacterCounterLabel(with:)` and give it a maximum number of characters.
 
-- `AnimatedTextInput` has its own delegate methods, although they the same as `UITextField` and `UITextView`.
-
+- `AnimatedTextInput` has its own delegate methods, very similar to `UITextFieldDelegate` and `UITextViewDelegate`.
 
 Download and check the Example project for more examples.
 
----  
+---
 
 #### One last question: Why create a `TextInput` abstraction and not use `UITextField` or `UITextView` instead?
-From the API point of view, we only wanted to deal with 1 control. However, we needed some behaviours that are not supported by `UITextField` and same goes with `UITextView`. For instance, we wanted `AnimatedTextInput` to support multiline, but `UITextField` does not support it. We also wanted secure text entry for the password type, but `UITextView` does not support it. This is why we ended up creating `TextInput` abstraction.
+From an API point of view, we only wanted to deal with one control. However, we needed some behaviours that were not supported by `UITextField` or `UITextView`. For instance, we wanted `AnimatedTextInput` to support multiline, but `UITextField` does not support it. We also wanted secure text entry for the password type, but `UITextView` does not support it. That's why we ended up creating `TextInput` abstraction.
