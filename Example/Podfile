@@ -3,3 +3,7 @@ use_frameworks!
 target 'AnimatedTextInput_Example' do
     pod 'AnimatedTextInput', :path => '../'
 end
+
+target 'AnimatedTextInput_Tests' do
+    pod 'KIF', '~> 3.0'
+end

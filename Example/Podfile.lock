@@ -1,16 +1,19 @@
 PODS:
   - AnimatedTextInput (0.2.0)
+  - KIF (3.4.2):
+    - KIF/Core (= 3.4.2)
+  - KIF/Core (3.4.2)
 
 DEPENDENCIES:
   - AnimatedTextInput (from `../`)
+  - KIF (~> 3.0)
 
 EXTERNAL SOURCES:
   AnimatedTextInput:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   AnimatedTextInput: 45da8c76459a0380e8d8834f2610f3f5cd3b3668
+  KIF: b518c9831453abea5afdbbde3908ec47832d6d56
 
-PODFILE CHECKSUM: 2ce5d80fef54d8ef0d5ca0c7d754bae641726324
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

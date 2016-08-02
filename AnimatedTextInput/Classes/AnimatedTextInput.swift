@@ -247,6 +247,8 @@ public class AnimatedTextInput: UIControl {
         return true
     }
 
+
+
     override public func canResignFirstResponder() -> Bool {
         return textInput.view.canResignFirstResponder()
     }
