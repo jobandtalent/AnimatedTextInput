@@ -1,5 +1,4 @@
 import UIKit
-import PureLayout
 
 @objc public protocol AnimatedTextInputDelegate: class {
 
@@ -47,10 +46,11 @@ public class AnimatedTextInput: UIControl {
     private let counterLabel = UILabel()
     private let lineWidth: CGFloat = 1
     private let counterLabelRightMargin: CGFloat = 15
+    private let counterLabelTopMargin: CGFloat = 5
 
     private var isPlaceholderAsHint = false
+    private var hasCounterLabel = false
     private var textInput: TextInput!
-    private var textInputHeightConstraint: NSLayoutConstraint!
     private var placeholderErrorText = "Error message"
     private var lineToBottomConstraint: NSLayoutConstraint!
 
@@ -77,7 +77,28 @@ public class AnimatedTextInput: UIControl {
         return CGSize(width: UIViewNoIntrinsicMetric, height: normalHeight + style.topMargin + style.bottomMargin)
     }
 
+    public override func updateConstraints() {
+        addLineViewConstraints()
+        addTextInputConstraints()
+        super.updateConstraints()
+    }
+
     // MARK: Configuration
+
+    private func addLineViewConstraints() {
+        pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
+        pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
+        lineView.setHeight(to: lineWidth)
+        let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize().height - counterLabelTopMargin : 0
+        pinBottom(toBottomOf: lineView, constant: constant)
+    }
+
+    private func addTextInputConstraints() {
+        pinLeading(toLeadingOf: textInput.view, constant: style.leftMargin)
+        pinTrailing(toTrailingOf: textInput.view, constant: style.rightMargin)
+        pinTop(toTopOf: textInput.view, constant: style.topMargin)
+        textInput.view.pinBottom(toTopOf: lineView, constant: style.bottomMargin)
+    }
 
     private func setupCommonElements() {
         addLine()
@@ -88,11 +109,8 @@ public class AnimatedTextInput: UIControl {
 
     private func addLine() {
         lineView.defaultColor = style.inactiveColor
+        lineView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(lineView)
-        lineView.autoPinEdge(.Leading, toEdge: .Leading, ofView: self, withOffset: style.leftMargin)
-        lineView.autoPinEdge(.Trailing, toEdge: .Trailing, ofView: self, withOffset: -style.rightMargin)
-        lineToBottomConstraint = lineView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
-        lineView.autoSetDimension(.Height, toSize: lineWidth)
     }
 
     private func addPlaceHolder() {
@@ -118,11 +136,8 @@ public class AnimatedTextInput: UIControl {
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
+        textInput.view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textInput.view)
-        textInput.view.autoPinEdge(.Leading, toEdge: .Leading, ofView: self, withOffset: style.leftMargin)
-        textInput.view.autoPinEdge(.Trailing, toEdge: .Trailing, ofView: self, withOffset: -style.rightMargin)
-        textInput.view.autoPinEdge(.Bottom, toEdge: .Top, ofView: lineView, withOffset: -style.bottomMargin)
-        textInput.view.autoPinEdge(.Top, toEdge: .Top, ofView: self, withOffset: style.topMargin)
         invalidateIntrinsicContentSize()
     }
 
@@ -266,12 +281,15 @@ public class AnimatedTextInput: UIControl {
         counterLabel.text = "\(characters)/\(maximum)"
         counterLabel.textColor = isActive ? style.activeColor : style.inactiveColor
         counterLabel.font = style.counterLabelFont
+        counterLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(counterLabel)
-        let topOffset: CGFloat = 5
-        counterLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: lineView, withOffset: topOffset)
-        counterLabel.autoPinEdge(.Trailing, toEdge: .Trailing, ofView: self, withOffset: -counterLabelRightMargin)
-        lineToBottomConstraint.constant = -counterLabel.intrinsicContentSize().height - topOffset
+        addCharacterCounterConstraints()
         invalidateIntrinsicContentSize()
+    }
+
+    private func addCharacterCounterConstraints() {
+        lineView.pinBottom(toTopOf: counterLabel, constant: counterLabelTopMargin)
+        pinTrailing(toTrailingOf: counterLabel, constant: counterLabelRightMargin)
     }
 
     public func removeCharacterCounterLabel() {
