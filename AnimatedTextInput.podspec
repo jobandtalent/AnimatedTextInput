@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AnimatedTextInput'
-  s.version          = '0.2.0'
+  s.version          = '0.1.0'
   s.summary          = 'UITextField and UITextView replacement with animated hint and error message support. Highly customizable. Used in Jobandtalent iOS app'
 
   s.description      = <<-DESC
