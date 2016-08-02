@@ -1,5 +1,5 @@
 PODS:
-  - AnimatedTextInput (0.2.0)
+  - AnimatedTextInput (0.1.0)
 
 DEPENDENCIES:
   - AnimatedTextInput (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnimatedTextInput: 45da8c76459a0380e8d8834f2610f3f5cd3b3668
+  AnimatedTextInput: 5c406580b2eb14cac4f8427f73c7ec8e74c35924
 
 PODFILE CHECKSUM: 2ce5d80fef54d8ef0d5ca0c7d754bae641726324
 
