@@ -12,11 +12,15 @@ public final class AnimatedLine: UIView {
     var animationDuration: Double = 0.4
 
     var defaultColor = UIColor.grayColor().colorWithAlphaComponent(0.6) {
-        didSet { backgroundColor = defaultColor }
+        didSet {
+            backgroundColor = defaultColor
+        }
     }
 
     var fillType = FillType.leftToRight {
-        didSet { updatePath() }
+        didSet {
+            updatePath()
+        }
     }
 
     override init(frame: CGRect) {
@@ -93,13 +97,8 @@ public final class AnimatedLine: UIView {
 
     private func animateLine(to value: CGFloat) {
         let function = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        CATransaction.begin()
-        CATransaction.disableActions()
-        CATransaction.setAnimationDuration(animationDuration)
-        CATransaction.setAnimationTimingFunction(function)
-        
-        lineLayer.strokeEnd = value
-        
-        CATransaction.commit()
+        transactionAnimation(with: animationDuration, timingFuncion: function) {
+            self.lineLayer.strokeEnd = value
+        }
     }
 }

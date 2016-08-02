@@ -23,6 +23,4 @@ DESC
   s.resource_bundles = {
     'AnimatedTextInput' => ['AnimatedTextInput/Assets/*.*']
   }
-
-  s.dependency 'PureLayout', '~> 3.0'
 end

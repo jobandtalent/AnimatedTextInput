@@ -23,10 +23,5 @@
     "AnimatedTextInput": [
       "AnimatedTextInput/Assets/*.*"
     ]
-  },
-  "dependencies": {
-    "PureLayout": [
-      "~> 3.0"
-    ]
   }
 }

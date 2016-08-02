@@ -8,22 +8,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         textInputs[0].placeHolderText = "Normal text"
-        
+
         textInputs[1].placeHolderText = "Password"
-        textInputs[1].configureType(with: .password)
+        textInputs[1].type = .password
 
         textInputs[2].placeHolderText = "Numeric"
-        textInputs[2].configureType(with: .numeric)
+        textInputs[2].type = .numeric
 
         textInputs[3].placeHolderText = "Selection"
-        textInputs[3].configureType(with: .selection)
+        textInputs[3].type = .selection
         textInputs[3].tapAction = { [weak self] in
             guard let strongself = self else { return }
             strongself.tap()
         }
 
         textInputs[4].placeHolderText = "Multiline"
-        textInputs[4].configureType(with: .multiline)
+        textInputs[4].type = .multiline
         textInputs[4].showCharacterCounterLabel(with: 160)
     }
 
@@ -31,8 +31,11 @@ class ViewController: UIViewController {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.blueColor()
         presentViewController(vc, animated: true) {
-            if let text = self.textInputs[3].text where text.isEmpty { self.textInputs[3].set(text: "Some option the user did select") }
-            else { self.textInputs[3].set(text: nil) }
+            if let text = self.textInputs[3].text where text.isEmpty {
+                self.textInputs[3].text = "Some option the user did select"
+            } else {
+                self.textInputs[3].text = nil
+            }
             vc.dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -42,7 +45,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func toggleStyle(sender: AnyObject) {
-        isBlue ? textInputs[1].configureStyle(with: CustomTextInputStyle()) : textInputs[1].configureStyle(with: AnimatedTextInputStyleBlue())
+        textInputs[1].style = isBlue ? CustomTextInputStyle() : AnimatedTextInputStyleBlue()
         isBlue = !isBlue
     }
 
