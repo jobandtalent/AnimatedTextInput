@@ -17,7 +17,7 @@ pod 'AnimatedTextInput', '~> 0.1.0'
 Use the main class `AnimatedTextInput`. Create it either by code or dragging a new instance of `UIView` into your storyboard/nib file and setting its class in the identity inspector.
 
 ### Types
-Currently there are 6 different types, defined in `AnimatedTextInputType` enum.
+Currently there are 6 different types, defined in the `AnimatedTextInputType` enum.
 
 - Text: basic text input, same behaviour as UITextField.
 
@@ -31,15 +31,15 @@ Currently there are 6 different types, defined in `AnimatedTextInputType` enum.
 
 - Generic: expects a configured `TextInput`. Use this if you need a UITextField or UITextView with your custom behaviour. Check `TextInput` and `TextInputDelegate` protocols and create a class conforming to them.
 
-To switch between types, call `configureType(with:)` using one of the above.
+To switch between types, you can simply use the `type` property assining one of the values available in the `AnimatedTextInputType` enum.
 
 ```swift
-textInput.configureType(with: .numeric)
+textInput.type = .numeric
 ```
 
 ### Styles
 
-Creating a new visual style is as easy as creating a new `struct` that conforms to `AnimatedTextInputStyle` protocol.
+Creating a new visual style is as easy as creating a new `struct` that conforms to the `AnimatedTextInputStyle` protocol.
 
 For example:
 
@@ -62,18 +62,15 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
 }
 ```
 
-Then just create and pass it to the `configureStyle(with:)` function.
+Then, use the `style` property to set it.
 
 ```swift
-textInput.configureStyle(with: CustomTextInputStyle())
+textInput.style = CustomTextInputStyle()
 ```
-
 
 ### Other considerations
 
-- You can use `AnimatedTextInput` as a replacement for either `UITextField` or `UITextView`. To retrieve the user's input text, use the `text` property.
-
-- To set your custom value in the text input, use the function `set(text:)`.
+- You can use `AnimatedTextInput` as a replacement for either `UITextField` or `UITextView`. To set or retrieve the input text, use the `text` property.
 
 - This control provides an easy way of setting a counter label. Just call the function `showCharacterCounterLabel(with:)` and give it a maximum number of characters.
 

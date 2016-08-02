@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         vc.view.backgroundColor = UIColor.blueColor()
         presentViewController(vc, animated: true) {
             if let text = self.textInputs[3].text where text.isEmpty {
-                self.textInputs[3].set(text: "Some option the user did select")
+                self.textInputs[3].text = "Some option the user did select"
             } else {
-                self.textInputs[3].set(text: nil)
+                self.textInputs[3].text = nil
             }
             vc.dismissViewControllerAnimated(true, completion: nil)
         }

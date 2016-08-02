@@ -38,7 +38,13 @@ public class AnimatedTextInput: UIControl {
     }
 
     public var text: String? {
-        return textInput.currentText
+        get {
+            return textInput.currentText
+        }
+        set {
+            (newValue != nil) ? placeholderHintInactiveConfiguration() : placeholderDefaultConfiguration()
+            textInput.currentText = newValue
+        }
     }
 
     private let lineView = AnimatedLine()
@@ -247,11 +253,6 @@ public class AnimatedTextInput: UIControl {
 
     override public func canBecomeFirstResponder() -> Bool {
         return textInput.view.canBecomeFirstResponder()
-    }
-
-    public func set(text text: String?) {
-        (text != nil) ? placeholderHintInactiveConfiguration() : placeholderDefaultConfiguration()
-        textInput.currentText = text
     }
 
     public func show(error errorMessage: String, placeholderText: String? = nil) {
