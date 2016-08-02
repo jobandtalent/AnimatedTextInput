@@ -93,14 +93,14 @@ public class AnimatedTextInput: UIControl {
                                          toItem: self,
                                          attribute: .Leading,
                                          multiplier: 1.0,
-                                         constant: styleConfigurator.leftMargin)
+                                         constant: style.leftMargin)
         let trailing = NSLayoutConstraint(item: lineView,
                                           attribute: .Trailing,
                                           relatedBy: .Equal,
                                           toItem: self,
                                           attribute: .Trailing,
                                           multiplier: 1.0,
-                                          constant: -styleConfigurator.rightMargin)
+                                          constant: -style.rightMargin)
         let height = NSLayoutConstraint(item: lineView,
                                         attribute: .Height,
                                         relatedBy: .Equal,
@@ -125,28 +125,28 @@ public class AnimatedTextInput: UIControl {
                                          toItem: self,
                                          attribute: .Leading,
                                          multiplier: 1.0,
-                                         constant: styleConfigurator.leftMargin)
+                                         constant: style.leftMargin)
         let trailing = NSLayoutConstraint(item: textInput.view,
                                           attribute: .Trailing,
                                           relatedBy: .Equal,
                                           toItem: self,
                                           attribute: .Trailing,
                                           multiplier: 1.0,
-                                          constant: -styleConfigurator.rightMargin)
+                                          constant: -style.rightMargin)
         let top = NSLayoutConstraint(item: textInput.view,
                                      attribute: .Top,
                                      relatedBy: .Equal,
                                      toItem: self,
                                      attribute: .Top,
                                      multiplier: 1.0,
-                                     constant: styleConfigurator.topMargin)
+                                     constant: style.topMargin)
         let bottom = NSLayoutConstraint(item: textInput.view,
                                         attribute: .Bottom,
                                         relatedBy: .Equal,
                                         toItem: lineView,
                                         attribute: .Top,
                                         multiplier: 1.0,
-                                        constant: -styleConfigurator.bottomMargin)
+                                        constant: -style.bottomMargin)
         addConstraints([leading, trailing, top, bottom])
     }
 
