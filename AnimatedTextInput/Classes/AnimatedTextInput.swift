@@ -51,7 +51,6 @@ public class AnimatedTextInput: UIControl {
     private var isPlaceholderAsHint = false
     private var hasCounterLabel = false
     private var textInput: TextInput!
-    private var textInputHeightConstraint: NSLayoutConstraint!
     private var placeholderErrorText = "Error message"
     private var lineToBottomConstraint: NSLayoutConstraint!
 
@@ -87,67 +86,18 @@ public class AnimatedTextInput: UIControl {
     // MARK: Configuration
 
     private func addLineViewConstraints() {
-        let leading = NSLayoutConstraint(item: lineView,
-                                         attribute: .Leading,
-                                         relatedBy: .Equal,
-                                         toItem: self,
-                                         attribute: .Leading,
-                                         multiplier: 1.0,
-                                         constant: style.leftMargin)
-        let trailing = NSLayoutConstraint(item: lineView,
-                                          attribute: .Trailing,
-                                          relatedBy: .Equal,
-                                          toItem: self,
-                                          attribute: .Trailing,
-                                          multiplier: 1.0,
-                                          constant: -style.rightMargin)
-        let height = NSLayoutConstraint(item: lineView,
-                                        attribute: .Height,
-                                        relatedBy: .Equal,
-                                        toItem: nil,
-                                        attribute: .NotAnAttribute,
-                                        multiplier: 1.0,
-                                        constant: lineWidth)
+        pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
+        pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
+        lineView.setHeight(to: lineWidth)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize().height - counterLabelTopMargin : 0
-        lineToBottomConstraint = NSLayoutConstraint(item: lineView,
-                                                    attribute: .Bottom,
-                                                    relatedBy: .Equal,
-                                                    toItem: self,
-                                                    attribute: .Bottom,
-                                                    multiplier: 1.0,
-                                                    constant: constant)
-        addConstraints([leading, trailing, height, lineToBottomConstraint])
+        pinBottom(toBottomOf: lineView, constant: constant)
     }
+
     private func addTextInputConstraints() {
-        let leading = NSLayoutConstraint(item: textInput.view,
-                                         attribute: .Leading,
-                                         relatedBy: .Equal,
-                                         toItem: self,
-                                         attribute: .Leading,
-                                         multiplier: 1.0,
-                                         constant: style.leftMargin)
-        let trailing = NSLayoutConstraint(item: textInput.view,
-                                          attribute: .Trailing,
-                                          relatedBy: .Equal,
-                                          toItem: self,
-                                          attribute: .Trailing,
-                                          multiplier: 1.0,
-                                          constant: -style.rightMargin)
-        let top = NSLayoutConstraint(item: textInput.view,
-                                     attribute: .Top,
-                                     relatedBy: .Equal,
-                                     toItem: self,
-                                     attribute: .Top,
-                                     multiplier: 1.0,
-                                     constant: style.topMargin)
-        let bottom = NSLayoutConstraint(item: textInput.view,
-                                        attribute: .Bottom,
-                                        relatedBy: .Equal,
-                                        toItem: lineView,
-                                        attribute: .Top,
-                                        multiplier: 1.0,
-                                        constant: -style.bottomMargin)
-        addConstraints([leading, trailing, top, bottom])
+        pinLeading(toLeadingOf: textInput.view, constant: style.leftMargin)
+        pinTrailing(toTrailingOf: textInput.view, constant: style.rightMargin)
+        pinTop(toTopOf: textInput.view, constant: style.topMargin)
+        textInput.view.pinBottom(toTopOf: lineView, constant: style.bottomMargin)
     }
 
     private func setupCommonElements() {
@@ -338,21 +288,8 @@ public class AnimatedTextInput: UIControl {
     }
 
     private func addCharacterCounterConstraints() {
-        let top = NSLayoutConstraint(item: counterLabel,
-                                     attribute: .Top,
-                                     relatedBy: .Equal,
-                                     toItem: lineView,
-                                     attribute: .Bottom,
-                                     multiplier: 1.0,
-                                     constant: counterLabelTopMargin)
-        let trailing = NSLayoutConstraint(item: counterLabel,
-                                          attribute: .Trailing,
-                                          relatedBy: .Equal,
-                                          toItem: self,
-                                          attribute: .Trailing,
-                                          multiplier: 1.0,
-                                          constant: -counterLabelRightMargin)
-        addConstraints([top, trailing])
+        lineView.pinBottom(toTopOf: counterLabel, constant: counterLabelTopMargin)
+        pinTrailing(toTrailingOf: counterLabel, constant: counterLabelRightMargin)
     }
 
     public func removeCharacterCounterLabel() {
