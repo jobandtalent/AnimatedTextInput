@@ -5,88 +5,168 @@ import Nimble
 import AnimatedTextInput
 @testable import AnimatedTextInput_Example
 
-class AnimatedTextInputTests: AcceptanceTestCase {
+class AnimatedTextInputTests: KIFTestCase {
 
     let inputAccessibilityLabel = "standard_text_input"
 
-    func testStandardInputHasCorrectText() {
-        tester().waitForAnimationsToFinish()
-        let testText = "hello"
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        standardTextInput.becomeFirstResponder()
-        tester().enterTextIntoCurrentFirstResponder(testText)
-        tester().waitForTimeInterval(0.5)
-
-        expect(standardTextInput.text).to(equal(testText.capitalizedString))
-    }
-
-    func testInputIsActive() {
-        tester().waitForAnimationsToFinish()
-
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        standardTextInput.becomeFirstResponder()
-
-        expect(standardTextInput.isActive).to(beTrue())
-    }
-
-    func testInputIsInActive() {
-        tester().waitForAnimationsToFinish()
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        standardTextInput.becomeFirstResponder()
-        tester().waitForAnimationsToFinish()
-        standardTextInput.resignFirstResponder()
-
-        expect(standardTextInput.isActive).to(beFalse())
-    }
-
-    func testStandardInputSetText() {
-        tester().waitForAnimationsToFinish()
-        let initialText = "hello"
-        let typedText = " world!"
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        standardTextInput.text = initialText
-        standardTextInput.becomeFirstResponder()
-        tester().enterTextIntoCurrentFirstResponder(typedText)
-        tester().waitForTimeInterval(0.5)
-
-        expect(standardTextInput.text).to(equal(initialText + typedText))
-    }
-
-    func testTapInputToBecomeActive() {
-        tester().waitForAnimationsToFinish()
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        tester().tapScreenAtPoint(standardTextInput.center)
-
-        expect(standardTextInput.isActive).to(beTrue())
-    }
-
-    func testPlaceholderActiveState() {
-        tester().waitForAnimationsToFinish()
-        let standardTextInput = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
-        let style = CustomTextInputStyle()
-        standardTextInput.style = style
-
-        //how to get text layer?
-        let placeholder = CATextLayer()
-
-        standardTextInput.becomeFirstResponder()
-        tester().waitForAnimationsToFinish()
-
-        XCTAssertEqual(placeholder.fontSize, style.placeholderMinFontSize)
-    }
-
     override func afterEach() {
         super.afterEach()
-        let viewController = rootViewController as! AnimatedTextInput_Example.ViewController
+        let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! AnimatedTextInput_Example.ViewController
         viewController.textInputs.forEach{
-            $0.text = ""
+            $0.text = nil
             $0.resignFirstResponder()
         }
     }
 
-    private func openExampleViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: ViewController.self))
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("ViewController")
-        presentViewController(viewController)
+    func testStandardInputHasCorrectText() {
+        // GIVEN
+        let testText = "hello"
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+
+        // WHEN
+        sut.becomeFirstResponder()
+        tester().enterTextIntoCurrentFirstResponder(testText)
+        tester().waitForTimeInterval(0.5)
+
+        // THEN
+        expect(sut.text).to(equal(testText.capitalizedString))
+    }
+
+    func testInputIsActive() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+
+        // WHEN
+        sut.becomeFirstResponder()
+
+        // THEN
+        expect(sut.isActive).to(beTrue())
+    }
+
+    func testInputIsInActive() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+
+        // WHEN
+        sut.becomeFirstResponder()
+        tester().waitForAnimationsToFinish()
+        sut.resignFirstResponder()
+
+        // THEN
+        expect(sut.isActive).to(beFalse())
+    }
+
+    func testStandardInputSetText() {
+        // GIVEN
+        let initialText = "hello"
+        let typedText = " world!"
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+
+        // WHEN
+        sut.text = initialText
+        sut.becomeFirstResponder()
+        tester().enterTextIntoCurrentFirstResponder(typedText)
+        tester().waitForTimeInterval(0.5)
+
+        // THEN
+        expect(sut.text).to(equal(initialText + typedText))
+    }
+
+    func testTapInputToBecomeActive() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+
+        // WHEN
+        tester().tapScreenAtPoint(sut.center)
+
+        // THEN
+        expect(sut.isActive).to(beTrue())
+    }
+
+    func testPlaceholderActiveState() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let style = CustomTextInputStyle()
+        sut.style = style
+        let placeholder = textLayer(forTextInput: sut)
+
+        // WHEN
+        sut.becomeFirstResponder()
+        tester().waitForAnimationsToFinish()
+
+        // THEN
+        expect(placeholder.fontSize).to(equal(style.placeholderMinFontSize))
+    }
+
+    func testPlaceholderInactiveStateWhenEmpty() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let style = CustomTextInputStyle()
+        sut.style = style
+        let placeholder = textLayer(forTextInput: sut)
+
+        // WHEN
+        sut.becomeFirstResponder()
+        tester().waitForAnimationsToFinish()
+        sut.resignFirstResponder()
+        tester().waitForAnimationsToFinish()
+
+        // THEN
+        expect(placeholder.fontSize).to(equal(style.textInputFont.pointSize))
+    }
+
+    func testPlaceholderInactiveStateWhenFilled() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let style = CustomTextInputStyle()
+        sut.style = style
+        let placeholder = textLayer(forTextInput: sut)
+
+        // WHEN
+        sut.becomeFirstResponder()
+        tester().enterTextIntoCurrentFirstResponder("hello")
+        tester().waitForAnimationsToFinish()
+        sut.resignFirstResponder()
+        tester().waitForAnimationsToFinish()
+
+        // THEN
+        expect(placeholder.fontSize).to(equal(style.placeholderMinFontSize))
+    }
+
+    func testPlaceholderErrorState() {
+        // GIVEN
+        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let style = CustomTextInputStyle()
+        sut.style = style
+        let placeholder = textLayer(forTextInput: sut)
+
+        // WHEN
+        let errorMessage = "Error"
+        sut.show(error: errorMessage)
+        tester().waitForAnimationsToFinish()
+
+        // THEN
+        expect(placeholder.string as? String).to(equal(errorMessage))
+    }
+
+    private func textLayer(forTextInput textInput: AnimatedTextInput) -> CATextLayer {
+        var placeholder: CATextLayer?
+        for layer in textInput.layer.sublayers! {
+            if let textLayer = layer as? CATextLayer {
+                placeholder = textLayer
+            }
+        }
+        return placeholder!
+    }
+}
+
+extension XCTestCase {
+
+    func tester(file: String = #file, line: Int = #line) -> KIFUITestActor {
+        return KIFUITestActor(inFile: file, atLine: line, delegate: self)
+    }
+
+    func system(file: String = #file, line: Int = #line) -> KIFSystemTestActor {
+        return KIFSystemTestActor(inFile: file, atLine: line, delegate: self)
     }
 }

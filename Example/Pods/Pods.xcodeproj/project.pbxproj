@@ -564,9 +564,9 @@
 		8ADDE639E00DB0C05CCE648A512BEB89 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8CDBEDEFBBD79CBCF96E71467BF070BF /* AnimatedTextInput.swift */,
 				85FB6D50A6D94B90269398173F4DF8F3 /* AnimatedLine.swift */,
 				7ECCDB238553CFEB66F7B470E84A8CAF /* AnimatedTextField.swift */,
-				8CDBEDEFBBD79CBCF96E71467BF070BF /* AnimatedTextInput.swift */,
 				B44F52B70F47FAC7DEB1930D34DC122C /* AnimatedTextInputFieldConfigurator.swift */,
 				485A2DDC600B509B9F8B694962BB6D41 /* AnimatedTextInputStyle.swift */,
 				47462595A7B049933D92441B4ED6C35F /* AnimatedTextView.swift */,

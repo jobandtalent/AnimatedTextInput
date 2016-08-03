@@ -19,7 +19,7 @@ public class AnimatedTextInput: UIControl {
     public  weak var delegate: AnimatedTextInputDelegate?
     public private(set) var isActive = false
 
-    public var type: AnimatedTextInputType = .text {
+    public var type: AnimatedTextInputType = .standard {
         didSet {
             configureType()
         }
@@ -42,7 +42,7 @@ public class AnimatedTextInput: UIControl {
             return textInput.currentText
         }
         set {
-            (newValue != nil) ? placeholderHintInactiveConfiguration() : placeholderDefaultConfiguration()
+            (newValue != nil) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
             textInput.currentText = newValue
         }
     }
@@ -89,11 +89,6 @@ public class AnimatedTextInput: UIControl {
         super.updateConstraints()
     }
 
-    override public var accessibilityLabel: String? {
-        didSet {
-            placeholderLayer.accessibilityLabel = (accessibilityLabel != nil) ? "\(accessibilityLabel)_placeholder" : nil
-        }
-    }
 
     // MARK: Configuration
 
@@ -162,7 +157,7 @@ public class AnimatedTextInput: UIControl {
 
     //MARK: States and animations
 
-    private func placeholderHintActiveConfiguration() {
+    private func configurePlaceholderAsActiveHint() {
         isPlaceholderAsHint = true
         configurePlaceholderWith(fontSize: style.placeholderMinFontSize,
                                  foregroundColor: style.activeColor.CGColor,
@@ -170,7 +165,7 @@ public class AnimatedTextInput: UIControl {
         lineView.fillLine(with: style.activeColor)
     }
 
-    private func placeholderHintInactiveConfiguration() {
+    private func configurePlaceholderAsInactiveHint() {
         isPlaceholderAsHint = true
         configurePlaceholderWith(fontSize: style.placeholderMinFontSize,
                                  foregroundColor: style.inactiveColor.CGColor,
@@ -178,7 +173,7 @@ public class AnimatedTextInput: UIControl {
         lineView.animateToInitialState()
     }
 
-    private func placeholderDefaultConfiguration() {
+    private func configurePlaceholderAsDefault() {
         isPlaceholderAsHint = false
         configurePlaceholderWith(fontSize: style.textInputFont.pointSize,
                                  foregroundColor: style.inactiveColor.CGColor,
@@ -186,7 +181,7 @@ public class AnimatedTextInput: UIControl {
         lineView.animateToInitialState()
     }
 
-    private func placeholderHintErrorConfiguration() {
+    private func configurePlaceholderAsErrorHint() {
         isPlaceholderAsHint = true
         configurePlaceholderWith(fontSize: style.placeholderMinFontSize,
                                  foregroundColor: style.errorColor.CGColor,
@@ -232,7 +227,7 @@ public class AnimatedTextInput: UIControl {
         isActive = true
         textInput.view.becomeFirstResponder()
         counterLabel.textColor = style.activeColor
-        animatePlaceholder(to: placeholderHintActiveConfiguration)
+        animatePlaceholder(to: configurePlaceholderAsActiveHint)
         return true
     }
 
@@ -246,10 +241,10 @@ public class AnimatedTextInput: UIControl {
         }
 
         guard let text = textInput.currentText where !text.isEmpty else {
-            animatePlaceholder(to: placeholderDefaultConfiguration)
+            animatePlaceholder(to: configurePlaceholderAsDefault)
             return true
         }
-        animatePlaceholder(to: placeholderHintInactiveConfiguration)
+        animatePlaceholder(to: configurePlaceholderAsInactiveHint)
         return true
     }
 
@@ -268,7 +263,7 @@ public class AnimatedTextInput: UIControl {
         if let textInput = textInput as? TextInputError {
             textInput.configureErrorState(with: placeholderText)
         }
-        animatePlaceholder(to: placeholderHintErrorConfiguration)
+        animatePlaceholder(to: configurePlaceholderAsErrorHint)
     }
 
     private func configureType() {
@@ -279,9 +274,9 @@ public class AnimatedTextInput: UIControl {
     private func configureStyle() {
         styleDidChange()
         if isActive {
-            placeholderHintActiveConfiguration()
+            configurePlaceholderAsActiveHint()
         } else {
-            isPlaceholderAsHint ? placeholderHintInactiveConfiguration() : placeholderDefaultConfiguration()
+            isPlaceholderAsHint ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
         }
     }
 

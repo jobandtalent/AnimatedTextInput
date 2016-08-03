@@ -15,7 +15,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		955FE9E51D510DA80022C0EF /* AnimatedTextInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */; };
 		955FE9E91D51108A0022C0EF /* TestsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955FE9E81D51108A0022C0EF /* TestsInfo.plist */; };
-		955FE9F11D5118E90022C0EF /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FE9F01D5118E90022C0EF /* AcceptanceTestCase.swift */; };
 		C7352E8C1D5120F70061AEC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		C7FD31E41D51233900A9C8C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		CF74770227EE084954D694CB /* Pods_AnimatedTextInput_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B6F16EBB106DA1AD747724 /* Pods_AnimatedTextInput_Example.framework */; };
@@ -48,7 +47,6 @@
 		955FE9E31D510DA80022C0EF /* AnimatedTextInput_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnimatedTextInput_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTextInputTests.swift; sourceTree = "<group>"; };
 		955FE9E81D51108A0022C0EF /* TestsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
-		955FE9F01D5118E90022C0EF /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
 		984E76A286835FB27BBBC690 /* Pods_AnimatedTextInput_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimatedTextInput_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC96906680158A6AEBA30E7E /* AnimatedTextInput.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AnimatedTextInput.podspec; path = ../AnimatedTextInput.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */,
-				955FE9F01D5118E90022C0EF /* AcceptanceTestCase.swift */,
 				955FE9E31D510DA80022C0EF /* AnimatedTextInput_Tests-Bridging-Header.h */,
 			);
 			name = Tests;
@@ -368,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7FD31E41D51233900A9C8C7 /* ViewController.swift in Sources */,
-				955FE9F11D5118E90022C0EF /* AcceptanceTestCase.swift in Sources */,
 				955FE9E51D510DA80022C0EF /* AnimatedTextInputTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
