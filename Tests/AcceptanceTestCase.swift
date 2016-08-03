@@ -1,18 +1,10 @@
-//
-//  AcceptanceTestCase.swift
-//  AnimatedTextInput
-//
-//  Created by Daniel Garcia on 02/08/16.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
-
 import XCTest
 import KIF
 
 class AcceptanceTestCase: KIFTestCase {
     
     private var originalRootViewController: UIViewController?
-    private var rootViewController: UIViewController? {
+    var rootViewController: UIViewController? {
         get {
             return UIApplication.sharedApplication().keyWindow?.rootViewController
         }
@@ -24,9 +16,9 @@ class AcceptanceTestCase: KIFTestCase {
 
     override func tearDown() {
         super.tearDown()
-        if let originalRootViewController = originalRootViewController {
-            rootViewController = originalRootViewController
-        }
+//        if let originalRootViewController = originalRootViewController {
+//            rootViewController = originalRootViewController
+//        }
     }
 
     func presentViewController(viewController: UIViewController) {

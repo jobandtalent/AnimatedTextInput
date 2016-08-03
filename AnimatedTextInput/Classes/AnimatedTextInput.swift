@@ -89,6 +89,12 @@ public class AnimatedTextInput: UIControl {
         super.updateConstraints()
     }
 
+    override public var accessibilityLabel: String? {
+        didSet {
+            placeholderLayer.accessibilityLabel = (accessibilityLabel != nil) ? "\(accessibilityLabel)_placeholder" : nil
+        }
+    }
+
     // MARK: Configuration
 
     private func addLineViewConstraints() {

@@ -5,5 +5,7 @@ target 'AnimatedTextInput_Example' do
 end
 
 target 'AnimatedTextInput_Tests' do
+    pod 'AnimatedTextInput', :path => '../'
     pod 'KIF', '~> 3.0'
+    pod 'Nimble', '~> 4.1'
 end

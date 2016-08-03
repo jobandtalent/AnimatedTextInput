@@ -75,6 +75,9 @@
                             <constraint firstItem="18e-se-gd0" firstAttribute="top" secondItem="x9I-2w-m4z" secondAttribute="bottom" id="tjZ-Vd-ILh"/>
                             <constraint firstAttribute="trailing" secondItem="ED2-K4-0S3" secondAttribute="trailing" id="y7Y-mD-Z6X"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="13H-Yl-Nte" appends="YES" id="YmL-ZU-lsa"/>
+                        </connections>
                     </view>
                     <connections>
                         <outletCollection property="textInputs" destination="2H2-ZR-ivo" collectionClass="NSMutableArray" id="inG-zk-ZZn"/>
@@ -85,6 +88,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="13H-Yl-Nte">
+                    <connections>
+                        <action selector="backgroundTap:" destination="vXZ-lx-hvc" id="4hq-lv-4Ff"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-15" y="289"/>
         </scene>
