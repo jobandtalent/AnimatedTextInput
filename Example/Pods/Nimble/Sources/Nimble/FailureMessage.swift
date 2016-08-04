@@ -33,11 +33,11 @@ public class FailureMessage: NSObject {
         _stringValueOverride = stringValue
     }
 
-    internal func stripNewlines(str: String) -> String {
-        var lines: [String] = NSString(string: str).componentsSeparatedByString("\n") as [String]
-        let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        lines = lines.map { line in NSString(string: line).stringByTrimmingCharactersInSet(whitespace) }
-        return lines.joinWithSeparator("")
+    internal func stripNewlines(_ str: String) -> String {
+        var lines: [String] = NSString(string: str).components(separatedBy: "\n") as [String]
+        let whitespace = CharacterSet.whitespacesAndNewlines
+        lines = lines.map { line in NSString(string: line).trimmingCharacters(in: whitespace) }
+        return lines.joined(separator: "")
     }
 
     internal func computeStringValue() -> String {
