@@ -1,6 +1,0 @@
-framework module AnimatedTextInput {
-  umbrella header "AnimatedTextInput-umbrella.h"
-
-  export *
-  module * { export * }
-}
