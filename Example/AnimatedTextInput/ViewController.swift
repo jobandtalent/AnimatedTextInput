@@ -7,6 +7,7 @@ class ViewController: UIViewController {
     private var isBlue = true
 
     override func viewDidLoad() {
+        textInputs[0].accessibilityLabel = "standard_text_input"
         textInputs[0].placeHolderText = "Normal text"
 
         textInputs[1].placeHolderText = "Password"

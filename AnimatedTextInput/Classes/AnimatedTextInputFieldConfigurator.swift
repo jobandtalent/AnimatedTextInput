@@ -3,7 +3,7 @@ import UIKit
 public struct AnimatedTextInputFieldConfigurator {
 
     public enum AnimatedTextInputType {
-        case text
+        case standard
         case password
         case numeric
         case selection
@@ -13,7 +13,7 @@ public struct AnimatedTextInputFieldConfigurator {
 
     static func configure(with type: AnimatedTextInputType) -> TextInput {
         switch type {
-        case .text:
+        case .standard:
             return AnimatedTextInputTextConfigurator.generate()
         case .password:
             return AnimatedTextInputPasswordConfigurator.generate()
