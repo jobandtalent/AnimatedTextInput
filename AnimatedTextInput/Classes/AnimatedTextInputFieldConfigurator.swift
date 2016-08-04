@@ -87,7 +87,7 @@ private struct AnimatedTextInputMultilineConfigurator {
 
     static func generate() -> TextInput {
         let textView = AnimatedTextView()
-        textView.textContainerInset = UIEdgeInsetsZero
+        textView.textContainerInset = UIEdgeInsets.zero
         textView.backgroundColor = UIColor.clear
         textView.isScrollEnabled = false
         return textView

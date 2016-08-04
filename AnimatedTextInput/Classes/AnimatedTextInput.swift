@@ -78,9 +78,11 @@ public class AnimatedTextInput: UIControl {
         setupCommonElements()
     }
 
-    override public func intrinsicContentSize() -> CGSize {
+    override public var intrinsicContentSize: CGSize {
+        get {
         let normalHeight = textInput.view.intrinsicContentSize.height
         return CGSize(width: UIViewNoIntrinsicMetric, height: normalHeight + style.topMargin + style.bottomMargin)
+        }
     }
 
     public override func updateConstraints() {
@@ -240,7 +242,7 @@ public class AnimatedTextInput: UIControl {
             textInputError.removeErrorHintMessage()
         }
 
-        guard let text = textInput.currentText where !text.isEmpty else {
+        guard let text = textInput.currentText , !text.isEmpty else {
             animatePlaceholder(to: configurePlaceholderAsDefault)
             return true
         }
@@ -250,12 +252,16 @@ public class AnimatedTextInput: UIControl {
 
 
 
-    override public func canResignFirstResponder() -> Bool {
-        return textInput.view.canResignFirstResponder
+    override public var canResignFirstResponder: Bool {
+        get {
+            return textInput.view.canResignFirstResponder
+        }
     }
 
-    override public func canBecomeFirstResponder() -> Bool {
-        return textInput.view.canBecomeFirstResponder
+    override public var canBecomeFirstResponder: Bool {
+        get {
+            return textInput.view.canBecomeFirstResponder
+        }
     }
 
     public func show(error errorMessage: String, placeholderText: String? = nil) {
