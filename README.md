@@ -1,6 +1,7 @@
 ![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Assets/Jobandtalent%20Eng.png)
 
-# AnimatedTextInput
+
+# AnimatedTextInput [![GitHub version](https://badge.fury.io/gh/jobandtalent%2FAnimatedTextInput.svg)](https://badge.fury.io/gh/jobandtalent%2FAnimatedTextInput)
 iOS custom text input component used in the [Jobandtalent app](https://itunes.apple.com/app/id665060895).
 
 ![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Assets/general.gif)
