@@ -128,7 +128,10 @@ public class AnimatedTextInput: UIControl {
         placeholderLayer.fontSize = fontSize
         placeholderLayer.font = style.textInputFont
         placeholderLayer.contentsScale = UIScreen.mainScreen().scale
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize))
+        placeholderLayer.backgroundColor = UIColor.redColor().CGColor
+        // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
+        let frameHeightCorrectionFactor: CGFloat = 1.2
+        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize * frameHeightCorrectionFactor))
         layer.addSublayer(placeholderLayer)
     }
 
