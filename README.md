@@ -9,7 +9,7 @@ iOS custom text input component used in the [Jobandtalent app](https://itunes.ap
 Use cocoapods to install this custom control in your project.
 
 ```
-pod 'AnimatedTextInput', '~> 0.3.1'
+pod 'AnimatedTextInput', '~> 0.3.0'
 ```
 
 ## Usage
