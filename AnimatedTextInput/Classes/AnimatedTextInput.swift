@@ -93,6 +93,7 @@ public class AnimatedTextInput: UIControl {
     // MARK: Configuration
 
     private func addLineViewConstraints() {
+        self.removeConstraints(self.constraints)
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
         lineView.setHeight(to: lineWidth)
