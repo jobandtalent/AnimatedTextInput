@@ -11,7 +11,7 @@ class AnimatedTextInputTests: KIFTestCase {
 
     override func afterEach() {
         super.afterEach()
-        let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! AnimatedTextInput_Example.ViewController
+        let viewController = UIApplication.shared.keyWindow?.rootViewController as! AnimatedTextInput_Example.ViewController
         viewController.textInputs.forEach{
             $0.text = nil
             $0.resignFirstResponder()
@@ -21,20 +21,21 @@ class AnimatedTextInputTests: KIFTestCase {
     func testStandardInputHasCorrectText() {
         // GIVEN
         let testText = "hello"
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
 
         // WHEN
         sut.becomeFirstResponder()
-        tester().enterTextIntoCurrentFirstResponder(testText)
-        tester().waitForTimeInterval(0.5)
+        tester().enterText(intoCurrentFirstResponder: testText)
+        tester().wait(forTimeInterval: 0.5)
 
         // THEN
-        expect(sut.text).to(equal(testText.capitalizedString))
+        expect(sut.text).to(equal(testText.capitalized))
+        
     }
 
     func testInputIsActive() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
 
         // WHEN
         sut.becomeFirstResponder()
@@ -45,7 +46,7 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testInputIsInActive() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
 
         // WHEN
         sut.becomeFirstResponder()
@@ -60,13 +61,13 @@ class AnimatedTextInputTests: KIFTestCase {
         // GIVEN
         let initialText = "hello"
         let typedText = " world!"
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
 
         // WHEN
         sut.text = initialText
         sut.becomeFirstResponder()
-        tester().enterTextIntoCurrentFirstResponder(typedText)
-        tester().waitForTimeInterval(0.5)
+        tester().enterText(intoCurrentFirstResponder: typedText)
+        tester().wait(forTimeInterval: 0.5)
 
         // THEN
         expect(sut.text).to(equal(initialText + typedText))
@@ -74,10 +75,10 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testTapInputToBecomeActive() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
 
         // WHEN
-        tester().tapScreenAtPoint(sut.center)
+        tester().tapScreen(at: sut.center)
 
         // THEN
         expect(sut.isActive).to(beTrue())
@@ -85,7 +86,7 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testPlaceholderActiveState() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
         let style = CustomTextInputStyle()
         sut.style = style
         let placeholder = textLayer(forTextInput: sut)
@@ -100,7 +101,7 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testPlaceholderInactiveStateWhenEmpty() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
         let style = CustomTextInputStyle()
         sut.style = style
         let placeholder = textLayer(forTextInput: sut)
@@ -117,14 +118,14 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testPlaceholderInactiveStateWhenFilled() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
         let style = CustomTextInputStyle()
         sut.style = style
         let placeholder = textLayer(forTextInput: sut)
 
         // WHEN
         sut.becomeFirstResponder()
-        tester().enterTextIntoCurrentFirstResponder("hello")
+        tester().enterText(intoCurrentFirstResponder: "hello")
         tester().waitForAnimationsToFinish()
         sut.resignFirstResponder()
         tester().waitForAnimationsToFinish()
@@ -135,7 +136,7 @@ class AnimatedTextInputTests: KIFTestCase {
 
     func testPlaceholderErrorState() {
         // GIVEN
-        let sut = tester().waitForViewWithAccessibilityLabel(inputAccessibilityLabel) as! AnimatedTextInput
+        let sut = tester().waitForView(withAccessibilityLabel: inputAccessibilityLabel) as! AnimatedTextInput
         let style = CustomTextInputStyle()
         sut.style = style
         let placeholder = textLayer(forTextInput: sut)
@@ -149,7 +150,7 @@ class AnimatedTextInputTests: KIFTestCase {
         expect(placeholder.string as? String).to(equal(errorMessage))
     }
 
-    private func textLayer(forTextInput textInput: AnimatedTextInput) -> CATextLayer {
+    fileprivate func textLayer(forTextInput textInput: AnimatedTextInput) -> CATextLayer {
         var placeholder: CATextLayer?
         for layer in textInput.layer.sublayers! {
             if let textLayer = layer as? CATextLayer {
@@ -162,11 +163,11 @@ class AnimatedTextInputTests: KIFTestCase {
 
 extension XCTestCase {
 
-    func tester(file: String = #file, line: Int = #line) -> KIFUITestActor {
+    func tester(_ file: String = #file, line: Int = #line) -> KIFUITestActor {
         return KIFUITestActor(inFile: file, atLine: line, delegate: self)
     }
 
-    func system(file: String = #file, line: Int = #line) -> KIFSystemTestActor {
+    func system(_ file: String = #file, line: Int = #line) -> KIFSystemTestActor {
         return KIFSystemTestActor(inFile: file, atLine: line, delegate: self)
     }
 }

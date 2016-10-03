@@ -64,10 +64,7 @@ NSComparisonResult selectorSort(NSInvocation *invocOne, NSInvocation *invocTwo, 
 
 + (void)setUp
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [[KIFAccessibilityEnabler sharedAccessibilityEnabler] enableAccessibility];
-    });
+    KIFEnableAccessibility();
     [self performSetupTearDownWithSelector:@selector(beforeAll)];
 }
 
@@ -125,7 +122,7 @@ NSComparisonResult selectorSort(NSInvocation *invocOne, NSInvocation *invocTwo, 
         NSLog(@"Fatal failure encountered: %@", exception.description);
         NSLog(@"Stopping tests since stopTestsOnFirstBigFailure = YES");
         
-        KIFTestActor *waiter = [[KIFTestActor alloc] init];
+        KIFTestActor *waiter = KIFActorWithClass(KIFTestActor);
         [waiter waitForTimeInterval:[[NSDate distantFuture] timeIntervalSinceNow]];
         
         return;
