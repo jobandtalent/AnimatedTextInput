@@ -35,7 +35,7 @@ extension AnimatedTextView: TextInput {
     }
 
     var textAttributes: [String: AnyObject] {
-        get { return typingAttributes }
+        get { return typingAttributes as [String : AnyObject] }
         set { self.typingAttributes = textAttributes }
     }
 }
@@ -43,29 +43,29 @@ extension AnimatedTextView: TextInput {
 extension AnimatedTextView: UITextViewDelegate {
 
     func textViewDidBeginEditing(textView: UITextView) {
-        textInputDelegate?.textInputDidBeginEditing(self)
+        textInputDelegate?.textInputDidBeginEditing(textInput: self)
     }
 
     func textViewDidEndEditing(textView: UITextView) {
-        textInputDelegate?.textInputDidEndEditing(self)
+        textInputDelegate?.textInputDidEndEditing(textInput: self)
     }
 
     func textViewDidChange(textView: UITextView) {
-        textInputDelegate?.textInputDidChange(self)
+        textInputDelegate?.textInputDidChange(textInput: self)
     }
 
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            return textInputDelegate?.textInputShouldReturn(self) ?? true
+            return textInputDelegate?.textInputShouldReturn(textInput: self) ?? true
         }
-        return textInputDelegate?.textInput(self, shouldChangeCharactersInRange: range, replacementString: text) ?? true
+        return textInputDelegate?.textInput(textInput: self, shouldChangeCharactersInRange: range, replacementString: text) ?? true
     }
 
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        return textInputDelegate?.textInputShouldBeginEditing(self) ?? true
+        return textInputDelegate?.textInputShouldBeginEditing(textInput: self) ?? true
     }
 
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        return textInputDelegate?.textInputShouldEndEditing(self) ?? true
+        return textInputDelegate?.textInputShouldEndEditing(textInput: self) ?? true
     }
 }
