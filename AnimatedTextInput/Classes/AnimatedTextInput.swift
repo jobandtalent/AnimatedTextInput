@@ -138,7 +138,7 @@ public class AnimatedTextInput: UIControl {
     
     
      private func addTapGestureRecognizer() {
-        let tap = UITapGestureRecognizer(target: self, action: Selector("viewWasTapped:"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewWasTapped))
         
         addGestureRecognizer(tap)
     }
@@ -210,7 +210,7 @@ public class AnimatedTextInput: UIControl {
 
     //MARK: Behaviours
 
-    func viewWasTapped(sender: UIGestureRecognizer? = nil) {
+    func viewWasTapped(sender: UIGestureRecognizer) {
         if let tapAction = tapAction { tapAction() }
         else { becomeFirstResponder() }
     }
@@ -229,7 +229,7 @@ public class AnimatedTextInput: UIControl {
         layoutIfNeeded()
     }
 
-    override public func becomeFirstResponder() -> Bool {
+    @discardableResult override public func becomeFirstResponder() -> Bool {
         isActive = true
         textInput.view.becomeFirstResponder()
         counterLabel.textColor = style.activeColor
