@@ -61,6 +61,7 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
 
     let activeColor = UIColor.orangeColor()
     let inactiveColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
+    let lineInactiveColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
     let errorColor = UIColor.redColor()
     let textInputFont = UIFont.systemFontOfSize(14)
     let textInputFontColor = UIColor.blackColor()
@@ -71,4 +72,5 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
     let rightMargin: CGFloat = 0
     let bottomMargin: CGFloat = 10
     let yHintPositionOffset: CGFloat = 7
+    let yPlaceholderPositionOffset: CGFloat = 0
 }

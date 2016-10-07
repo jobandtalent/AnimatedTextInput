@@ -42,7 +42,9 @@ public class AnimatedTextInput: UIControl {
             return textInput.currentText
         }
         set {
-            (newValue != nil) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
+            if !textInput.view.isFirstResponder() {
+                (newValue != nil) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
+            }
             textInput.currentText = newValue
         }
     }
@@ -54,15 +56,16 @@ public class AnimatedTextInput: UIControl {
     private let counterLabelRightMargin: CGFloat = 15
     private let counterLabelTopMargin: CGFloat = 5
 
+    private var isResigningResponder = false
     private var isPlaceholderAsHint = false
     private var hasCounterLabel = false
     private var textInput: TextInput!
-    private var placeholderErrorText = "Error message"
+    private var placeholderErrorText: String?
     private var lineToBottomConstraint: NSLayoutConstraint!
 
     private var placeholderPosition: CGPoint {
         let hintPosition = CGPoint(x: style.leftMargin, y: style.yHintPositionOffset)
-        let defaultPosition = CGPoint(x: style.leftMargin, y: style.topMargin)
+        let defaultPosition = CGPoint(x: style.leftMargin, y: style.topMargin + style.yPlaceholderPositionOffset)
         return isPlaceholderAsHint ? hintPosition : defaultPosition
     }
 
@@ -89,13 +92,23 @@ public class AnimatedTextInput: UIControl {
         super.updateConstraints()
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        layoutPlaceholderLayer()
+    }
 
-    // MARK: Configuration
+    private func layoutPlaceholderLayer() {
+        // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
+        let frameHeightCorrectionFactor: CGFloat = 1.2
+        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: style.textInputFont.pointSize * frameHeightCorrectionFactor))
+    }
+
+    // mark: Configuration
 
     private func addLineViewConstraints() {
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
-        lineView.setHeight(to: lineWidth)
+        lineView.setHeight(to: lineWidth / UIScreen.mainScreen().scale)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize().height - counterLabelTopMargin : 0
         pinBottom(toBottomOf: lineView, constant: constant)
     }
@@ -115,7 +128,7 @@ public class AnimatedTextInput: UIControl {
     }
 
     private func addLine() {
-        lineView.defaultColor = style.inactiveColor
+        lineView.defaultColor = style.lineInactiveColor
         lineView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(lineView)
     }
@@ -124,19 +137,12 @@ public class AnimatedTextInput: UIControl {
         placeholderLayer.masksToBounds = false
         placeholderLayer.string = placeHolderText
         placeholderLayer.foregroundColor = style.inactiveColor.CGColor
-        let fontSize = style.textInputFont.pointSize
-        placeholderLayer.fontSize = fontSize
+        placeholderLayer.fontSize = style.textInputFont.pointSize
         placeholderLayer.font = style.textInputFont
         placeholderLayer.contentsScale = UIScreen.mainScreen().scale
         placeholderLayer.backgroundColor = UIColor.clearColor().CGColor
-        // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
-        placeholderLayer.frame = correctedPlacholderLayer(with: fontSize)
+        layoutPlaceholderLayer()
         layer.addSublayer(placeholderLayer)
-    }
-
-    private func correctedPlacholderLayer(with fontSize: CGFloat) -> CGRect {
-        let frameHeightCorrectionFactor: CGFloat = 2
-        return CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize * frameHeightCorrectionFactor))
     }
 
     private func addTapGestureRecognizer() {
@@ -162,7 +168,7 @@ public class AnimatedTextInput: UIControl {
         counterLabel.text = "\(characters)/\(components[1])"
     }
 
-    //MARK: States and animations
+    //mark: States and animations
 
     private func configurePlaceholderAsActiveHint() {
         isPlaceholderAsHint = true
@@ -196,7 +202,7 @@ public class AnimatedTextInput: UIControl {
         lineView.fillLine(with: style.errorColor)
     }
 
-    private func configurePlaceholderWith(fontSize fontSize: CGFloat, foregroundColor: CGColor, text: String) {
+    private func configurePlaceholderWith(fontSize fontSize: CGFloat, foregroundColor: CGColor, text: String?) {
         placeholderLayer.fontSize = fontSize
         placeholderLayer.foregroundColor = foregroundColor
         placeholderLayer.string = text
@@ -212,17 +218,20 @@ public class AnimatedTextInput: UIControl {
     //MARK: Behaviours
 
     @objc private func viewWasTapped(sender: UIGestureRecognizer) {
-        if let tapAction = tapAction { tapAction() }
-        else { becomeFirstResponder() }
+        if let tapAction = tapAction {
+            tapAction()
+        } else {
+            becomeFirstResponder()
+        }
     }
 
     private func styleDidChange() {
-        lineView.defaultColor = style.inactiveColor
+        lineView.defaultColor = style.lineInactiveColor
         placeholderLayer.foregroundColor = style.inactiveColor.CGColor
         let fontSize = style.textInputFont.pointSize
         placeholderLayer.fontSize = fontSize
         placeholderLayer.font = style.textInputFont
-        placeholderLayer.frame = correctedPlacholderLayer(with: fontSize)
+        layoutPlaceholderLayer()
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
@@ -234,34 +243,44 @@ public class AnimatedTextInput: UIControl {
         isActive = true
         textInput.view.becomeFirstResponder()
         counterLabel.textColor = style.activeColor
+        placeholderErrorText = nil
         animatePlaceholder(to: configurePlaceholderAsActiveHint)
         return true
     }
 
     override public func resignFirstResponder() -> Bool {
+        guard !isResigningResponder else { return true }
         isActive = false
+        isResigningResponder = true
         textInput.view.resignFirstResponder()
+        isResigningResponder = false
         counterLabel.textColor = style.inactiveColor
 
         if let textInputError = textInput as? TextInputError {
             textInputError.removeErrorHintMessage()
         }
 
-        guard let text = textInput.currentText where !text.isEmpty else {
-            animatePlaceholder(to: configurePlaceholderAsDefault)
-            return true
+        // If the placeholder is showing an error we want to keep this state. Otherwise revert to inactive state.
+        if placeholderErrorText == nil {
+            animateToInactiveState()
         }
-        animatePlaceholder(to: configurePlaceholderAsInactiveHint)
         return true
     }
 
-
+    private func animateToInactiveState() {
+        guard let text = textInput.currentText where !text.isEmpty else {
+            animatePlaceholder(to: configurePlaceholderAsDefault)
+            return
+        }
+        animatePlaceholder(to: configurePlaceholderAsInactiveHint)
+    }
 
     override public func canResignFirstResponder() -> Bool {
         return textInput.view.canResignFirstResponder()
     }
 
     override public func canBecomeFirstResponder() -> Bool {
+        guard !isResigningResponder else { return false }
         return textInput.view.canBecomeFirstResponder()
     }
 
@@ -271,6 +290,18 @@ public class AnimatedTextInput: UIControl {
             textInput.configureErrorState(with: placeholderText)
         }
         animatePlaceholder(to: configurePlaceholderAsErrorHint)
+    }
+
+    public func clearError() {
+        placeholderErrorText = nil
+        if let textInputError = textInput as? TextInputError {
+            textInputError.removeErrorHintMessage()
+        }
+        if isActive {
+            animatePlaceholder(to: configurePlaceholderAsActiveHint)
+        } else {
+            animateToInactiveState()
+        }
     }
 
     private func configureType() {
