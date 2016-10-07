@@ -130,9 +130,13 @@ public class AnimatedTextInput: UIControl {
         placeholderLayer.contentsScale = UIScreen.mainScreen().scale
         placeholderLayer.backgroundColor = UIColor.clearColor().CGColor
         // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
-        let frameHeightCorrectionFactor: CGFloat = 1.2
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize * frameHeightCorrectionFactor))
+        placeholderLayer.frame = correctedPlacholderLayer(with: fontSize)
         layer.addSublayer(placeholderLayer)
+    }
+
+    private func correctedPlacholderLayer(with fontSize: CGFloat) -> CGRect {
+        let frameHeightCorrectionFactor: CGFloat = 2
+        return CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize * frameHeightCorrectionFactor))
     }
 
     private func addTapGestureRecognizer() {
@@ -218,7 +222,7 @@ public class AnimatedTextInput: UIControl {
         let fontSize = style.textInputFont.pointSize
         placeholderLayer.fontSize = fontSize
         placeholderLayer.font = style.textInputFont
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: fontSize))
+        placeholderLayer.frame = correctedPlacholderLayer(with: fontSize)
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
