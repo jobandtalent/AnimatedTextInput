@@ -1,5 +1,5 @@
 PODS:
-  - AnimatedTextInput (0.3.3)
+  - AnimatedTextInput (0.4.0)
   - KIF (3.5.1):
     - KIF/Core (= 3.5.1)
   - KIF/Core (3.5.1)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnimatedTextInput: 80cf3575a165119b3df1cc7e09122dd7fde851ed
+  AnimatedTextInput: 0a49cb5170b9a07b927303750429e5d53f36a704
   KIF: 082eb65279e51c3092923802849eb796a04982ab
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
 
