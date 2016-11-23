@@ -42,9 +42,7 @@
 		3EF19B34021963FA6089DF4DC1F3B93D /* CAAnimation+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E218C08AAAC3453AF3086E5BD20DD86 /* CAAnimation+KIFAdditions.m */; };
 		3F57A1A9C04A45070D5711F68D9711D3 /* NSFileManager-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4EB2C98D7FD548CC86EDB4AE45458D /* NSFileManager-KIFAdditions.m */; };
 		411FDF2F785DE86B1CF42BADC81F2950 /* NSString+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ABC645E7EABD1884EE8B476A1FB5 /* NSString+KIFAdditions.m */; };
-		4157A3DD4D0E8DA871E1E1F8973DCDC3 /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */; };
 		4257AD46C939A9991F263F34F823B00B /* IOHIDEvent+KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3607AABBA182CD574096066F025D96 /* IOHIDEvent+KIF.m */; };
-		45C0C7727835FC0844CF38591F52A34F /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */; };
 		469E9C3ED9FD6009F7C9AAF9E537E212 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E15AC03F19D9A7CF679734E292B5715 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F15C4EE12D39DC47943CA1DDACE047E /* CALayer-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA009E89DEC32140C4A0753A677DD5BD /* CALayer-KIFAdditions.m */; };
 		4F3F103945CC52D0A3B8A891BB0E21C4 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42189D760CE68EA382E4C3CB199CFA /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -98,6 +96,7 @@
 		91E2FEC690D3DEB642EFB7D746A13F18 /* UIScrollView-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFA73C1E6ED1A8A206CA80C2C4F22BE /* UIScrollView-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		947162383483B6391F8CDF38249BFBD2 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E23CD3FDCF58845663823CC86674BB /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9544A4EEC2A8448743ECA9981F88B60F /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E4D7D0CD1143A8CB4D6CEAA74711B /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		95F331C7F9063341A92B0F4AB354A6F0 /* cm_icon_input_eye_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0649A3BBB4A034AADD4A1335CFAB78B7 /* cm_icon_input_eye_selected@3x.png */; };
 		9625A36047BD10D7E6A2EBE18B815E1C /* NSError-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5C48D3EB4B3BCA1AB351C0C3E08886 /* NSError-KIFAdditions.m */; };
 		96CD60D6CFF486CDDC49A7CF0ECB87DE /* UIApplication-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB66E6C57BE193DA590181D591481642 /* UIApplication-KIFAdditions.m */; };
 		97797473FD197BDC257E45850E8A4E06 /* AnimatedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBEDEFBBD79CBCF96E71467BF070BF /* AnimatedTextInput.swift */; };
@@ -105,6 +104,7 @@
 		9ABFBA84E15B346718703F11E35C31FB /* NSException-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A791972C361BD3AED3CD41B571C3A6E /* NSException-KIFAdditions.m */; };
 		9AF235C16362BA00BFBF12147907E953 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359930538C967037AA1F8F61C5BF14A /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9BEBD1791C233763A8DC13080BFB99C9 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E286BFEBC176224CD581CFEF8C7F8A /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		9DD411EC9CA55346AA4627B03918F2C5 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = FC47D4D83854E2A8C8B5623CBB0C701F /* disclosure.png */; };
 		9E95D6E15DBE9B0FC92AAF60D42D1464 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3BC786F4DDCBB32BC4CEC2902FB773 /* Nimble-dummy.m */; };
 		A0198C5B5404FB73D9907E36D97F14B0 /* UIApplication-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A1B8389B7E7B0B9113C9CD247C9CE5 /* UIApplication-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A33F1754198E8E8CCC7087F6176FFDC8 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F666EA1E3A3A29E551EFB37681DED /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -135,6 +135,7 @@
 		BB10A2D0B1EE5B1BA811354116F83E3F /* CwlDarwinDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA343427E771985A3284987AAF00CF01 /* CwlDarwinDefinitions.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BDE4F1A122F5FA24194CA262A768858A /* UIScreen+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FC31A329757999F95ED6F482B0E4B0 /* UIScreen+KIFAdditions.m */; };
 		BF3AF1D2B46E09E2B3DCC824E6C1F5AF /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F306B09B3E2B7EBE252FAB31C279C5 /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		C4CEE304709CD60777D4D0B3A48FF394 /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 015224B870CCE12422A5A734A65C0773 /* cm_icon_input_eye_selected@2x.png */; };
 		C526C78FF8D02B38D9EB5B71210D252B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57104F1BCA3F9CBB3636CCBA2A26D47 /* CoreGraphics.framework */; };
 		C547C17FA840E0E1233F44F117A00428 /* NSString+KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 59531A1168120986DD04CD93F7CBB09B /* NSString+KIFAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C66097ED65CB3345A7311C4ACCB44351 /* UIView-Debugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FF9E8A0E2940B63EBE20385E8C462C5 /* UIView-Debugging.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,25 +147,27 @@
 		CE3FA6AE0944D4AE737F0E57CFF4A615 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE40DB3CD903B4FDCE015EA84B80EA3 /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		CE4CEF6328E255B380E2B2692B351CF8 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49190B492E311F1F7735E07B8D79746F /* MatchError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D0051B48CC5DA9039312620021E8A901 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD316B88D7EE125985644F4BAF686FFB /* Foundation.framework */; };
+		D5DAA5A7AF0CFBD068061335B61E4CA8 /* cm_icon_input_eye_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB677505E7283F6B02A24CFE97A41EA /* cm_icon_input_eye_normal@3x.png */; };
 		D88575ED37BC462E8130CDBEFE9EA308 /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C833F450D862808DB29897B4C1C421 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D8C5846DA701BECBBD2A10A0C593A5AD /* LoadableCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C2E9373B3D403025D7FA2CF4FFCDE3 /* LoadableCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D8E734B0EB74F230212B865C59E4F63B /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5C80AA6CB968076599D55F54DD1C05A /* disclosure@2x.png */; };
 		DA3EB8B89F4F1835287606F1BCD8454C /* KIFUIObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFFFC7C4EDC92AFB8718CEC0B0FD978 /* KIFUIObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB1359FEBF09D978A0CFAF065231BEFB /* UIView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DA6E5651BACA007C301A0EAEB85BD5 /* UIView-KIFAdditions.m */; };
 		DC32331BE565888E694E1321BB1D80F5 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BA128F7F33E1150CF7614398C11DBD94 /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DCEE854E62441E78FED15CC994497F61 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDB50E3172E5EE871DEFBC83FF9EEC /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E5CCEF0B83F8272D10671C01AAE4FFA0 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6699667C8403FC2673787ABFE572C5 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E6126A6910A9E6CB0D6199BBDA5197CB /* UIWindow-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B23D42B93F3D961D2288B9DA882FD7 /* UIWindow-KIFAdditions.m */; };
+		EACA208E1E17E41FAD96223423D8F33A /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0F4EEC5E48D8CC707400C2178BCACEB /* cm_icon_input_eye_normal@2x.png */; };
 		EBA52C16F42E42A1824D87C284F4A60C /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9BD21831C5D32450975D74B587BF9 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F0999036372487EC5493B192D911001F /* UIWindow-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B05D2B5227481879FB3714DA00AD8A08 /* UIWindow-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1A49690BC2F93BA915346BA23673920 /* cm_icon_input_eye_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */; };
 		F37F6E8C68DA6754251CAD7ED5FCEE7E /* AnimatedTextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485A2DDC600B509B9F8B694962BB6D41 /* AnimatedTextInputStyle.swift */; };
 		F4A1B7A059AAA6727EB70E58E09332A4 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B651AFA613A60BF01307E17A8FC8A07 /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F60D221B548716DF35193FC2CF244676 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24105111E54EC746B1AE47ECD9FD3B39 /* BeAKindOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		F62764B6C27896B453229AB8E24A3CBA /* disclosure@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F606745544BEEF8549D092D67722C81 /* disclosure@3x.png */; };
 		F693D0A9E0D05F815A85DC258E75AF8D /* CurrentTestCaseTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F2CDC9B20A17F5B10D3C81F6280C5C4 /* CurrentTestCaseTracker.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F9D61EB5EEB799105913685722FF4C9C /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E25044178D96B4A31094AE41CE19C /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F9E05A63D447B51E008B89731192FE7F /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B6B37F1287585AB193AEEC136D531E /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FAB4ECE0C5039D99BB7173880670871D /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE57EB49EAEDE63619E8BAF5A593F8B /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		FB5EA30949C963DF591C113CCF5802E3 /* cm_icon_input_eye_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */; };
 		FCFFEB587281358CFF05A65ED9E94C12 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596126B80E15AD39F009E8CE1FEDA663 /* Functional.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FF2D9717D9A2EFC9157BE1431F691503 /* KIFTestStepValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F46EA8AF911DE24209987312E0754 /* KIFTestStepValidation.m */; };
 		FFF8B7FCACBA4522A80DD23B1AA81EA6 /* KIFUIViewTestActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D94DA2D2589EB0306A4D9A3994C15B /* KIFUIViewTestActor.m */; };
@@ -210,7 +213,9 @@
 
 /* Begin PBXFileReference section */
 		00DD5FC427EE874F1EE6EA0D41F21FA2 /* KIFTestActor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIFTestActor.h; path = Classes/KIFTestActor.h; sourceTree = "<group>"; };
+		015224B870CCE12422A5A734A65C0773 /* cm_icon_input_eye_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_selected@2x.png"; sourceTree = "<group>"; };
 		05049FEF7A2E1008AE8E316108CF481D /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
+		0649A3BBB4A034AADD4A1335CFAB78B7 /* cm_icon_input_eye_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_selected@3x.png"; sourceTree = "<group>"; };
 		09B9BD21831C5D32450975D74B587BF9 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		0E15AC03F19D9A7CF679734E292B5715 /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		0E4EF112D7C6B531381258C86310DBA4 /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
@@ -287,6 +292,7 @@
 		687F0A1A0FB4F771E04C814F5685AA5A /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Nimble.modulemap; sourceTree = "<group>"; };
 		6CE116FA7A3C014037CAE6528E81712D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D1F471CE7AD6C25A2866DB2A08278E0 /* UIView-Debugging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView-Debugging.m"; path = "Additions/UIView-Debugging.m"; sourceTree = "<group>"; };
+		6F606745544BEEF8549D092D67722C81 /* disclosure@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "disclosure@3x.png"; sourceTree = "<group>"; };
 		6FF9E8A0E2940B63EBE20385E8C462C5 /* UIView-Debugging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView-Debugging.h"; path = "Additions/UIView-Debugging.h"; sourceTree = "<group>"; };
 		7231E0B248610920FFA8E31F95B09775 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		72BDCA215D70FAD47FF138FE9B9A5D16 /* KIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIF.h; path = Classes/KIF.h; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 		75A767217DA1F8E96AACABC989E48FFC /* Pods-AnimatedTextInput_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AnimatedTextInput_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		76D5FF07A79DB2810DA8282DB5C2198B /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Sources/Lib/CwlPreconditionTesting/CwlPreconditionTesting/mach_excServer.h; sourceTree = "<group>"; };
 		7A791972C361BD3AED3CD41B571C3A6E /* NSException-KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSException-KIFAdditions.m"; path = "Additions/NSException-KIFAdditions.m"; sourceTree = "<group>"; };
+		7BB677505E7283F6B02A24CFE97A41EA /* cm_icon_input_eye_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_normal@3x.png"; sourceTree = "<group>"; };
 		7BDCA3C7C0D85E426C019C03CAB7DF5A /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		7C14A136A7A9ADFA33F7AA127B2C1A29 /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		7ECCDB238553CFEB66F7B470E84A8CAF /* AnimatedTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
@@ -309,7 +316,6 @@
 		8C3BC786F4DDCBB32BC4CEC2902FB773 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		8C5F8AD7B667D26D9831D54971C1AD14 /* KIFAccessibilityEnabler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIFAccessibilityEnabler.h; path = Classes/KIFAccessibilityEnabler.h; sourceTree = "<group>"; };
 		8CDBEDEFBBD79CBCF96E71467BF070BF /* AnimatedTextInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnimatedTextInput.swift; sourceTree = "<group>"; };
-		8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_selected@3x.png"; sourceTree = "<group>"; };
 		8D65F51141D3605492CA568AA2A977BF /* UITouch-KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITouch-KIFAdditions.m"; path = "Additions/UITouch-KIFAdditions.m"; sourceTree = "<group>"; };
 		8DE313C606727CF7F2712969CF6A80DF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E218C08AAAC3453AF3086E5BD20DD86 /* CAAnimation+KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+KIFAdditions.m"; path = "Additions/CAAnimation+KIFAdditions.m"; sourceTree = "<group>"; };
@@ -345,7 +351,6 @@
 		BBF39069C1C4462DE606B39AB918F24A /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3607AABBA182CD574096066F025D96 /* IOHIDEvent+KIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IOHIDEvent+KIF.m"; path = "Classes/IOHIDEvent+KIF.m"; sourceTree = "<group>"; };
 		BC77E2CBA54C8D993B1EE73812605B25 /* CALayer-KIFAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer-KIFAdditions.h"; path = "Additions/CALayer-KIFAdditions.h"; sourceTree = "<group>"; };
-		BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_normal@3x.png"; sourceTree = "<group>"; };
 		BD316B88D7EE125985644F4BAF686FFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BE5C48D3EB4B3BCA1AB351C0C3E08886 /* NSError-KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError-KIFAdditions.m"; path = "Additions/NSError-KIFAdditions.m"; sourceTree = "<group>"; };
 		BEC167BD11408F6F91724647A51BDDB2 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
@@ -371,7 +376,6 @@
 		D12B638F0E967E9A3E403265DAA35EF0 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		D236ACBD5102E3916DC3ECA7E73AF43D /* IOHIDEvent+KIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IOHIDEvent+KIF.h"; path = "Classes/IOHIDEvent+KIF.h"; sourceTree = "<group>"; };
 		D30BF03981C718EF139DD4E6945BB8E4 /* Nimble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.xcconfig; sourceTree = "<group>"; };
-		D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_normal@2x.png"; sourceTree = "<group>"; };
 		D7BC2F4C2597893AC86B991DFC75FA8B /* Pods-AnimatedTextInput_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnimatedTextInput_Tests-resources.sh"; sourceTree = "<group>"; };
 		D7DA6E5651BACA007C301A0EAEB85BD5 /* UIView-KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView-KIFAdditions.m"; path = "Additions/UIView-KIFAdditions.m"; sourceTree = "<group>"; };
 		E0287343FB36C2D65AFF44C384606025 /* AnimatedTextInput.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AnimatedTextInput.modulemap; sourceTree = "<group>"; };
@@ -381,7 +385,6 @@
 		E5B6B37F1287585AB193AEEC136D531E /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		E6547C72AD4D7105BA0646DC019DB8DB /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		E7129066F9A72CE7342AE5BAE1A09BE6 /* KIFTypist.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KIFTypist.m; path = Classes/KIFTypist.m; sourceTree = "<group>"; };
-		E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_selected@2x.png"; sourceTree = "<group>"; };
 		E92F666EA1E3A3A29E551EFB37681DED /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		EAE57EB49EAEDE63619E8BAF5A593F8B /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
 		EBA229D26726C5B25F32EFD59BCBF6F8 /* KIF-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KIF-umbrella.h"; sourceTree = "<group>"; };
@@ -391,14 +394,17 @@
 		EEB662DA23A999CB20BB97CE92C54294 /* KIF.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KIF.modulemap; sourceTree = "<group>"; };
 		F0A1B8389B7E7B0B9113C9CD247C9CE5 /* UIApplication-KIFAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication-KIFAdditions.h"; path = "Additions/UIApplication-KIFAdditions.h"; sourceTree = "<group>"; };
 		F0B79836C6ECF715C98A6E8C53D994AE /* Pods-AnimatedTextInput_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimatedTextInput_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F0F4EEC5E48D8CC707400C2178BCACEB /* cm_icon_input_eye_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "cm_icon_input_eye_normal@2x.png"; sourceTree = "<group>"; };
 		F10E1A90130D10C56E75A62E5F3C769D /* KIFTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KIFTestCase.m; path = Classes/KIFTestCase.m; sourceTree = "<group>"; };
 		F11D44040FD14FDD33E85364A54BE64C /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
 		F1BDFD0BFF2F4A322D20BC8D4C456EFE /* CGGeometry-KIFAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CGGeometry-KIFAdditions.m"; path = "Additions/CGGeometry-KIFAdditions.m"; sourceTree = "<group>"; };
 		F1F8FE3A29FD43C3DD49F7E5051191A6 /* UIEvent+KIFAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIEvent+KIFAdditions.h"; path = "Additions/UIEvent+KIFAdditions.h"; sourceTree = "<group>"; };
 		F359930538C967037AA1F8F61C5BF14A /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		F38696EA307BE3259E5122E6B8B04D2E /* KIF-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KIF-prefix.pch"; sourceTree = "<group>"; };
+		F5C80AA6CB968076599D55F54DD1C05A /* disclosure@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 		F857A0548E185E1A73D7F76A8B4C1C4B /* KIFUITestActor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KIFUITestActor.m; path = Classes/KIFUITestActor.m; sourceTree = "<group>"; };
 		F925ACEE43D8116A0F7AF9996B677A67 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
+		FC47D4D83854E2A8C8B5623CBB0C701F /* disclosure.png */ = {isa = PBXFileReference; includeInIndex = 1; path = disclosure.png; sourceTree = "<group>"; };
 		FC9CAE3A9D5975A1CF6102E3D32857C5 /* KIFTestStepValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIFTestStepValidation.h; path = Classes/KIFTestStepValidation.h; sourceTree = "<group>"; };
 		FD65087464E6ADA1E32888EEF6D70849 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -588,18 +594,6 @@
 			path = "Target Support Files/Pods-AnimatedTextInput_Tests";
 			sourceTree = "<group>";
 		};
-		4A9D63F198BC3E2EB88C0A24DE3B8435 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				D4E18B7645726A514760FF826FF86736 /* cm_icon_input_eye_normal@2x.png */,
-				BD1CFD2895FBE79A3931040A4DE2FC86 /* cm_icon_input_eye_normal@3x.png */,
-				E8B64EAD69B98FC5CF876FBEB19D7DAF /* cm_icon_input_eye_selected@2x.png */,
-				8D16D4EBA79A1E3526D82857912A1E78 /* cm_icon_input_eye_selected@3x.png */,
-			);
-			name = Assets;
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		6E34B625918459142FB7B2F32E2B66BC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,10 +728,25 @@
 			path = Nimble;
 			sourceTree = "<group>";
 		};
+		A0B3F3ACD75D025914DF5C4A95FEE4ED /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F0F4EEC5E48D8CC707400C2178BCACEB /* cm_icon_input_eye_normal@2x.png */,
+				7BB677505E7283F6B02A24CFE97A41EA /* cm_icon_input_eye_normal@3x.png */,
+				015224B870CCE12422A5A734A65C0773 /* cm_icon_input_eye_selected@2x.png */,
+				0649A3BBB4A034AADD4A1335CFAB78B7 /* cm_icon_input_eye_selected@3x.png */,
+				FC47D4D83854E2A8C8B5623CBB0C701F /* disclosure.png */,
+				F5C80AA6CB968076599D55F54DD1C05A /* disclosure@2x.png */,
+				6F606745544BEEF8549D092D67722C81 /* disclosure@3x.png */,
+			);
+			name = Assets;
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		A34CCF941B2B514AEBD21C43D122902C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C599952D366330ED87E990628F822049 /* AnimatedTextInput */,
+				C72F6DA2C97FCDB206B97BAF440F3FD9 /* AnimatedTextInput */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -778,10 +787,10 @@
 			path = "Target Support Files/Pods-AnimatedTextInput_Example";
 			sourceTree = "<group>";
 		};
-		C599952D366330ED87E990628F822049 /* AnimatedTextInput */ = {
+		C72F6DA2C97FCDB206B97BAF440F3FD9 /* AnimatedTextInput */ = {
 			isa = PBXGroup;
 			children = (
-				4A9D63F198BC3E2EB88C0A24DE3B8435 /* Assets */,
+				A0B3F3ACD75D025914DF5C4A95FEE4ED /* Assets */,
 			);
 			name = AnimatedTextInput;
 			path = AnimatedTextInput;
@@ -975,7 +984,7 @@
 			buildPhases = (
 				BBCD3D5B0E249126AC864C50584B0C30 /* Sources */,
 				9031BDE56E150B98A1795CBB978443A5 /* Frameworks */,
-				B222A885968EE6652BF5E37F4CEF2FF1 /* Resources */,
+				85B887352C886AFB78868B24149A5B43 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1056,14 +1065,17 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B222A885968EE6652BF5E37F4CEF2FF1 /* Resources */ = {
+		85B887352C886AFB78868B24149A5B43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4157A3DD4D0E8DA871E1E1F8973DCDC3 /* cm_icon_input_eye_normal@2x.png in Resources */,
-				FB5EA30949C963DF591C113CCF5802E3 /* cm_icon_input_eye_normal@3x.png in Resources */,
-				45C0C7727835FC0844CF38591F52A34F /* cm_icon_input_eye_selected@2x.png in Resources */,
-				F1A49690BC2F93BA915346BA23673920 /* cm_icon_input_eye_selected@3x.png in Resources */,
+				EACA208E1E17E41FAD96223423D8F33A /* cm_icon_input_eye_normal@2x.png in Resources */,
+				D5DAA5A7AF0CFBD068061335B61E4CA8 /* cm_icon_input_eye_normal@3x.png in Resources */,
+				C4CEE304709CD60777D4D0B3A48FF394 /* cm_icon_input_eye_selected@2x.png in Resources */,
+				95F331C7F9063341A92B0F4AB354A6F0 /* cm_icon_input_eye_selected@3x.png in Resources */,
+				9DD411EC9CA55346AA4627B03918F2C5 /* disclosure.png in Resources */,
+				D8E734B0EB74F230212B865C59E4F63B /* disclosure@2x.png in Resources */,
+				F62764B6C27896B453229AB8E24A3CBA /* disclosure@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AnimatedTextInput'
-  s.version          = '0.3.3'
+  s.version          = '0.4'
   s.summary          = 'UITextField and UITextView replacement with animated hint and error message support. Highly customizable. Used in Jobandtalent iOS app'
 
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ DESC
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Victor Baro' => 'fs.baro@gmail.com' }
   s.source           = { :git => 'https://github.com/jobandtalent/AnimatedTextInput.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/jobandtalentEng'
+  s.social_media_url = 'https://twitter.com/jobandtalentEng'
 
   s.ios.deployment_target = '8.0'
 
