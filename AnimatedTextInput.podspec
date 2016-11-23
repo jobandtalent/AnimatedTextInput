@@ -10,7 +10,7 @@ The animation consists on the placeholder becoming the hint. This control also a
 DESC
 
   s.homepage         = 'https://github.com/jobandtalent/AnimatedTextInput'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://github.com/jobandtalent/AnimatedTextInput/raw/master/Assets/general.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Victor Baro' => 'fs.baro@gmail.com' }
   s.source           = { :git => 'https://github.com/jobandtalent/AnimatedTextInput.git', :tag => s.version.to_s }

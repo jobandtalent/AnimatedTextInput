@@ -1,17 +1,17 @@
 import UIKit
 
-public final class AnimatedLine: UIView {
+open class AnimatedLine: UIView {
 
     enum FillType {
         case leftToRight
         case rightToLeft
     }
 
-    private let lineLayer = CAShapeLayer()
+    fileprivate let lineLayer = CAShapeLayer()
 
     var animationDuration: Double = 0.4
 
-    var defaultColor = UIColor.grayColor().colorWithAlphaComponent(0.6) {
+    var defaultColor = UIColor.gray.withAlphaComponent(0.6) {
         didSet {
             backgroundColor = defaultColor
         }
@@ -35,57 +35,57 @@ public final class AnimatedLine: UIView {
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         backgroundColor = defaultColor
         addLine()
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         lineLayer.frame = bounds
-        lineLayer.lineWidth = CGRectGetHeight(bounds)
+        lineLayer.lineWidth = bounds.height
         updatePath()
     }
 
-    private func addLine() {
+    fileprivate func addLine() {
         lineLayer.frame = bounds
-        let clearColor = UIColor.clearColor().CGColor
+        let clearColor = UIColor.clear.cgColor
         lineLayer.backgroundColor = clearColor
         lineLayer.fillColor = clearColor
-        lineLayer.strokeColor = defaultColor.CGColor
-        lineLayer.lineWidth = CGRectGetHeight(bounds)
+        lineLayer.strokeColor = defaultColor.cgColor
+        lineLayer.lineWidth = bounds.height
         updatePath()
         lineLayer.strokeEnd = 0
         layer.addSublayer(lineLayer)
     }
 
-    private func updatePath() {
+    fileprivate func updatePath() {
         lineLayer.path = linePath()
     }
 
-    private func linePath() -> CGPath {
+    fileprivate func linePath() -> CGPath {
         let path = UIBezierPath()
-        let initialPoint = CGPoint(x: 0, y: CGRectGetMidY(bounds))
-        let finalPoint = CGPoint(x: CGRectGetMaxX(bounds), y: CGRectGetMidY(bounds))
+        let initialPoint = CGPoint(x: 0, y: bounds.midY)
+        let finalPoint = CGPoint(x: bounds.maxX, y: bounds.midY)
 
         switch fillType {
         case .leftToRight:
-            path.moveToPoint(initialPoint)
-            path.addLineToPoint(finalPoint)
+            path.move(to: initialPoint)
+            path.addLine(to: finalPoint)
         case .rightToLeft:
-            path.moveToPoint(finalPoint)
-            path.addLineToPoint(initialPoint)
+            path.move(to: finalPoint)
+            path.addLine(to: initialPoint)
         }
 
-        return path.CGPath
+        return path.cgPath
     }
 
     func fillLine(with color: UIColor) {
         if lineLayer.strokeEnd == 1 {
-            backgroundColor = UIColor(CGColor: lineLayer.strokeColor ?? defaultColor.CGColor)
+            backgroundColor = UIColor(cgColor: lineLayer.strokeColor ?? defaultColor.cgColor)
         }
-        lineLayer.strokeColor = color.CGColor
+        lineLayer.strokeColor = color.cgColor
         lineLayer.strokeEnd = 0
         animateLine(to: 1.0)
     }
@@ -95,7 +95,7 @@ public final class AnimatedLine: UIView {
         animateLine(to: 0.0)
     }
 
-    private func animateLine(to value: CGFloat) {
+    fileprivate func animateLine(to value: CGFloat) {
         let function = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transactionAnimation(with: animationDuration, timingFuncion: function) {
             self.lineLayer.strokeEnd = value

@@ -27,6 +27,7 @@
         _delegate = delegate;
         _executionBlockTimeout = [[self class] defaultTimeout];
         _animationWaitingTimeout = [[self class] defaultAnimationWaitingTimeout];
+        _animationStabilizationTimeout = [[self class] defaultAnimationStabilizationTimeout];
     }
     return self;
 }
@@ -95,6 +96,7 @@
 #pragma mark Class Methods
 
 static NSTimeInterval KIFTestStepDefaultAnimationWaitingTimeout = 0.5;
+static NSTimeInterval KIFTestStepDefaultAnimationStabilizationTimeout = 0.5;
 static NSTimeInterval KIFTestStepDefaultTimeout = 10.0;
 static NSTimeInterval KIFTestStepDelay = 0.1;
 
@@ -106,6 +108,16 @@ static NSTimeInterval KIFTestStepDelay = 0.1;
 + (void)setDefaultAnimationWaitingTimeout:(NSTimeInterval)newDefaultAnimationWaitingTimeout;
 {
     KIFTestStepDefaultAnimationWaitingTimeout = newDefaultAnimationWaitingTimeout;
+}
+
++ (NSTimeInterval)defaultAnimationStabilizationTimeout
+{
+    return KIFTestStepDefaultAnimationStabilizationTimeout;
+}
+
++ (void)setDefaultAnimationStabilizationTimeout:(NSTimeInterval)newDefaultAnimationStabilizationTimeout;
+{
+    KIFTestStepDefaultAnimationStabilizationTimeout = newDefaultAnimationStabilizationTimeout;
 }
 
 + (NSTimeInterval)defaultTimeout;
@@ -154,6 +166,15 @@ static NSTimeInterval KIFTestStepDelay = 0.1;
 
 - (void)waitForTimeInterval:(NSTimeInterval)timeInterval
 {
+    [self waitForTimeInterval:timeInterval relativeToAnimationSpeed:NO];
+}
+
+- (void)waitForTimeInterval:(NSTimeInterval)timeInterval relativeToAnimationSpeed:(BOOL)scaleTime
+{
+    if (scaleTime) {
+        timeInterval /= [UIApplication sharedApplication].animationSpeed;
+    }
+    
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
     [self runBlock:^KIFTestStepResult(NSError **error) {

@@ -11,82 +11,76 @@
 #import <dlfcn.h>
 
 
-@interface AccessibilitySettingsController
+@protocol KIFSelectorsToMakeCompilerHappy <NSObject>
+
+// AccessibilitySettingsController (AccessibilitySettings.bundle)
 - (void)setAXInspectorEnabled:(NSNumber*)enabled specifier:(id)specifier;
 - (NSNumber *)AXInspectorEnabled:(id)specifier;
-@end
-
-
-@interface KIFAccessibilityEnabler ()
-
-@property (nonatomic, strong) id axSettingPrefController;
-@property (nonatomic, strong) NSNumber *initialAccessibilityInspectorSetting;
 
 @end
 
 
-@implementation KIFAccessibilityEnabler
-
-+ (instancetype)sharedAccessibilityEnabler
-{
-    static dispatch_once_t onceToken;
-    static KIFAccessibilityEnabler *_sharedAccessibilityEnabler;
-    dispatch_once(&onceToken, ^{
-        _sharedAccessibilityEnabler = [[self alloc] init];
-    });
-
-    return _sharedAccessibilityEnabler;
-}
-
-- (void)enableAccessibility
+static void * loadDylibForSimulator(NSString *path)
 {
     NSDictionary *environment = [[NSProcessInfo processInfo] environment];
     NSString *simulatorRoot = [environment objectForKey:@"IPHONE_SIMULATOR_ROOT"];
-
-    NSString *appSupportLocation = @"/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport";
     if (simulatorRoot) {
-        appSupportLocation = [simulatorRoot stringByAppendingString:appSupportLocation];
+        path = [simulatorRoot stringByAppendingPathComponent:path];
     }
-
-    void *appSupportLibrary = dlopen([appSupportLocation fileSystemRepresentation], RTLD_LAZY);
-
-    CFStringRef (*copySharedResourcesPreferencesDomainForDomain)(CFStringRef domain) = dlsym(appSupportLibrary, "CPCopySharedResourcesPreferencesDomainForDomain");
-
-    if (copySharedResourcesPreferencesDomainForDomain) {
-        CFStringRef accessibilityDomain = copySharedResourcesPreferencesDomainForDomain(CFSTR("com.apple.Accessibility"));
-
-        if (accessibilityDomain) {
-            CFPreferencesSetValue(CFSTR("ApplicationAccessibilityEnabled"), kCFBooleanTrue, accessibilityDomain, kCFPreferencesAnyUser, kCFPreferencesAnyHost);
-            CFRelease(accessibilityDomain);
-        }
-    }
-
-    NSString* accessibilitySettingsBundleLocation = @"/System/Library/PreferenceBundles/AccessibilitySettings.bundle/AccessibilitySettings";
-    if (simulatorRoot) {
-        accessibilitySettingsBundleLocation = [simulatorRoot stringByAppendingString:accessibilitySettingsBundleLocation];
-    }
-    const char *accessibilitySettingsBundlePath = [accessibilitySettingsBundleLocation fileSystemRepresentation];
-    void* accessibilitySettingsBundle = dlopen(accessibilitySettingsBundlePath, RTLD_LAZY);
-    if (accessibilitySettingsBundle) {
-        Class axSettingsPrefControllerClass = NSClassFromString(@"AccessibilitySettingsController");
-        self.axSettingPrefController = [[axSettingsPrefControllerClass alloc] init];
-
-        self.initialAccessibilityInspectorSetting = [self.axSettingPrefController AXInspectorEnabled:nil];
-        [self.axSettingPrefController setAXInspectorEnabled:@(YES) specifier:nil];
-    }
+    return dlopen([path fileSystemRepresentation], RTLD_LOCAL);
 }
 
-- (void)_resetAccessibilityInspector
+
+void KIFEnableAccessibility(void)
 {
-    [self.axSettingPrefController setAXInspectorEnabled:self.initialAccessibilityInspectorSetting specifier:nil];
-}
-
-@end
-
-void ResetAccessibilityInspector(void);
-
-// It appears that if you register as a test observer too late, then you don't get the testBundleDidFinish: method called, so instead we use this is a workaround. This is also works well for test envs that don't have XCTestObservation
-__attribute__((destructor))
-void ResetAccessibilityInspector() {
-  [[KIFAccessibilityEnabler sharedAccessibilityEnabler] _resetAccessibilityInspector];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // CPCopySharedResourcesPreferencesDomainForDomain from AppSupport
+        void *appSupport = loadDylibForSimulator(@"/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport");
+        if (appSupport) {
+            CFStringRef (*copySharedResourcesPreferencesDomainForDomain)(CFStringRef domain) = dlsym(appSupport, "CPCopySharedResourcesPreferencesDomainForDomain");
+            if (copySharedResourcesPreferencesDomainForDomain) {
+                CFStringRef accessibilityDomain = copySharedResourcesPreferencesDomainForDomain(CFSTR("com.apple.Accessibility"));
+                if (accessibilityDomain) {
+                    CFPreferencesSetValue(CFSTR("ApplicationAccessibilityEnabled"), kCFBooleanTrue, accessibilityDomain, kCFPreferencesAnyUser, kCFPreferencesAnyHost);
+                    CFRelease(accessibilityDomain);
+                }
+            }
+        }
+        
+        // Load AccessibilitySettings bundle
+        NSString *settingsBundleLocation = @"/System/Library/PreferenceBundles/AccessibilitySettings.bundle/AccessibilitySettings";
+        void *settingsBundle = loadDylibForSimulator(settingsBundleLocation);
+        if (settingsBundle) {
+            Class axClass = NSClassFromString(@"AccessibilitySettingsController");
+            if (axClass) {
+                id axInstance = [[axClass alloc] init];
+                if ([axInstance respondsToSelector:@selector(AXInspectorEnabled:)]) {
+                    NSNumber *initialValue = [axInstance AXInspectorEnabled:nil];
+                    
+                    // reset on exit
+                    atexit_b(^{
+                        [axInstance setAXInspectorEnabled:initialValue specifier:nil];
+                    });
+                    [axInstance setAXInspectorEnabled:@YES specifier:nil];
+                    return;
+                }
+            }
+        }
+        
+        // If we get to this point, the legacy method has not worked
+        void *handle = loadDylibForSimulator(@"/usr/lib/libAccessibility.dylib");
+        if (!handle) {
+            [NSException raise:NSGenericException format:@"Could not enable accessibility"];
+        }
+        
+        int (*_AXSAutomationEnabled)(void) = dlsym(handle, "_AXSAutomationEnabled");
+        void (*_AXSSetAutomationEnabled)(int) = dlsym(handle, "_AXSSetAutomationEnabled");
+        
+        int initialValue = _AXSAutomationEnabled();
+        _AXSSetAutomationEnabled(YES);
+        atexit_b(^{
+            _AXSSetAutomationEnabled(initialValue);
+        });
+    });
 }

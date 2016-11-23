@@ -9,12 +9,13 @@ final internal class AnimatedTextField: UITextField {
         case selection
     }
 
-    private let defaultPadding: CGFloat = -16
+    fileprivate let defaultPadding: CGFloat = -16
+    fileprivate let clearButtonPadding: CGFloat = -8
 
     var rightViewPadding: CGFloat
     weak var textInputDelegate: TextInputDelegate?
 
-    private var disclosureButtonAction: (Void -> Void)?
+    fileprivate var disclosureButtonAction: ((Void) -> Void)?
 
     override init(frame: CGRect) {
         self.rightViewPadding = defaultPadding
@@ -32,46 +33,65 @@ final internal class AnimatedTextField: UITextField {
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         delegate = self
-        addTarget(self, action: #selector(textFieldDidChange), forControlEvents: .EditingChanged)
+        addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
 
-    override func rightViewRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectOffset(super.rightViewRectForBounds(bounds), rightViewPadding, 0)
+    override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        return super.rightViewRect(forBounds: bounds).offsetBy(dx: rightViewPadding, dy: 0)
     }
 
-    func add(disclosureButton button: UIButton, action: (Void -> Void)) {
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        return super.clearButtonRect(forBounds: bounds).offsetBy(dx: clearButtonPadding, dy: 0)
+    }
+
+    func add(disclosureButton button: UIButton, action: @escaping ((Void) -> Void)) {
         let selector = #selector(disclosureButtonPressed)
         if disclosureButtonAction != nil, let previousButton = rightView as? UIButton {
-            previousButton.removeTarget(self, action: selector, forControlEvents: .TouchUpInside)
+            previousButton.removeTarget(self, action: selector, for: .touchUpInside)
         }
         disclosureButtonAction = action
-        button.addTarget(self, action: selector, forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: selector, for: .touchUpInside)
         rightView = button
     }
 
-    @objc private func disclosureButtonPressed() {
+    @objc fileprivate func disclosureButtonPressed() {
         disclosureButtonAction?()
     }
 
-    @objc private func textFieldDidChange() {
-        textInputDelegate?.textInputDidChange(self)
+    @objc fileprivate func textFieldDidChange() {
+        textInputDelegate?.textInputDidChange(textInput: self)
     }
 }
 
 extension AnimatedTextField: TextInput {
 
-    var view: UIView { return self }
+    func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
+        returnKeyType = newReturnKeyType
+    }
+
+    func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
+        return position(from: from, offset: offset)
+    }
 
     var currentText: String? {
         get { return text }
         set { self.text = newValue }
     }
 
-    var textAttributes: [String: AnyObject] {
+    var textAttributes: [String: Any] {
         get { return typingAttributes ?? [:] }
         set { self.typingAttributes = textAttributes }
+    }
+
+    var currentSelectedTextRange: UITextRange? {
+        get { return self.selectedTextRange }
+        set { self.selectedTextRange = newValue }
+    }
+
+    open var currentBeginningOfDocument: UITextPosition? {
+        get { return self.beginningOfDocument }
     }
 }
 
@@ -88,27 +108,27 @@ extension AnimatedTextField: TextInputError {
 
 extension AnimatedTextField: UITextFieldDelegate {
 
-    func textFieldDidBeginEditing(textField: UITextField) {
-        textInputDelegate?.textInputDidBeginEditing(self)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textInputDelegate?.textInputDidBeginEditing(textInput: self)
     }
 
-    func textFieldDidEndEditing(textField: UITextField) {
-        textInputDelegate?.textInputDidEndEditing(self)
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textInputDelegate?.textInputDidEndEditing(textInput: self)
     }
 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        return textInputDelegate?.textInput(self, shouldChangeCharactersInRange: range, replacementString: string) ?? true
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textInputDelegate?.textInput(textInput: self, shouldChangeCharactersInRange: range, replacementString: string) ?? true
     }
 
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return textInputDelegate?.textInputShouldBeginEditing(self) ?? true
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return textInputDelegate?.textInputShouldBeginEditing(textInput: self) ?? true
     }
 
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        return textInputDelegate?.textInputShouldEndEditing(self) ?? true
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return textInputDelegate?.textInputShouldEndEditing(textInput: self) ?? true
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        return textInputDelegate?.textInputShouldReturn(self) ?? true
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textInputDelegate?.textInputShouldReturn(textInput: self) ?? true
     }
 }
