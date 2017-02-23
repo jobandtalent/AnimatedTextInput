@@ -2,7 +2,7 @@ import UIKit
 
 extension UIView {
 
-    func transactionAnimation(with duration: CFTimeInterval, timingFuncion: CAMediaTimingFunction, animations: Void -> Void) {
+    func transactionAnimation(with duration: CFTimeInterval, timingFuncion: CAMediaTimingFunction, animations: (Void) -> Void) {
         CATransaction.begin()
         CATransaction.disableActions()
         CATransaction.setAnimationDuration(duration)
@@ -13,61 +13,85 @@ extension UIView {
 
     func pinLeading(toLeadingOf view: UIView, constant: CGFloat) {
         NSLayoutConstraint(item: view,
-                           attribute: .Leading,
-                           relatedBy: .Equal,
+                           attribute: .leading,
+                           relatedBy: .equal,
                            toItem: self,
-                           attribute: .Leading,
+                           attribute: .leading,
                            multiplier: 1.0,
-                           constant: constant).active = true
+                           constant: constant).isActive = true
     }
 
-    func pinTrailing(toTrailingOf view: UIView, constant: CGFloat) {
-        NSLayoutConstraint(item: view,
-                           attribute: .Trailing,
-                           relatedBy: .Equal,
+    func pinTrailing(toTrailingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view,
+                           attribute: .trailing,
+                           relatedBy: .equal,
                            toItem: self,
-                           attribute: .Trailing,
+                           attribute: .trailing,
                            multiplier: 1.0,
-                           constant: -constant).active = true
+                           constant: -constant)
+        constraint.isActive = true
+        return constraint
+    }
+
+    func pinTrailing(toLeadingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view,
+                                            attribute: .leading,
+                                            relatedBy: .equal,
+                                            toItem: self,
+                                            attribute: .trailing,
+                                            multiplier: 1.0,
+                                            constant: -constant)
+        constraint.isActive = true
+        return constraint
+    }
+
+    func alignHorizontalAxis(toSameAxisOfView view:UIView) {
+        NSLayoutConstraint(item: view,
+                           attribute: .centerY,
+                           relatedBy: .equal,
+                           toItem: self,
+                           attribute: .centerY,
+                           multiplier: 1.0,
+                           constant: 0.0).isActive = true
     }
 
     func pinTop(toTopOf view: UIView, constant: CGFloat) {
         NSLayoutConstraint(item: view,
-                           attribute: .Top,
-                           relatedBy: .Equal,
+                           attribute: .top,
+                           relatedBy: .equal,
                            toItem: self,
-                           attribute: .Top,
+                           attribute: .top,
                            multiplier: 1.0,
-                           constant: constant).active = true
+                           constant: constant).isActive = true
     }
 
     func pinBottom(toBottomOf view: UIView, constant: CGFloat) {
         NSLayoutConstraint(item: view,
-                           attribute: .Bottom,
-                           relatedBy: .Equal,
+                           attribute: .bottom,
+                           relatedBy: .equal,
                            toItem: self,
-                           attribute: .Bottom,
+                           attribute: .bottom,
                            multiplier: 1.0,
-                           constant: -constant).active = true
+                           constant: -constant).isActive = true
     }
 
     func pinBottom(toTopOf view: UIView, constant: CGFloat) {
         NSLayoutConstraint(item: self,
-                           attribute: .Bottom,
-                           relatedBy: .Equal,
+                           attribute: .bottom,
+                           relatedBy: .equal,
                            toItem: view,
-                           attribute: .Top,
+                           attribute: .top,
                            multiplier: 1.0,
-                           constant: -constant).active = true
+                           constant: -constant).isActive = true
     }
 
     func setHeight(to constant: CGFloat) {
         NSLayoutConstraint(item: self,
-                           attribute: .Height,
-                           relatedBy: .Equal,
+                           attribute: .height,
+                           relatedBy: .equal,
                            toItem: nil,
-                           attribute: .NotAnAttribute,
+                           attribute: .notAnAttribute,
                            multiplier: 1.0,
-                           constant: constant).active = true
+                           constant: constant).isActive = true
     }
 }

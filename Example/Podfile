@@ -6,6 +6,6 @@ end
 
 target 'AnimatedTextInput_Tests' do
     pod 'AnimatedTextInput', :path => '../'
-    pod 'KIF', '~> 3.0'
-    pod 'Nimble', '~> 4.1'
+    pod 'KIF', '~> 3.5'
+    pod 'Nimble', '~> 5.1'
 end

@@ -4,7 +4,7 @@ import AnimatedTextInput
 class ViewController: UIViewController {
 
     @IBOutlet var textInputs: [AnimatedTextInput]!
-    private var isBlue = true
+    fileprivate var isBlue = true
 
     override func viewDidLoad() {
         textInputs[0].accessibilityLabel = "standard_text_input"
@@ -30,27 +30,27 @@ class ViewController: UIViewController {
 
     func tap() {
         let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.blueColor()
-        presentViewController(vc, animated: true) {
-            if let text = self.textInputs[3].text where text.isEmpty {
+        vc.view.backgroundColor = UIColor.blue
+        present(vc, animated: true) {
+            if let text = self.textInputs[3].text, text.isEmpty {
                 self.textInputs[3].text = "Some option the user did select"
             } else {
                 self.textInputs[3].text = nil
             }
-            vc.dismissViewControllerAnimated(true, completion: nil)
+            vc.dismiss(animated: true, completion: nil)
         }
     }
 
-    @IBAction func showError(sender: AnyObject) {
+    @IBAction func showError(_ sender: AnyObject) {
         textInputs[0].show(error: "You made an error!", placeholderText: "Type something")
     }
 
-    @IBAction func toggleStyle(sender: AnyObject) {
+    @IBAction func toggleStyle(_ sender: AnyObject) {
         textInputs[1].style = isBlue ? CustomTextInputStyle() : AnimatedTextInputStyleBlue()
         isBlue = !isBlue
     }
 
-    @IBAction func backgroundTap(sender: AnyObject) {
+    @IBAction func backgroundTap(_ sender: AnyObject) {
         for input in textInputs {
             input.resignFirstResponder()
         }
@@ -59,16 +59,18 @@ class ViewController: UIViewController {
 
 struct CustomTextInputStyle: AnimatedTextInputStyle {
 
-    let activeColor = UIColor.orangeColor()
-    let inactiveColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
-    let errorColor = UIColor.redColor()
-    let textInputFont = UIFont.systemFontOfSize(14)
-    let textInputFontColor = UIColor.blackColor()
+    let activeColor = UIColor.orange
+    let inactiveColor = UIColor.gray.withAlphaComponent(0.3)
+    let lineInactiveColor = UIColor.gray.withAlphaComponent(0.3)
+    let errorColor = UIColor.red
+    let textInputFont = UIFont.systemFont(ofSize: 14)
+    let textInputFontColor = UIColor.black
     let placeholderMinFontSize: CGFloat = 9
-    let counterLabelFont: UIFont? = UIFont.systemFontOfSize(9)
+    let counterLabelFont: UIFont? = UIFont.systemFont(ofSize: 9)
     let leftMargin: CGFloat = 25
     let topMargin: CGFloat = 20
     let rightMargin: CGFloat = 0
     let bottomMargin: CGFloat = 10
     let yHintPositionOffset: CGFloat = 7
+    let yPlaceholderPositionOffset: CGFloat = 0
 }

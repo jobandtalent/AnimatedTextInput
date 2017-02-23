@@ -4,6 +4,7 @@ public struct AnimatedTextInputFieldConfigurator {
 
     public enum AnimatedTextInputType {
         case standard
+        case email
         case password
         case numeric
         case selection
@@ -15,6 +16,8 @@ public struct AnimatedTextInputFieldConfigurator {
         switch type {
         case .standard:
             return AnimatedTextInputTextConfigurator.generate()
+        case .email:
+            return AnimatedTextInputEmailConfigurator.generate()
         case .password:
             return AnimatedTextInputPasswordConfigurator.generate()
         case .numeric:
@@ -29,67 +32,85 @@ public struct AnimatedTextInputFieldConfigurator {
     }
 }
 
-private struct AnimatedTextInputTextConfigurator {
+fileprivate struct AnimatedTextInputTextConfigurator {
 
     static func generate() -> TextInput {
         let textField = AnimatedTextField()
-        textField.clearButtonMode = .WhileEditing
+        textField.clearButtonMode = .whileEditing
+        textField.autocorrectionType = .no
+        textField.clearButtonMode = .whileEditing
         return textField
     }
 }
 
-private struct AnimatedTextInputPasswordConfigurator {
+fileprivate struct AnimatedTextInputEmailConfigurator {
 
     static func generate() -> TextInput {
         let textField = AnimatedTextField()
-        textField.rightViewMode = .WhileEditing
-        textField.secureTextEntry = true
-        let disclosureButton = UIButton(type: .Custom)
+        textField.clearButtonMode = .whileEditing
+        textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
+        return textField
+    }
+}
+
+fileprivate struct AnimatedTextInputPasswordConfigurator {
+
+    static func generate() -> TextInput {
+        let textField = AnimatedTextField()
+        textField.rightViewMode = .whileEditing
+        textField.isSecureTextEntry = true
+        textField.autocapitalizationType = .none
+        let disclosureButton = UIButton(type: .custom)
         disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
-        let bundle = NSBundle(path: NSBundle(forClass: AnimatedTextInput.self).pathForResource("AnimatedTextInput", ofType: "bundle")!)
-        let normalImage = UIImage(named: "cm_icon_input_eye_normal", inBundle: bundle, compatibleWithTraitCollection: nil)
-        let selectedImage = UIImage(named: "cm_icon_input_eye_selected", inBundle: bundle, compatibleWithTraitCollection: nil)
-        disclosureButton.setImage(normalImage, forState: .Normal)
-        disclosureButton.setImage(selectedImage, forState: .Selected)
+        let bundle = Bundle(path: Bundle(for: AnimatedTextInput.self).path(forResource: "AnimatedTextInput", ofType: "bundle")!)
+        let normalImage = UIImage(named: "cm_icon_input_eye_normal", in: bundle, compatibleWith: nil)
+        let selectedImage = UIImage(named: "cm_icon_input_eye_selected", in: bundle, compatibleWith: nil)
+        disclosureButton.setImage(normalImage, for: .normal)
+        disclosureButton.setImage(selectedImage, for: .selected)
         textField.add(disclosureButton: disclosureButton) {
-            disclosureButton.selected = !disclosureButton.selected
+            disclosureButton.isSelected = !disclosureButton.isSelected
             textField.resignFirstResponder()
-            textField.secureTextEntry = !textField.secureTextEntry
+            textField.isSecureTextEntry = !textField.isSecureTextEntry
             textField.becomeFirstResponder()
         }
         return textField
     }
 }
 
-private struct AnimatedTextInputNumericConfigurator {
+fileprivate struct AnimatedTextInputNumericConfigurator {
 
     static func generate() -> TextInput {
         let textField = AnimatedTextField()
-        textField.clearButtonMode = .WhileEditing
-        textField.keyboardType = .DecimalPad
+        textField.clearButtonMode = .whileEditing
+        textField.keyboardType = .decimalPad
+        textField.autocorrectionType = .no
         return textField
     }
 }
 
-private struct AnimatedTextInputSelectionConfigurator {
+fileprivate struct AnimatedTextInputSelectionConfigurator {
 
     static func generate() -> TextInput {
         let textField = AnimatedTextField()
-        let arrowImageView = UIImageView(image: UIImage(named: "disclosure-indicator"))
+        let bundle = Bundle(path: Bundle(for: AnimatedTextInput.self).path(forResource: "AnimatedTextInput", ofType: "bundle")!)
+        let arrowImageView = UIImageView(image: UIImage(named: "disclosure", in: bundle, compatibleWith: nil))
         textField.rightView = arrowImageView
-        textField.rightViewMode = .Always
-        textField.userInteractionEnabled = false
+        textField.rightViewMode = .always
+        textField.isUserInteractionEnabled = false
         return textField
     }
 }
 
-private struct AnimatedTextInputMultilineConfigurator {
+fileprivate struct AnimatedTextInputMultilineConfigurator {
 
     static func generate() -> TextInput {
         let textView = AnimatedTextView()
-        textView.textContainerInset = UIEdgeInsetsZero
-        textView.backgroundColor = UIColor.clearColor()
-        textView.scrollEnabled = false
+        textView.textContainerInset = .zero
+        textView.backgroundColor = .clear
+        textView.isScrollEnabled = false
+        textView.autocorrectionType = .no
         return textView
     }
 }
