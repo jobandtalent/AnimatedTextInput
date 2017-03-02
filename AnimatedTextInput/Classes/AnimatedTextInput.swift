@@ -348,9 +348,13 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open func showCharacterCounterLabel(with maximum: Int) {
+    open func showCharacterCounterLabel(with maximum: Int? = nil) {
         let characters = (text != nil) ? text!.characters.count : 0
-        counterLabel.text = "\(characters)/\(maximum)"
+        if let maximumValue = maximum {
+            counterLabel.text = "\(characters)/\(maximumValue)"
+        } else {
+            counterLabel.text = "\(characters)"
+        }
         counterLabel.textColor = isActive ? style.activeColor : style.inactiveColor
         counterLabel.font = style.counterLabelFont
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
