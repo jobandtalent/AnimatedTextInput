@@ -53,6 +53,11 @@ open class AnimatedTextInput: UIControl {
             textInput.currentText = newValue
         }
     }
+    
+    open var textAttributes: [String: Any]? {
+        get { return textInput.textAttributes }
+        set { textInput.textAttributes = newValue }
+    }
 
     open var selectedTextRange: UITextRange? {
         get { return textInput.currentSelectedTextRange }
@@ -270,7 +275,7 @@ open class AnimatedTextInput: UIControl {
         return textInput.view.isFirstResponder
     }
 
-    override open func resignFirstResponder() -> Bool {
+    @discardableResult override open func resignFirstResponder() -> Bool {
         guard !isResigningResponder else { return true }
         isActive = false
         isResigningResponder = true
@@ -428,10 +433,10 @@ extension AnimatedTextInput: TextInputDelegate {
 
 public protocol TextInput {
     var view: UIView { get }
-
     var currentText: String? { get set }
     var font: UIFont? { get set }
     var textColor: UIColor? { get set }
+    var textAttributes: [String: Any]? { get set }
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }

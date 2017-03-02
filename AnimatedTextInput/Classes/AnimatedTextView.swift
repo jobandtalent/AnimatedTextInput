@@ -2,6 +2,8 @@ import UIKit
 
 final internal class AnimatedTextView: UITextView {
 
+    var textAttributes: [String: Any]?
+
     weak var textInputDelegate: TextInputDelegate?
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -30,11 +32,6 @@ extension AnimatedTextView: TextInput {
     var currentText: String? {
         get { return text }
         set { self.text = newValue }
-    }
-
-    var textAttributes: [String: Any] {
-        get { return typingAttributes }
-        set { self.typingAttributes = textAttributes }
     }
 
     var currentSelectedTextRange: UITextRange? {
@@ -66,6 +63,10 @@ extension AnimatedTextView: UITextViewDelegate {
     }
 
     func textViewDidChange(_ textView: UITextView) {
+        let range = textView.selectedRange
+        textView.attributedText = NSAttributedString(string: textView.text, attributes: textAttributes)
+        textView.selectedRange = range
+
         textInputDelegate?.textInputDidChange(textInput: self)
     }
 
