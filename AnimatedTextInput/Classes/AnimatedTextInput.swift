@@ -63,16 +63,26 @@ open class AnimatedTextInput: UIControl {
         get { return textInput.currentBeginningOfDocument }
     }
 
+    open var font: UIFont? {
+        get { return textInput.font }
+        set { textAttributes = [NSFontAttributeName: newValue] }
+    }
+
+    open var textColor: UIColor? {
+        get { return textInput.textColor }
+        set { textAttributes = [NSForegroundColorAttributeName: newValue] }
+    }
+
     open var lineSpacing: CGFloat? {
         get {
-            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
             return paragraph.lineSpacing
         }
         set {
             guard let spacing = newValue else { return }
-            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = spacing
-            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
         }
     }
 
@@ -83,35 +93,35 @@ open class AnimatedTextInput: UIControl {
         }
         set {
             guard let alignment = newValue else { return }
-            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.alignment = alignment
-            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
         }
     }
 
     open var tailIndent: CGFloat? {
         get {
-            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
             return paragraph.tailIndent
         }
         set {
             guard let indent = newValue else { return }
-            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.tailIndent = indent
-            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
         }
     }
 
     open var headIndent: CGFloat? {
         get {
-            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
             return paragraph.headIndent
         }
         set {
             guard let indent = newValue else { return }
-            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.headIndent = indent
-            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
         }
     }
 
@@ -125,7 +135,7 @@ open class AnimatedTextInput: UIControl {
                 textInput.textAttributes = nil
                 return
             }
-            textInputAttributes.merge(dict: textAttributes!)
+            textInput.textAttributes = textInputAttributes.merge(dict: textAttributes!)
         }
     }
 
@@ -532,8 +542,9 @@ public protocol TextInputError {
 }
 
 fileprivate extension Dictionary {
-    mutating func merge(dict: [Key: Value]) {
+    mutating func merge(dict: [Key: Value]) -> Dictionary {
         for (key, value) in dict { self[key] = value }
+        return self
     }
 }
 

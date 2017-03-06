@@ -2,7 +2,12 @@ import UIKit
 
 final internal class AnimatedTextView: UITextView {
 
-    var textAttributes: [String: Any]?
+    var textAttributes: [String: Any]? {
+        didSet {
+            guard let attributes = textAttributes else { return }
+            typingAttributes = attributes
+        }
+    }
 
     weak var textInputDelegate: TextInputDelegate?
 
