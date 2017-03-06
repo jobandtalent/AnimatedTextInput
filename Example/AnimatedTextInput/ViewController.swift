@@ -29,10 +29,7 @@ class ViewController: UIViewController {
 
 
         // Text attributes (as well as any other property, can be configured using styles (AnimatedTextInputStyle) or using textInput's propoerties
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 15
-        textInputs[4].textAttributes = [NSParagraphStyleAttributeName : paragraphStyle,
-                                        NSFontAttributeName : UIFont.boldSystemFont(ofSize: 18)]
+        textInputs[4].lineSpacing = 15
     }
 
     func tap() {

@@ -53,11 +53,6 @@ open class AnimatedTextInput: UIControl {
             textInput.currentText = newValue
         }
     }
-    
-    open var textAttributes: [String: Any]? {
-        get { return textInput.textAttributes }
-        set { textInput.textAttributes = newValue }
-    }
 
     open var selectedTextRange: UITextRange? {
         get { return textInput.currentSelectedTextRange }
@@ -66,6 +61,72 @@ open class AnimatedTextInput: UIControl {
 
     open var beginningOfDocument: UITextPosition? {
         get { return textInput.currentBeginningOfDocument }
+    }
+
+    open var lineSpacing: CGFloat? {
+        get {
+            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.lineSpacing
+        }
+        set {
+            guard let spacing = newValue else { return }
+            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = spacing
+            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+        }
+    }
+
+    open var textAlignment: NSTextAlignment? {
+        get {
+            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.alignment
+        }
+        set {
+            guard let alignment = newValue else { return }
+            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.alignment = alignment
+            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+        }
+    }
+
+    open var tailIndent: CGFloat? {
+        get {
+            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.tailIndent
+        }
+        set {
+            guard let indent = newValue else { return }
+            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.tailIndent = indent
+            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+        }
+    }
+
+    open var headIndent: CGFloat? {
+        get {
+            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.headIndent
+        }
+        set {
+            guard let indent = newValue else { return }
+            let paragraphStyle = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.headIndent = indent
+            textInput.textAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
+        }
+    }
+
+    open var textAttributes: [String: Any]? {
+        didSet {
+            guard var textInputAttributes = textInput.textAttributes else {
+                textInput.textAttributes = textAttributes
+                return
+            }
+            guard textAttributes != nil else {
+                textInput.textAttributes = nil
+                return
+            }
+            textInputAttributes.merge(dict: textAttributes!)
+        }
     }
 
     fileprivate let lineView = AnimatedLine()
@@ -469,3 +530,10 @@ public protocol TextInputError {
     func configureErrorState(with message: String?)
     func removeErrorHintMessage()
 }
+
+fileprivate extension Dictionary {
+    mutating func merge(dict: [Key: Value]) {
+        for (key, value) in dict { self[key] = value }
+    }
+}
+
