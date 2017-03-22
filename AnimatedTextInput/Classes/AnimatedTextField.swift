@@ -15,6 +15,8 @@ final internal class AnimatedTextField: UITextField {
     var rightViewPadding: CGFloat
     weak var textInputDelegate: TextInputDelegate?
 
+    var textAttributes: [String: Any]?
+
     fileprivate var disclosureButtonAction: ((Void) -> Void)?
 
     override init(frame: CGRect) {
@@ -61,6 +63,9 @@ final internal class AnimatedTextField: UITextField {
     }
 
     @objc fileprivate func textFieldDidChange() {
+        if let text = text {
+            attributedText = NSAttributedString(string: text, attributes: textAttributes)
+        }
         textInputDelegate?.textInputDidChange(textInput: self)
     }
 }
@@ -78,11 +83,6 @@ extension AnimatedTextField: TextInput {
     var currentText: String? {
         get { return text }
         set { self.text = newValue }
-    }
-
-    var textAttributes: [String: Any] {
-        get { return typingAttributes ?? [:] }
-        set { self.typingAttributes = textAttributes }
     }
 
     var currentSelectedTextRange: UITextRange? {

@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         textInputs[4].placeHolderText = "Multiline"
         textInputs[4].type = .multiline
         textInputs[4].showCharacterCounterLabel(with: 160)
+
+
+        // Text attributes (as well as any other property, can be configured using styles (AnimatedTextInputStyle) or using textInput's propoerties
+        textInputs[4].lineSpacing = 15
+        textInputs[4].font = UIFont.systemFont(ofSize: 13)
     }
 
     func tap() {
@@ -73,4 +78,5 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
     let bottomMargin: CGFloat = 10
     let yHintPositionOffset: CGFloat = 7
     let yPlaceholderPositionOffset: CGFloat = 0
+    public let textAttributes: [String: Any]? = nil
 }

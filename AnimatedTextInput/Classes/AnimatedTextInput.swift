@@ -63,6 +63,82 @@ open class AnimatedTextInput: UIControl {
         get { return textInput.currentBeginningOfDocument }
     }
 
+    open var font: UIFont? {
+        get { return textInput.font }
+        set { textAttributes = [NSFontAttributeName: newValue] }
+    }
+
+    open var textColor: UIColor? {
+        get { return textInput.textColor }
+        set { textAttributes = [NSForegroundColorAttributeName: newValue] }
+    }
+
+    open var lineSpacing: CGFloat? {
+        get {
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.lineSpacing
+        }
+        set {
+            guard let spacing = newValue else { return }
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = spacing
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        }
+    }
+
+    open var textAlignment: NSTextAlignment? {
+        get {
+            guard let paragraph = textInput.textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.alignment
+        }
+        set {
+            guard let alignment = newValue else { return }
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.alignment = alignment
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        }
+    }
+
+    open var tailIndent: CGFloat? {
+        get {
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.tailIndent
+        }
+        set {
+            guard let indent = newValue else { return }
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.tailIndent = indent
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        }
+    }
+
+    open var headIndent: CGFloat? {
+        get {
+            guard let paragraph = textAttributes?[NSParagraphStyleAttributeName] as? NSParagraphStyle else { return nil }
+            return paragraph.headIndent
+        }
+        set {
+            guard let indent = newValue else { return }
+            let paragraphStyle = textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            paragraphStyle.headIndent = indent
+            textAttributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        }
+    }
+
+    open var textAttributes: [String: Any]? {
+        didSet {
+            guard var textInputAttributes = textInput.textAttributes else {
+                textInput.textAttributes = textAttributes
+                return
+            }
+            guard textAttributes != nil else {
+                textInput.textAttributes = nil
+                return
+            }
+            textInput.textAttributes = textInputAttributes.merge(dict: textAttributes!)
+        }
+    }
+
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
@@ -270,7 +346,7 @@ open class AnimatedTextInput: UIControl {
         return textInput.view.isFirstResponder
     }
 
-    override open func resignFirstResponder() -> Bool {
+    @discardableResult override open func resignFirstResponder() -> Bool {
         guard !isResigningResponder else { return true }
         isActive = false
         isResigningResponder = true
@@ -343,9 +419,13 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open func showCharacterCounterLabel(with maximum: Int) {
+    open func showCharacterCounterLabel(with maximum: Int? = nil) {
         let characters = (text != nil) ? text!.characters.count : 0
-        counterLabel.text = "\(characters)/\(maximum)"
+        if let maximumValue = maximum {
+            counterLabel.text = "\(characters)/\(maximumValue)"
+        } else {
+            counterLabel.text = "\(characters)"
+        }
         counterLabel.textColor = isActive ? style.activeColor : style.inactiveColor
         counterLabel.font = style.counterLabelFont
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -428,10 +508,10 @@ extension AnimatedTextInput: TextInputDelegate {
 
 public protocol TextInput {
     var view: UIView { get }
-
     var currentText: String? { get set }
     var font: UIFont? { get set }
     var textColor: UIColor? { get set }
+    var textAttributes: [String: Any]? { get set }
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
@@ -460,3 +540,11 @@ public protocol TextInputError {
     func configureErrorState(with message: String?)
     func removeErrorHintMessage()
 }
+
+fileprivate extension Dictionary {
+    mutating func merge(dict: [Key: Value]) -> Dictionary {
+        for (key, value) in dict { self[key] = value }
+        return self
+    }
+}
+
