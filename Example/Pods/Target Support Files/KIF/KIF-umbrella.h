@@ -1,6 +1,4 @@
-#ifdef __OBJC__
 #import <UIKit/UIKit.h>
-#endif
 
 #import "IOHIDEvent+KIF.h"
 #import "KIF.h"
