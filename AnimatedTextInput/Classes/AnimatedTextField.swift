@@ -39,6 +39,13 @@ final internal class AnimatedTextField: UITextField {
         delegate = self
         addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
+    
+    override func becomeFirstResponder() -> Bool {
+        if let alignment = (textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment {
+            textAlignment = alignment
+        }
+        return super.becomeFirstResponder()
+    }
 
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         return super.rightViewRect(forBounds: bounds).offsetBy(dx: rightViewPadding, dy: 0)
