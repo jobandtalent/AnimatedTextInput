@@ -35,6 +35,12 @@ open class AnimatedTextInput: UIControl {
             placeholderLayer.string = placeHolderText
         }
     }
+    
+    open var placeholderAlignment: CATextLayer.Alignment = .natural {
+        didSet {
+            placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
+        }
+    }
 
     open var style: AnimatedTextInputStyle = AnimatedTextInputStyleBlue() {
         didSet {
@@ -157,8 +163,14 @@ open class AnimatedTextInput: UIControl {
     fileprivate var placeholderErrorText: String?
 
     fileprivate var placeholderPosition: CGPoint {
-        let hintPosition = CGPoint(x: style.leftMargin, y: style.yHintPositionOffset)
-        let defaultPosition = CGPoint(x: style.leftMargin, y: style.topMargin + style.yPlaceholderPositionOffset)
+        let hintPosition = CGPoint(
+            x: placeholderAlignment != .natural ? 0 : style.leftMargin,
+            y: style.yHintPositionOffset
+        )
+        let defaultPosition = CGPoint(
+            x: placeholderAlignment != .natural ? 0 : style.leftMargin,
+            y: style.topMargin + style.yPlaceholderPositionOffset
+        )
         return isPlaceholderAsHint ? hintPosition : defaultPosition
     }
 
@@ -540,6 +552,23 @@ public protocol TextInputDelegate: class {
 public protocol TextInputError {
     func configureErrorState(with message: String?)
     func removeErrorHintMessage()
+}
+
+public extension CATextLayer {
+    /// Describes how individual lines of text are aligned within the layer.
+    ///
+    /// - natural: Natural alignment.
+    /// - left: Left alignment.
+    /// - right: Right alignment.
+    /// - center: Center alignment.
+    /// - justified: Justified alignment.
+    enum Alignment {
+        case natural
+        case left
+        case right
+        case center
+        case justified
+    }
 }
 
 fileprivate extension Dictionary {
