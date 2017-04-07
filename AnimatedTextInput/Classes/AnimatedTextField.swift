@@ -40,7 +40,7 @@ final internal class AnimatedTextField: UITextField {
         addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
-    override func becomeFirstResponder() -> Bool {
+    @discardableResult override func becomeFirstResponder() -> Bool {
         if let alignment = (textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment {
             textAlignment = alignment
         }
