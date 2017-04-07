@@ -65,12 +65,12 @@ open class AnimatedTextInput: UIControl {
 
     open var font: UIFont? {
         get { return textInput.font }
-        set { textAttributes = [NSFontAttributeName: newValue] }
+        set { textAttributes = [NSFontAttributeName: newValue as Any] }
     }
 
     open var textColor: UIColor? {
         get { return textInput.textColor }
-        set { textAttributes = [NSForegroundColorAttributeName: newValue] }
+        set { textAttributes = [NSForegroundColorAttributeName: newValue as Any] }
     }
 
     open var lineSpacing: CGFloat? {
