@@ -86,6 +86,10 @@ extension AnimatedTextField: TextInput {
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
+    
+    func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode) {
+        clearButtonMode = newClearButtonMode
+    }
 
     var currentText: String? {
         get { return text }

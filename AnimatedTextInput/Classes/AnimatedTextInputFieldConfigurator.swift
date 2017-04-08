@@ -38,7 +38,6 @@ fileprivate struct AnimatedTextInputTextConfigurator {
         let textField = AnimatedTextField()
         textField.clearButtonMode = .whileEditing
         textField.autocorrectionType = .no
-        textField.clearButtonMode = .whileEditing
         return textField
     }
 }
