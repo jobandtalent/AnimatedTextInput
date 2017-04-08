@@ -54,6 +54,24 @@ final internal class AnimatedTextField: UITextField {
     override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         return super.clearButtonRect(forBounds: bounds).offsetBy(dx: clearButtonPadding, dy: 0)
     }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        var width = bounds.width
+        if clearButtonMode == .always || clearButtonMode == .unlessEditing {
+            width = bounds.width - clearButtonRect(forBounds: bounds).width * 2
+        }
+        return CGRect(x: bounds.origin.x, y: bounds.origin.y, width: width, height: bounds.height)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        var width = bounds.width
+        if clearButtonMode != .never {
+            width = bounds.width - clearButtonRect(forBounds: bounds).width * 2
+        } else if let _ = rightView {
+            width = bounds.width - rightViewRect(forBounds: bounds).width * 2
+        }
+        return CGRect(x: bounds.origin.x, y: bounds.origin.y, width: width, height: bounds.height)
+    }
 
     func add(disclosureButton button: UIButton, action: @escaping ((Void) -> Void)) {
         let selector = #selector(disclosureButtonPressed)
