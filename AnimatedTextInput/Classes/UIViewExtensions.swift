@@ -21,7 +21,7 @@ extension UIView {
                            constant: constant).isActive = true
     }
 
-    func pinTrailing(toTrailingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func pinTrailing(toTrailingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: view,
                            attribute: .trailing,
                            relatedBy: .equal,
@@ -33,7 +33,7 @@ extension UIView {
         return constraint
     }
 
-    func pinTrailing(toLeadingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func pinTrailing(toLeadingOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: view,
                                             attribute: .leading,
                                             relatedBy: .equal,
@@ -45,7 +45,7 @@ extension UIView {
         return constraint
     }
 
-    func alignHorizontalAxis(toSameAxisOfView view:UIView) {
+    func alignHorizontalAxis(toSameAxisOfView view: UIView) {
         NSLayoutConstraint(item: view,
                            attribute: .centerY,
                            relatedBy: .equal,

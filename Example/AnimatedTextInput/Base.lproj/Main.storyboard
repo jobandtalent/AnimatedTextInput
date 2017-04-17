@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,45 +18,45 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="2H2-ZR-ivo" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
-                                <rect key="frame" x="0.0" y="40" width="600" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="ED2-K4-0S3" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
-                                <rect key="frame" x="0.0" y="168" width="600" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="168" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSK-Ud-hG2">
-                                <rect key="frame" x="172" y="449" width="256" height="30"/>
+                                <rect key="frame" x="59.5" y="449" width="256" height="30"/>
                                 <state key="normal" title="Toggle color style in second text field"/>
                                 <connections>
                                     <action selector="toggleStyle:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="miU-dZ-QCM"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="x9I-2w-m4z" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
-                                <rect key="frame" x="0.0" y="232" width="600" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="232" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-RA-5je" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
-                                <rect key="frame" x="0.0" y="104" width="600" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="64" translatesAutoresizingMaskIntoConstraints="NO" id="18e-se-gd0" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
-                                <rect key="frame" x="0.0" y="296" width="600" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="296" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="562-Pg-j6A">
-                                <rect key="frame" x="207" y="411" width="186" height="30"/>
+                                <rect key="frame" x="94.5" y="411" width="186" height="30"/>
                                 <state key="normal" title="Show error in first text field"/>
                                 <connections>
                                     <action selector="showError:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wcy-bk-mrX"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2H2-ZR-ivo" secondAttribute="trailing" id="0hV-hp-1kz"/>

@@ -24,15 +24,27 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var returnKeyType: UIReturnKeyType! = .default {
+    open var returnKeyType: UIReturnKeyType = .default {
         didSet {
             textInput.changeReturnKeyType(with: returnKeyType)
+        }
+    }
+    
+    open var clearButtonMode: UITextFieldViewMode = .whileEditing {
+        didSet {
+            textInput.changeClearButtonMode(with: clearButtonMode)
         }
     }
 
     open var placeHolderText = "Test" {
         didSet {
             placeholderLayer.string = placeHolderText
+        }
+    }
+    
+    open var placeholderAlignment: CATextLayer.Alignment = .natural {
+        didSet {
+            placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
         }
     }
 
@@ -65,12 +77,12 @@ open class AnimatedTextInput: UIControl {
 
     open var font: UIFont? {
         get { return textInput.font }
-        set { textAttributes = [NSFontAttributeName: newValue] }
+        set { textAttributes = [NSFontAttributeName: newValue as Any] }
     }
 
     open var textColor: UIColor? {
         get { return textInput.textColor }
-        set { textAttributes = [NSForegroundColorAttributeName: newValue] }
+        set { textAttributes = [NSForegroundColorAttributeName: newValue as Any] }
     }
 
     open var lineSpacing: CGFloat? {
@@ -169,8 +181,14 @@ open class AnimatedTextInput: UIControl {
     fileprivate var placeholderErrorText: String?
 
     fileprivate var placeholderPosition: CGPoint {
-        let hintPosition = CGPoint(x: style.leftMargin, y: style.yHintPositionOffset)
-        let defaultPosition = CGPoint(x: style.leftMargin, y: style.topMargin + style.yPlaceholderPositionOffset)
+        let hintPosition = CGPoint(
+            x: placeholderAlignment != .natural ? 0 : style.leftMargin,
+            y: style.yHintPositionOffset
+        )
+        let defaultPosition = CGPoint(
+            x: placeholderAlignment != .natural ? 0 : style.leftMargin,
+            y: style.topMargin + style.yPlaceholderPositionOffset
+        )
         return isPlaceholderAsHint ? hintPosition : defaultPosition
     }
 
@@ -531,6 +549,7 @@ public protocol TextInput {
 
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
+    func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode)
 }
 
 public extension TextInput where Self: UIView {
@@ -552,6 +571,23 @@ public protocol TextInputDelegate: class {
 public protocol TextInputError {
     func configureErrorState(with message: String?)
     func removeErrorHintMessage()
+}
+
+public extension CATextLayer {
+    /// Describes how individual lines of text are aligned within the layer.
+    ///
+    /// - natural: Natural alignment.
+    /// - left: Left alignment.
+    /// - right: Right alignment.
+    /// - center: Center alignment.
+    /// - justified: Justified alignment.
+    enum Alignment {
+        case natural
+        case left
+        case right
+        case center
+        case justified
+    }
 }
 
 fileprivate extension Dictionary {

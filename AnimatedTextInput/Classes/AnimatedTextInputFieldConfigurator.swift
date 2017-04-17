@@ -5,7 +5,7 @@ public struct AnimatedTextInputFieldConfigurator {
     public enum AnimatedTextInputType {
         case standard
         case email
-        case password
+        case password(toggleable: Bool)
         case numeric
         case selection
         case multiline
@@ -18,8 +18,8 @@ public struct AnimatedTextInputFieldConfigurator {
             return AnimatedTextInputTextConfigurator.generate()
         case .email:
             return AnimatedTextInputEmailConfigurator.generate()
-        case .password:
-            return AnimatedTextInputPasswordConfigurator.generate()
+        case .password (let toggleable):
+            return AnimatedTextInputPasswordConfigurator.generate(toggleable: toggleable)
         case .numeric:
             return AnimatedTextInputNumericConfigurator.generate()
         case .selection:
@@ -38,7 +38,6 @@ fileprivate struct AnimatedTextInputTextConfigurator {
         let textField = AnimatedTextField()
         textField.clearButtonMode = .whileEditing
         textField.autocorrectionType = .no
-        textField.clearButtonMode = .whileEditing
         return textField
     }
 }
@@ -57,23 +56,25 @@ fileprivate struct AnimatedTextInputEmailConfigurator {
 
 fileprivate struct AnimatedTextInputPasswordConfigurator {
 
-    static func generate() -> TextInput {
+    static func generate(toggleable: Bool) -> TextInput {
         let textField = AnimatedTextField()
         textField.rightViewMode = .whileEditing
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
-        let disclosureButton = UIButton(type: .custom)
-        disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
-        let bundle = Bundle(path: Bundle(for: AnimatedTextInput.self).path(forResource: "AnimatedTextInput", ofType: "bundle")!)
-        let normalImage = UIImage(named: "cm_icon_input_eye_normal", in: bundle, compatibleWith: nil)
-        let selectedImage = UIImage(named: "cm_icon_input_eye_selected", in: bundle, compatibleWith: nil)
-        disclosureButton.setImage(normalImage, for: .normal)
-        disclosureButton.setImage(selectedImage, for: .selected)
-        textField.add(disclosureButton: disclosureButton) {
-            disclosureButton.isSelected = !disclosureButton.isSelected
-            textField.resignFirstResponder()
-            textField.isSecureTextEntry = !textField.isSecureTextEntry
-            textField.becomeFirstResponder()
+        if toggleable {
+            let disclosureButton = UIButton(type: .custom)
+            disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
+            let bundle = Bundle(path: Bundle(for: AnimatedTextInput.self).path(forResource: "AnimatedTextInput", ofType: "bundle")!)
+            let normalImage = UIImage(named: "cm_icon_input_eye_normal", in: bundle, compatibleWith: nil)
+            let selectedImage = UIImage(named: "cm_icon_input_eye_selected", in: bundle, compatibleWith: nil)
+            disclosureButton.setImage(normalImage, for: .normal)
+            disclosureButton.setImage(selectedImage, for: .selected)
+            textField.add(disclosureButton: disclosureButton) {
+                disclosureButton.isSelected = !disclosureButton.isSelected
+                textField.resignFirstResponder()
+                textField.isSecureTextEntry = !textField.isSecureTextEntry
+                textField.becomeFirstResponder()
+            }
         }
         return textField
     }

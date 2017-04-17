@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         textInputs[0].inputAccessoryView = inputAccessoryButton
 
         textInputs[1].placeHolderText = "Password"
-        textInputs[1].type = .password
+        textInputs[1].type = .password(toggleable: true)
 
         textInputs[2].placeHolderText = "Numeric"
         textInputs[2].type = .numeric
