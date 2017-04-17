@@ -7,8 +7,14 @@ class ViewController: UIViewController {
     fileprivate var isBlue = true
 
     override func viewDidLoad() {
+        let inputAccessoryButton = UIButton(type: .system)
+        inputAccessoryButton.setTitle("Input accessory view", for: .normal)
+        inputAccessoryButton.frame.size.height = 64
+        inputAccessoryButton.backgroundColor = .red
+
         textInputs[0].accessibilityLabel = "standard_text_input"
         textInputs[0].placeHolderText = "Normal text"
+        textInputs[0].inputAccessoryView = inputAccessoryButton
 
         textInputs[1].placeHolderText = "Password"
         textInputs[1].type = .password

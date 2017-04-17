@@ -139,6 +139,18 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
+    private var _inputAccessoryView: UIView?
+
+    open override var inputAccessoryView: UIView? {
+        set {
+            _inputAccessoryView = newValue
+        }
+
+        get {
+            return _inputAccessoryView
+        }
+    }
+
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
