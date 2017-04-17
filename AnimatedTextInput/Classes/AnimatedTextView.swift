@@ -1,15 +1,15 @@
 import UIKit
 
-final internal class AnimatedTextView: UITextView {
+final public class AnimatedTextView: UITextView {
 
-    var textAttributes: [String: Any]? {
+    public var textAttributes: [String: Any]? {
         didSet {
             guard let attributes = textAttributes else { return }
             typingAttributes = attributes
         }
     }
 
-    weak var textInputDelegate: TextInputDelegate?
+    public weak var textInputDelegate: TextInputDelegate?
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
@@ -17,7 +17,7 @@ final internal class AnimatedTextView: UITextView {
         setup()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         setup()
@@ -27,50 +27,50 @@ final internal class AnimatedTextView: UITextView {
         delegate = self
     }
 
-    override func resignFirstResponder() -> Bool {
+    public override func resignFirstResponder() -> Bool {
         return super.resignFirstResponder()
     }
 }
 
 extension AnimatedTextView: TextInput {
 
-    var currentText: String? {
+    public var currentText: String? {
         get { return text }
         set { self.text = newValue }
     }
 
-    var currentSelectedTextRange: UITextRange? {
+    public var currentSelectedTextRange: UITextRange? {
         get { return self.selectedTextRange }
         set { self.selectedTextRange = newValue }
     }
 
-    open var currentBeginningOfDocument: UITextPosition? {
+    public var currentBeginningOfDocument: UITextPosition? {
         return self.beginningOfDocument
     }
 
-    func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
+    public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }
 
-    func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
+    public func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
     
-    func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode) {}
+    public func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode) {}
     
 }
 
 extension AnimatedTextView: UITextViewDelegate {
 
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
         textInputDelegate?.textInputDidBeginEditing(textInput: self)
     }
 
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         textInputDelegate?.textInputDidEndEditing(textInput: self)
     }
 
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         let range = textView.selectedRange
         textView.attributedText = NSAttributedString(string: textView.text, attributes: textAttributes)
         textView.selectedRange = range
@@ -78,18 +78,18 @@ extension AnimatedTextView: UITextViewDelegate {
         textInputDelegate?.textInputDidChange(textInput: self)
     }
 
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             return textInputDelegate?.textInputShouldReturn(textInput: self) ?? true
         }
         return textInputDelegate?.textInput(textInput: self, shouldChangeCharactersInRange: range, replacementString: text) ?? true
     }
 
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         return textInputDelegate?.textInputShouldBeginEditing(textInput: self) ?? true
     }
 
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         return textInputDelegate?.textInputShouldEndEditing(textInput: self) ?? true
     }
 }
