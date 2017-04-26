@@ -1,5 +1,10 @@
 PODS:
   - AnimatedTextInput (0.5.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - KIF (3.5.1):
     - KIF/Core (= 3.5.1)
   - KIF/Core (3.5.1)
@@ -7,18 +12,20 @@ PODS:
 
 DEPENDENCIES:
   - AnimatedTextInput (from `../`)
+  - FBSnapshotTestCase
   - KIF (~> 3.5)
   - Nimble (~> 5.1)
 
 EXTERNAL SOURCES:
   AnimatedTextInput:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AnimatedTextInput: bb8ed93226076edb3105dfc859876fbfd1ff79d0
-  KIF: 082eb65279e51c3092923802849eb796a04982ab
+  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
+  KIF: '082eb65279e51c3092923802849eb796a04982ab'
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
 
-PODFILE CHECKSUM: ba591afaee73e22e00a48d54a57a04a8172c6ddd
+PODFILE CHECKSUM: 521edca37b56659d7097e2461b2bd232ebc45d2a
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.1
