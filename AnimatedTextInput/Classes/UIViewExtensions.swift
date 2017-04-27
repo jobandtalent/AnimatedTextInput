@@ -65,14 +65,16 @@ extension UIView {
                            constant: constant).isActive = true
     }
 
-    func pinBottom(toBottomOf view: UIView, constant: CGFloat) {
-        NSLayoutConstraint(item: view,
+    @discardableResult func pinBottom(toBottomOf view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view,
                            attribute: .bottom,
                            relatedBy: .equal,
                            toItem: self,
                            attribute: .bottom,
                            multiplier: 1.0,
-                           constant: -constant).isActive = true
+                           constant: -constant)
+        constraint.isActive = true
+        return constraint
     }
 
     func pinBottom(toTopOf view: UIView, constant: CGFloat) {

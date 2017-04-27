@@ -1,4 +1,5 @@
 use_frameworks!
+inhibit_all_warnings!
 
 target 'AnimatedTextInput_Example' do
     pod 'AnimatedTextInput', :path => '../'
@@ -8,6 +9,7 @@ target 'AnimatedTextInput_Tests' do
     pod 'AnimatedTextInput', :path => '../'
     pod 'KIF', '~> 3.5'
     pod 'Nimble', '~> 5.1'
+    pod 'FBSnapshotTestCase'
 end
 
 post_install do |installer|

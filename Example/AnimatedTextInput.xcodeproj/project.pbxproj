@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		955FE9E51D510DA80022C0EF /* AnimatedTextInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */; };
+		C70CECE21EB0E2B700BB92A9 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70CECE01EB0E27100BB92A9 /* SnapshotTests.swift */; };
 		C7352E8C1D5120F70061AEC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		C7FD31E41D51233900A9C8C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		CF74770227EE084954D694CB /* Pods_AnimatedTextInput_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B6F16EBB106DA1AD747724 /* Pods_AnimatedTextInput_Example.framework */; };
@@ -47,6 +48,7 @@
 		955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTextInputTests.swift; sourceTree = "<group>"; };
 		955FE9E81D51108A0022C0EF /* TestsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		984E76A286835FB27BBBC690 /* Pods_AnimatedTextInput_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimatedTextInput_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70CECE01EB0E27100BB92A9 /* SnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		FC96906680158A6AEBA30E7E /* AnimatedTextInput.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AnimatedTextInput.podspec; path = ../AnimatedTextInput.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				955FE9E41D510DA80022C0EF /* AnimatedTextInputTests.swift */,
+				C70CECE01EB0E27100BB92A9 /* SnapshotTests.swift */,
 				955FE9E31D510DA80022C0EF /* AnimatedTextInput_Tests-Bridging-Header.h */,
 			);
 			name = Tests;
@@ -159,7 +162,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "AnimatedTextInput_Example" */;
 			buildPhases = (
-				48BF324EA6D6064D4584587C /* 📦 Check Pods Manifest.lock */,
+				48BF324EA6D6064D4584587C /* [CP] Check Pods Manifest.lock */,
 				CDB846548235B60B5622AEBB /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
@@ -182,7 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "AnimatedTextInput_Tests" */;
 			buildPhases = (
-				E3CA2225B6CDED9CAA822173 /* 📦 Check Pods Manifest.lock */,
+				E3CA2225B6CDED9CAA822173 /* [CP] Check Pods Manifest.lock */,
 				CAC4E7ECBA55CDF296E15A0A /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
@@ -265,19 +268,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48BF324EA6D6064D4584587C /* 📦 Check Pods Manifest.lock */ = {
+		48BF324EA6D6064D4584587C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		542DC72D0CE13B87E08BE187 /* [CP] Copy Pods Resources */ = {
@@ -430,19 +433,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E3CA2225B6CDED9CAA822173 /* 📦 Check Pods Manifest.lock */ = {
+		E3CA2225B6CDED9CAA822173 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -462,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7FD31E41D51233900A9C8C7 /* ViewController.swift in Sources */,
+				C70CECE21EB0E2B700BB92A9 /* SnapshotTests.swift in Sources */,
 				955FE9E51D510DA80022C0EF /* AnimatedTextInputTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -212,6 +212,7 @@ open class AnimatedTextInput: UIControl {
     open override func updateConstraints() {
         addLineViewConstraints()
         addTextInputConstraints()
+        addCharacterCounterConstraints()
         super.updateConstraints()
     }
 
@@ -234,7 +235,7 @@ open class AnimatedTextInput: UIControl {
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
         lineView.setHeight(to: lineWidth)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize.height - counterLabelTopMargin : 0
-        pinBottom(toBottomOf: lineView, constant: constant)
+        lineToBottomConstraint = pinBottom(toBottomOf: lineView, constant: constant)
     }
 
     fileprivate func addTextInputConstraints() {
@@ -451,6 +452,7 @@ open class AnimatedTextInput: UIControl {
     }
 
     open func showCharacterCounterLabel(with maximum: Int? = nil) {
+        hasCounterLabel = true
         let characters = (text != nil) ? text!.characters.count : 0
         if let maximumValue = maximum {
             counterLabel.text = "\(characters)/\(maximumValue)"
@@ -461,16 +463,18 @@ open class AnimatedTextInput: UIControl {
         counterLabel.font = style.counterLabelFont
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(counterLabel)
-        addCharacterCounterConstraints()
         invalidateIntrinsicContentSize()
     }
 
     fileprivate func addCharacterCounterConstraints() {
+        guard hasCounterLabel else { return }
+        lineToBottomConstraint.constant = -counterLabel.intrinsicContentSize.height - counterLabelTopMargin
         lineView.pinBottom(toTopOf: counterLabel, constant: counterLabelTopMargin)
         pinTrailing(toTrailingOf: counterLabel, constant: counterLabelRightMargin)
     }
 
     open func removeCharacterCounterLabel() {
+        hasCounterLabel = false
         counterLabel.removeConstraints(counterLabel.constraints)
         counterLabel.removeFromSuperview()
         lineToBottomConstraint.constant = 0
