@@ -9,6 +9,14 @@ final public class AnimatedTextView: UITextView {
         }
     }
 
+    public override var font: UIFont? {
+        didSet {
+            var attributes = typingAttributes
+            attributes[NSFontAttributeName] = font
+            textAttributes = attributes
+        }
+    }
+
     public weak var textInputDelegate: TextInputDelegate?
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
