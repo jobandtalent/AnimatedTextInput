@@ -16,6 +16,7 @@ final public class AnimatedTextField: UITextField {
     weak public var textInputDelegate: TextInputDelegate?
 
     public var textAttributes: [String: Any]?
+    public var contentInset: UIEdgeInsets = .zero
 
     fileprivate var disclosureButtonAction: ((Void) -> Void)?
 
@@ -61,9 +62,12 @@ final public class AnimatedTextField: UITextField {
         if clearButtonMode == .always || clearButtonMode == .unlessEditing {
             width = bounds.width - clearButtonRect(forBounds: bounds).width * 2
         }
-        return CGRect(x: bounds.origin.x, y: bounds.origin.y, width: width, height: bounds.height)
+        return CGRect(x: bounds.origin.x + contentInset.left,
+                      y: bounds.origin.y + contentInset.top,
+                      width: width - contentInset.left - contentInset.right,
+                      height: bounds.height - contentInset.top - contentInset.bottom)
     }
-    
+
     override public func editingRect(forBounds bounds: CGRect) -> CGRect {
         var width = bounds.width
         if clearButtonMode != .never {
@@ -71,7 +75,10 @@ final public class AnimatedTextField: UITextField {
         } else if let _ = rightView {
             width = bounds.width - rightViewRect(forBounds: bounds).width * 2
         }
-        return CGRect(x: bounds.origin.x, y: bounds.origin.y, width: width, height: bounds.height)
+        return CGRect(x: bounds.origin.x + contentInset.left,
+                          y: bounds.origin.y + contentInset.top,
+                          width: width - contentInset.left - contentInset.right,
+                          height: bounds.height - contentInset.top - contentInset.bottom)
     }
 
     func add(disclosureButton button: UIButton, action: @escaping ((Void) -> Void)) {

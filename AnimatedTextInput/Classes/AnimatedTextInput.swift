@@ -163,6 +163,13 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
+    open var contentInset: UIEdgeInsets? {
+        didSet {
+            guard let insets = contentInset else { return }
+            textInput.contentInset = insets
+        }
+    }
+
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
@@ -192,7 +199,7 @@ open class AnimatedTextInput: UIControl {
         return isPlaceholderAsHint ? hintPosition : defaultPosition
     }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
 
         setupCommonElements()
@@ -550,6 +557,7 @@ public protocol TextInput {
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
+    var contentInset: UIEdgeInsets { get set }
 
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
