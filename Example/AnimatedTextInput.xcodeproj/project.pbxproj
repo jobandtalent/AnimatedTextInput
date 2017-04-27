@@ -591,7 +591,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F9D0531329A6A8308191DD9 /* Pods-AnimatedTextInput_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 49LW9LE429;
@@ -608,7 +607,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69EA084DBB4CB26B30DDA0A5 /* Pods-AnimatedTextInput_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 49LW9LE429;
@@ -625,7 +623,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344168981454E1FFACB0ECCB /* Pods-AnimatedTextInput_Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -651,7 +648,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B868C82B0012066CFF05B87 /* Pods-AnimatedTextInput_Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
