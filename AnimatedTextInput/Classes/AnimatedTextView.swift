@@ -32,6 +32,7 @@ final public class AnimatedTextView: UITextView {
     }
 
     fileprivate func setup() {
+        contentInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         delegate = self
     }
 

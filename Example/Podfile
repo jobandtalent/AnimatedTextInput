@@ -1,4 +1,5 @@
 use_frameworks!
+inhibit_all_warnings!
 
 target 'AnimatedTextInput_Example' do
     pod 'AnimatedTextInput', :path => '../'

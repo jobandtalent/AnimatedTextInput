@@ -101,6 +101,26 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
         verifySUT()
     }
 
+    func testAnimatedTextViewActiveCustomStyle() {
+        sut.type = .standard
+        sut.style = CustomTextInputStyle()
+        sut.placeHolderText = "Placeholder"
+        sut.text = "Input text"
+        sut.becomeFirstResponder()
+
+        verifySUT()
+    }
+
+    func testAnimatedTextFieldActiveCustomStyle() {
+        sut.type = .multiline
+        sut.style = CustomTextInputStyle()
+        sut.placeHolderText = "Placeholder"
+        sut.text = "Input text"
+        sut.becomeFirstResponder()
+
+        verifySUT()
+    }
+
     // Helpers
     private func setupViews() {
         let containerFrame = CGRect(origin: .zero, size: CGSize(width: 320, height: 200))
