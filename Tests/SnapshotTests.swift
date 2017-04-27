@@ -121,6 +121,25 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
         verifySUT()
     }
 
+    func testContentInsetTextFieldActive() {
+        sut.type = .standard
+        sut.contentInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+        sut.placeHolderText = "Placeholder"
+        sut.text = "Input text"
+        sut.becomeFirstResponder()
+
+        verifySUT()
+    }
+
+    func testContentInsetTextFieldInactive() {
+        sut.type = .standard
+        sut.contentInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+        sut.placeHolderText = "Placeholder"
+        sut.text = "Input text"
+
+        verifySUT()
+    }
+
     // Helpers
     private func setupViews() {
         let containerFrame = CGRect(origin: .zero, size: CGSize(width: 320, height: 200))
