@@ -76,9 +76,9 @@ final public class AnimatedTextField: UITextField {
             width = bounds.width - rightViewRect(forBounds: bounds).width * 2
         }
         return CGRect(x: bounds.origin.x + contentInset.left,
-                          y: bounds.origin.y + contentInset.top,
-                          width: width - contentInset.left - contentInset.right,
-                          height: bounds.height - contentInset.top - contentInset.bottom)
+                      y: bounds.origin.y + contentInset.top,
+                      width: width - contentInset.left - contentInset.right,
+                      height: bounds.height - contentInset.top - contentInset.bottom)
     }
 
     func add(disclosureButton button: UIButton, action: @escaping ((Void) -> Void)) {
