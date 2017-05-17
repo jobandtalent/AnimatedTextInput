@@ -205,6 +205,10 @@ open class AnimatedTextInput: UIControl {
         setupCommonElements()
     }
 
+    public func configureInputView(inputiew: UIView!) {
+        textInput.configureInputView(newInputView : inputiew)
+    }
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
@@ -559,6 +563,7 @@ public protocol TextInput {
     var currentBeginningOfDocument: UITextPosition? { get }
     var contentInset: UIEdgeInsets { get set }
 
+    func configureInputView(newInputView:UIView!)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
     func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode)

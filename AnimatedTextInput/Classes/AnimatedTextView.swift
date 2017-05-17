@@ -43,6 +43,11 @@ final public class AnimatedTextView: UITextView {
 
 extension AnimatedTextView: TextInput {
 
+    public func configureInputView(newInputView: UIView!) {
+        inputView = newInputView
+    }
+
+
     public var currentText: String? {
         get { return text }
         set { self.text = newValue }
