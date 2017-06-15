@@ -313,7 +313,7 @@ open class AnimatedTextInput: UIControl {
         configurePlaceholderWith(fontSize: style.placeholderMinFontSize,
                                  foregroundColor: style.activeColor.cgColor,
                                  text: placeHolderText)
-        lineView.fillLine(with: style.activeColor)
+        lineView.fillLine(with: style.lineActiveColor)
     }
 
     fileprivate func configurePlaceholderAsInactiveHint() {
