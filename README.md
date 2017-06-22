@@ -83,3 +83,9 @@ Download and check the Example project for more examples.
 
 #### One last question: Why create a `TextInput` abstraction and not use `UITextField` or `UITextView` instead?
 From an API point of view, we only wanted to deal with one control. However, we needed some behaviours that were not supported by `UITextField` or `UITextView`. For instance, we wanted `AnimatedTextInput` to support multiline, but `UITextField` does not support it. We also wanted secure text entry for the password type, but `UITextView` does not support it. That's why we ended up creating `TextInput` abstraction.
+
+
+
+## FAQ
+1. How do I enable autocorrection (or any property available in `UITextField` or `UITextView`)?
+https://github.com/jobandtalent/AnimatedTextInput/issues/67
