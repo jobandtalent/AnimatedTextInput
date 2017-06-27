@@ -365,7 +365,7 @@ open class AnimatedTextInput: UIControl {
 
     fileprivate func styleDidChange() {
         lineView.defaultColor = style.lineInactiveColor
-        placeholderLayer.foregroundColor = style.inactiveColor.cgColor
+        placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
         let fontSize = style.textInputFont.pointSize
         placeholderLayer.fontSize = fontSize
         placeholderLayer.font = style.textInputFont
