@@ -274,7 +274,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate func addPlaceHolder() {
         placeholderLayer.masksToBounds = false
         placeholderLayer.string = placeHolderText
-        placeholderLayer.foregroundColor = style.inactiveColor.cgColor
+        placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
         placeholderLayer.fontSize = style.textInputFont.pointSize
         placeholderLayer.font = style.textInputFont
         placeholderLayer.contentsScale = UIScreen.main.scale
