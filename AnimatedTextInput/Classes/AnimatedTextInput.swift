@@ -29,7 +29,7 @@ open class AnimatedTextInput: UIControl {
             textInput.changeReturnKeyType(with: returnKeyType)
         }
     }
-    
+
     open var clearButtonMode: UITextFieldViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -41,7 +41,7 @@ open class AnimatedTextInput: UIControl {
             placeholderLayer.string = placeHolderText
         }
     }
-    
+
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
             placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
