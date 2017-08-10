@@ -97,7 +97,14 @@ final public class AnimatedTextField: UITextField {
 
     @objc fileprivate func textFieldDidChange() {
         if let text = text {
+            var cursorPosition: Int?
+            if let selectedRange = self.selectedTextRange {
+                cursorPosition = self.offset(from: self.beginningOfDocument, to: selectedRange.start)
+            }
             attributedText = NSAttributedString(string: text, attributes: textAttributes)
+            if let cursorPosition = cursorPosition, let newPosition = self.position(from: self.beginningOfDocument, offset: cursorPosition) {
+                self.selectedTextRange = self.textRange(from: newPosition, to: newPosition)
+            }
         }
         textInputDelegate?.textInputDidChange(textInput: self)
     }
