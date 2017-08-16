@@ -105,7 +105,7 @@ final public class AnimatedTextField: UITextField {
 
 extension AnimatedTextField: TextInput {
 
-    public func configureInputView(newInputView: UIView!) {
+    public func configureInputView(newInputView: UIView) {
         inputView = newInputView
     }
 
