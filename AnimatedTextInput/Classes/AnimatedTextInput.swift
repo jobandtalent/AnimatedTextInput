@@ -59,9 +59,7 @@ open class AnimatedTextInput: UIControl {
             return textInput.currentText
         }
         set {
-            if !textInput.view.isFirstResponder {
-                (newValue != nil) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
-            }
+            (newValue != nil && !newValue!.isEmpty) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
             textInput.currentText = newValue
         }
     }
