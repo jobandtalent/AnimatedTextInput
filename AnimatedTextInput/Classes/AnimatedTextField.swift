@@ -15,10 +15,10 @@ final public class AnimatedTextField: UITextField {
     var rightViewPadding: CGFloat
     weak public var textInputDelegate: TextInputDelegate?
 
-    public var textAttributes: [String: Any]?
+    public var textAttributes: [NSAttributedStringKey: Any]?
     public var contentInset: UIEdgeInsets = .zero
 
-    fileprivate var disclosureButtonAction: ((Void) -> Void)?
+    fileprivate var disclosureButtonAction: (() -> Void)?
 
     override init(frame: CGRect) {
         self.rightViewPadding = defaultPadding
@@ -43,7 +43,7 @@ final public class AnimatedTextField: UITextField {
     }
     
     @discardableResult override public func becomeFirstResponder() -> Bool {
-        if let alignment = (textAttributes?[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle)?.alignment {
+        if let alignment = (textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle)?.alignment {
             textAlignment = alignment
         }
         return super.becomeFirstResponder()

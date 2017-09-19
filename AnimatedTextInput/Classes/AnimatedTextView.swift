@@ -2,18 +2,18 @@ import UIKit
 
 final public class AnimatedTextView: UITextView {
 
-    public var textAttributes: [String: Any]? {
+    public var textAttributes: [NSAttributedStringKey: Any]? {
         didSet {
             guard let attributes = textAttributes else { return }
-            typingAttributes = attributes
+            typingAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { ($0.key.rawValue, $0.value) })
         }
     }
 
     public override var font: UIFont? {
         didSet {
             var attributes = typingAttributes
-            attributes[NSFontAttributeName] = font
-            textAttributes = attributes
+            attributes[NSAttributedStringKey.font.rawValue] = font
+            textAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { (NSAttributedStringKey($0.key), $0.value)})
         }
     }
 
