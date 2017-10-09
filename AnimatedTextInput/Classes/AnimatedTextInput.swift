@@ -170,7 +170,7 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    fileprivate let lineView = AnimatedLine()
+    public let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
     fileprivate let lineWidth: CGFloat = 1.0 / UIScreen.main.scale
