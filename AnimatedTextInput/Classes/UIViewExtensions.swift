@@ -87,13 +87,15 @@ extension UIView {
                            constant: -constant).isActive = true
     }
 
-    func setHeight(to constant: CGFloat) {
-        NSLayoutConstraint(item: self,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: nil,
-                           attribute: .notAnAttribute,
-                           multiplier: 1.0,
-                           constant: constant).isActive = true
+    func setHeight(viewHeightFor view: UIView, constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view,
+                                            attribute: .height,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1.0,
+                                            constant: constant)
+        constraint.isActive = true
+        return constraint
     }
 }
