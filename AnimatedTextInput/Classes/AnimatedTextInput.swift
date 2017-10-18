@@ -181,6 +181,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate var isPlaceholderAsHint = false
     fileprivate var hasCounterLabel = false
     fileprivate var textInput: TextInput!
+    fileprivate var lineHeightConstraint: NSLayoutConstraint!
     fileprivate var lineToBottomConstraint: NSLayoutConstraint!
     fileprivate var textInputTrailingConstraint: NSLayoutConstraint!
     fileprivate var disclosureViewWidthConstraint: NSLayoutConstraint!
@@ -240,7 +241,7 @@ open class AnimatedTextInput: UIControl {
         removeConstraints(constraints)
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
-        lineView.setHeight(to: style.lineHeight)
+        lineHeightConstraint = setHeight(viewHeightFor: lineView, constant: style.lineHeight)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize.height - counterLabelTopMargin : 0
         lineToBottomConstraint = pinBottom(toBottomOf: lineView, constant: constant)
     }
