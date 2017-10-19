@@ -1,7 +1,6 @@
 import KIF
 import UIKit
 import XCTest
-import Nimble
 import AnimatedTextInput
 @testable import AnimatedTextInput_Example
 
@@ -29,7 +28,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().wait(forTimeInterval: 0.5)
 
         // THEN
-        expect(sut.text).to(equal(testText.capitalized))
+        XCTAssertEqual(sut.text, testText)
     }
 
     func testInputIsActive() {
@@ -40,7 +39,7 @@ class AnimatedTextInputTests: KIFTestCase {
         sut.becomeFirstResponder()
 
         // THEN
-        expect(sut.isActive).to(beTrue())
+        XCTAssert(sut.isActive)
     }
 
     func testInputIsInActive() {
@@ -53,7 +52,7 @@ class AnimatedTextInputTests: KIFTestCase {
         sut.resignFirstResponder()
 
         // THEN
-        expect(sut.isActive).to(beFalse())
+        XCTAssert(!sut.isActive)
     }
 
     func testStandardInputSetText() {
@@ -69,7 +68,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().wait(forTimeInterval: 0.5)
 
         // THEN
-        expect(sut.text).to(equal(initialText + typedText))
+        XCTAssertEqual(sut.text, initialText + typedText)
     }
 
     func testTapInputToBecomeActive() {
@@ -80,7 +79,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().tapScreen(at: sut.center)
 
         // THEN
-        expect(sut.isActive).to(beTrue())
+        XCTAssert(sut.isActive)
     }
 
     func testPlaceholderActiveState() {
@@ -95,7 +94,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
 
         // THEN
-        expect(placeholder.fontSize).to(equal(style.placeholderMinFontSize))
+        XCTAssertEqual(placeholder.fontSize, style.placeholderMinFontSize)
     }
 
     func testPlaceholderInactiveStateWhenEmpty() {
@@ -112,7 +111,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
 
         // THEN
-        expect(placeholder.fontSize).to(equal(style.textInputFont.pointSize))
+        XCTAssertEqual(placeholder.fontSize, style.textInputFont.pointSize)
     }
 
     func testPlaceholderInactiveStateWhenFilled() {
@@ -130,7 +129,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
 
         // THEN
-        expect(placeholder.fontSize).to(equal(style.placeholderMinFontSize))
+        XCTAssertEqual(placeholder.fontSize, style.placeholderMinFontSize)
     }
 
     func testPlaceholderErrorState() {
@@ -146,7 +145,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().waitForAnimationsToFinish()
 
         // THEN
-        expect(placeholder.string as? String).to(equal(errorMessage))
+        XCTAssertEqual((placeholder.string as? String), errorMessage)
     }
 
     fileprivate func textLayer(forTextInput textInput: AnimatedTextInput) -> CATextLayer {
