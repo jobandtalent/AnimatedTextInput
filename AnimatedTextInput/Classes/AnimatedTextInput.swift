@@ -29,7 +29,7 @@ open class AnimatedTextInput: UIControl {
             textInput.changeReturnKeyType(with: returnKeyType)
         }
     }
-    
+
     open var clearButtonMode: UITextFieldViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -41,7 +41,7 @@ open class AnimatedTextInput: UIControl {
             placeholderLayer.string = placeHolderText
         }
     }
-    
+
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
             placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
@@ -203,6 +203,10 @@ open class AnimatedTextInput: UIControl {
         setupCommonElements()
     }
 
+    public func configureInputView(inputiew: UIView!) {
+        textInput.configureInputView(newInputView : inputiew)
+    }
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
@@ -268,7 +272,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate func addPlaceHolder() {
         placeholderLayer.masksToBounds = false
         placeholderLayer.string = placeHolderText
-        placeholderLayer.foregroundColor = style.inactiveColor.cgColor
+        placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
         placeholderLayer.fontSize = style.textInputFont.pointSize
         placeholderLayer.font = style.textInputFont
         placeholderLayer.contentsScale = UIScreen.main.scale
@@ -307,7 +311,7 @@ open class AnimatedTextInput: UIControl {
         configurePlaceholderWith(fontSize: style.placeholderMinFontSize,
                                  foregroundColor: style.activeColor.cgColor,
                                  text: placeHolderText)
-        lineView.fillLine(with: style.activeColor)
+        lineView.fillLine(with: style.lineActiveColor)
     }
 
     fileprivate func configurePlaceholderAsInactiveHint() {
@@ -321,7 +325,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate func configurePlaceholderAsDefault() {
         isPlaceholderAsHint = false
         configurePlaceholderWith(fontSize: style.textInputFont.pointSize,
-                                 foregroundColor: style.inactiveColor.cgColor,
+                                 foregroundColor: style.placeholderInactiveColor.cgColor,
                                  text: placeHolderText)
         lineView.animateToInitialState()
     }
@@ -359,7 +363,7 @@ open class AnimatedTextInput: UIControl {
 
     fileprivate func styleDidChange() {
         lineView.defaultColor = style.lineInactiveColor
-        placeholderLayer.foregroundColor = style.inactiveColor.cgColor
+        placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
         let fontSize = style.textInputFont.pointSize
         placeholderLayer.fontSize = fontSize
         placeholderLayer.font = style.textInputFont
@@ -557,6 +561,7 @@ public protocol TextInput {
     var currentBeginningOfDocument: UITextPosition? { get }
     var contentInset: UIEdgeInsets { get set }
 
+    func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
     func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode)
