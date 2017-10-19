@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         textInputs[3].tapAction = { [weak self] in
             guard let strongself = self else { return }
             strongself.tap()
-        }
+        } as (() -> Void)
 
         textInputs[4].placeHolderText = "Multiline"
         textInputs[4].type = .multiline
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 }
 
 struct CustomTextInputStyle: AnimatedTextInputStyle {
-
+    let placeholderInactiveColor = UIColor.gray
     let activeColor = UIColor.orange
     let inactiveColor = UIColor.gray.withAlphaComponent(0.3)
     let lineInactiveColor = UIColor.gray.withAlphaComponent(0.0)

@@ -81,7 +81,7 @@ final public class AnimatedTextField: UITextField {
                       height: bounds.height - contentInset.top - contentInset.bottom)
     }
 
-    func add(disclosureButton button: UIButton, action: @escaping ((Void) -> Void)) {
+    func add(disclosureButton button: UIButton, action: @escaping (() -> Void)) {
         let selector = #selector(disclosureButtonPressed)
         if disclosureButtonAction != nil, let previousButton = rightView as? UIButton {
             previousButton.removeTarget(self, action: selector, for: .touchUpInside)
