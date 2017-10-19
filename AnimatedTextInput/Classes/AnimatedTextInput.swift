@@ -242,7 +242,7 @@ open class AnimatedTextInput: UIControl {
         removeConstraints(constraints)
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
-        lineView.setHeight(to: lineWidth)
+        lineView.setHeight(to: style.lineHeight)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize.height - counterLabelTopMargin : 0
         lineToBottomConstraint = pinBottom(toBottomOf: lineView, constant: constant)
     }
