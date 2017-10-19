@@ -28,7 +28,7 @@ class AnimatedTextInputTests: KIFTestCase {
         tester().wait(forTimeInterval: 0.5)
 
         // THEN
-        XCTAssertEqual(sut.text, testText.capitalized)
+        XCTAssertEqual(sut.text, testText)
     }
 
     func testInputIsActive() {
