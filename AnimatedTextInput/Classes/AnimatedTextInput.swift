@@ -171,7 +171,6 @@ open class AnimatedTextInput: UIControl {
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
-    fileprivate let lineWidth: CGFloat = 1.0 / UIScreen.main.scale
     fileprivate let counterLabelRightMargin: CGFloat = 15
     fileprivate let counterLabelTopMargin: CGFloat = 5
 
@@ -242,7 +241,7 @@ open class AnimatedTextInput: UIControl {
         removeConstraints(constraints)
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
-        lineView.setHeight(to: lineWidth)
+        lineView.setHeight(to: style.lineHeight)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize.height - counterLabelTopMargin : 0
         lineToBottomConstraint = pinBottom(toBottomOf: lineView, constant: constant)
     }
