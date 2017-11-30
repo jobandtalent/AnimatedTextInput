@@ -63,7 +63,7 @@ fileprivate struct AnimatedTextInputPasswordConfigurator {
         textField.autocapitalizationType = .none
         if toggleable {
             let disclosureButton = UIButton(type: .custom)
-            disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 20, height: 20))
+            disclosureButton.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 25, height: 17))
             let bundle = Bundle(path: Bundle(for: AnimatedTextInput.self).path(forResource: "AnimatedTextInput", ofType: "bundle")!)
             let normalImage = UIImage(named: "cm_icon_input_eye_normal", in: bundle, compatibleWith: nil)
             let selectedImage = UIImage(named: "cm_icon_input_eye_selected", in: bundle, compatibleWith: nil)
