@@ -9,6 +9,7 @@ public protocol AnimatedTextInputStyle {
     var lineHeight: CGFloat { get }
     var errorColor: UIColor { get }
     var textInputFont: UIFont { get }
+    var placeHolderFont: UIFont { get }
     var textInputFontColor: UIColor { get }
     var placeholderMinFontSize: CGFloat { get }
     var counterLabelFont: UIFont? { get }
@@ -31,6 +32,7 @@ public struct AnimatedTextInputStyleBlue: AnimatedTextInputStyle {
     public let lineHeight: CGFloat = 1.0 / UIScreen.main.scale
     public let errorColor = UIColor.red
     public let textInputFont = UIFont.systemFont(ofSize: 14)
+    public let placeHolderFont = UIFont.systemFont(ofSize: 14)
     public let textInputFontColor = UIColor.black
     public let placeholderMinFontSize: CGFloat = 9
     public let counterLabelFont: UIFont? = UIFont.systemFont(ofSize: 9)
