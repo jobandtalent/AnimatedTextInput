@@ -30,6 +30,12 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
+    open var keyboardAppearance: UIKeyboardAppearance =  .default {
+        didSet {
+            textInput.changeKeyboardAppearance(with: keyboardAppearance)
+        }
+    }
+    
     open var clearButtonMode: UITextFieldViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -562,6 +568,7 @@ public protocol TextInput {
 
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
+    func changeKeyboardAppearance(with newKeyboardAppearance: UIKeyboardAppearance)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
     func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode)
 }
