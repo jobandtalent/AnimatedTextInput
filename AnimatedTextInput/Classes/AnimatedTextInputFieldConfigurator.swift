@@ -7,6 +7,7 @@ public struct AnimatedTextInputFieldConfigurator {
         case email
         case password(toggleable: Bool)
         case numeric
+        case phone
         case selection
         case multiline
         case generic(textInput: TextInput)
@@ -22,6 +23,8 @@ public struct AnimatedTextInputFieldConfigurator {
             return AnimatedTextInputPasswordConfigurator.generate(toggleable: toggleable)
         case .numeric:
             return AnimatedTextInputNumericConfigurator.generate()
+        case .phone:
+            return AnimatedTextInputPhoneConfigurator.generate()
         case .selection:
             return AnimatedTextInputSelectionConfigurator.generate()
         case .multiline:
@@ -86,6 +89,17 @@ fileprivate struct AnimatedTextInputNumericConfigurator {
         let textField = AnimatedTextField()
         textField.clearButtonMode = .whileEditing
         textField.keyboardType = .decimalPad
+        textField.autocorrectionType = .no
+        return textField
+    }
+}
+
+fileprivate struct AnimatedTextInputPhoneConfigurator {
+    
+    static func generate() -> TextInput {
+        let textField = AnimatedTextField()
+        textField.clearButtonMode = .whileEditing
+        textField.keyboardType = .phonePad
         textField.autocorrectionType = .no
         return textField
     }
