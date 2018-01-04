@@ -121,10 +121,6 @@ extension AnimatedTextField: TextInput {
         returnKeyType = newReturnKeyType
     }
     
-    public func changeKeyboardAppearance(with newKeyboardAppearance: UIKeyboardAppearance) {
-        keyboardAppearance = newKeyboardAppearance
-    }
-
     public func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
@@ -145,6 +141,11 @@ extension AnimatedTextField: TextInput {
 
     open var currentBeginningOfDocument: UITextPosition? {
         get { return self.beginningOfDocument }
+    }
+    
+    public var currentKeyboardAppearance: UIKeyboardAppearance {
+        get { return self.keyboardAppearance }
+        set { self.keyboardAppearance = newValue}
     }
 }
 
