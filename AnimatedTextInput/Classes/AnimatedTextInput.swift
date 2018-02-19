@@ -23,7 +23,13 @@ open class AnimatedTextInput: UIControl {
             configureType()
         }
     }
-
+    
+    open var autocorrection: UITextAutocorrectionType = .no {
+        didSet {
+            configureType()
+        }
+    }
+    
     open var returnKeyType: UIReturnKeyType = .default {
         didSet {
             textInput.changeReturnKeyType(with: returnKeyType)
@@ -291,6 +297,7 @@ open class AnimatedTextInput: UIControl {
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
+        textInput.autocorrection = autocorrection
         textInput.view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textInput.view)
         invalidateIntrinsicContentSize()
@@ -559,6 +566,8 @@ public protocol TextInput {
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
     var contentInset: UIEdgeInsets { get set }
+    var autocorrection: UITextAutocorrectionType {get set}
+
 
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
