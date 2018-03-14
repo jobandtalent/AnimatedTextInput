@@ -39,6 +39,7 @@ open class AnimatedTextInput: UIControl {
     open var placeHolderText = "Test" {
         didSet {
             placeholderLayer.string = placeHolderText
+            textInput.view.accessibilityLabel = placeHolderText
         }
     }
 
@@ -341,6 +342,7 @@ open class AnimatedTextInput: UIControl {
         placeholderLayer.fontSize = fontSize
         placeholderLayer.foregroundColor = foregroundColor
         placeholderLayer.string = text
+        textInput.view.accessibilityLabel = text
         layoutPlaceholderLayer()
     }
 
