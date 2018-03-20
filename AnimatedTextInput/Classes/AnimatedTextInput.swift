@@ -26,7 +26,7 @@ open class AnimatedTextInput: UIControl {
     
     open var autocorrection: UITextAutocorrectionType = .no {
         didSet {
-            configureType()
+            textInput.autocorrection = autocorrection
         }
     }
     
