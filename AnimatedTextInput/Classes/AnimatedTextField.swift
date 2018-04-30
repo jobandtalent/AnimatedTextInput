@@ -62,6 +62,7 @@ final public class AnimatedTextField: UITextField {
         if clearButtonMode == .always || clearButtonMode == .unlessEditing {
             width = bounds.width - clearButtonRect(forBounds: bounds).width * 2
         }
+        
         return CGRect(x: bounds.origin.x + contentInset.left,
                       y: bounds.origin.y + contentInset.top,
                       width: width - contentInset.left - contentInset.right,
@@ -119,7 +120,7 @@ extension AnimatedTextField: TextInput {
     public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }
-
+    
     public func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
@@ -145,6 +146,11 @@ extension AnimatedTextField: TextInput {
 
     open var currentBeginningOfDocument: UITextPosition? {
         get { return self.beginningOfDocument }
+    }
+    
+    public var currentKeyboardAppearance: UIKeyboardAppearance {
+        get { return self.keyboardAppearance }
+        set { self.keyboardAppearance = newValue}
     }
 }
 

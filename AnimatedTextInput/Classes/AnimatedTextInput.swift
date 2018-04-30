@@ -36,6 +36,11 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
+    open var keyboardAppearance: UIKeyboardAppearance {
+        get { return textInput.currentKeyboardAppearance }
+        set { textInput.currentKeyboardAppearance = newValue }
+    }
+    
     open var clearButtonMode: UITextFieldViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -567,6 +572,7 @@ public protocol TextInput {
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
+    var currentKeyboardAppearance: UIKeyboardAppearance { get set }
     var contentInset: UIEdgeInsets { get set }
     var autocorrection: UITextAutocorrectionType {get set}
 
