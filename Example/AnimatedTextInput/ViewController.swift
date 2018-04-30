@@ -8,9 +8,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         let inputAccessoryButton = UIButton(type: .system)
+        inputAccessoryButton.setTitleColor(UIColor.white, for: .normal)
         inputAccessoryButton.setTitle("Input accessory view", for: .normal)
-        inputAccessoryButton.frame.size.height = 64
-        inputAccessoryButton.backgroundColor = .red
+        inputAccessoryButton.frame.size.height = 40
+        inputAccessoryButton.backgroundColor = UIColor.blue.withAlphaComponent(0.4)
 
         textInputs[0].accessibilityLabel = "standard_text_input"
         textInputs[0].placeHolderText = "Normal text"
