@@ -60,6 +60,11 @@ extension AnimatedTextView: TextInput {
         return self.beginningOfDocument
     }
 
+    public var autocorrection: UITextAutocorrectionType {
+        get { return self.autocorrectionType }
+        set { self.autocorrectionType = newValue }
+    }
+    
     public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }

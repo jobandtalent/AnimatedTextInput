@@ -132,6 +132,11 @@ extension AnimatedTextField: TextInput {
         get { return text }
         set { self.text = newValue }
     }
+    
+    public var autocorrection: UITextAutocorrectionType {
+        get { return self.autocorrectionType }
+        set { self.autocorrectionType = newValue }
+    }
 
     public var currentSelectedTextRange: UITextRange? {
         get { return self.selectedTextRange }
