@@ -23,13 +23,24 @@ open class AnimatedTextInput: UIControl {
             configureType()
         }
     }
-
+    
+    open var autocorrection: UITextAutocorrectionType = .no {
+        didSet {
+            textInput.autocorrection = autocorrection
+        }
+    }
+    
     open var returnKeyType: UIReturnKeyType = .default {
         didSet {
             textInput.changeReturnKeyType(with: returnKeyType)
         }
     }
 
+    open var keyboardAppearance: UIKeyboardAppearance {
+        get { return textInput.currentKeyboardAppearance }
+        set { textInput.currentKeyboardAppearance = newValue }
+    }
+    
     open var clearButtonMode: UITextFieldViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -39,6 +50,7 @@ open class AnimatedTextInput: UIControl {
     open var placeHolderText = "Test" {
         didSet {
             placeholderLayer.string = placeHolderText
+            textInput.view.accessibilityLabel = placeHolderText
         }
     }
 
@@ -171,7 +183,6 @@ open class AnimatedTextInput: UIControl {
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
-    fileprivate let lineWidth: CGFloat = 1.0 / UIScreen.main.scale
     fileprivate let counterLabelRightMargin: CGFloat = 15
     fileprivate let counterLabelTopMargin: CGFloat = 5
 
@@ -242,7 +253,7 @@ open class AnimatedTextInput: UIControl {
         removeConstraints(constraints)
         pinLeading(toLeadingOf: lineView, constant: style.leftMargin)
         pinTrailing(toTrailingOf: lineView, constant: style.rightMargin)
-        lineView.setHeight(to: lineWidth)
+        lineView.setHeight(to: style.lineHeight)
         let constant = hasCounterLabel ? -counterLabel.intrinsicContentSize.height - counterLabelTopMargin : 0
         lineToBottomConstraint = pinBottom(toBottomOf: lineView, constant: constant)
     }
@@ -292,6 +303,7 @@ open class AnimatedTextInput: UIControl {
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
+        textInput.autocorrection = autocorrection
         textInput.view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textInput.view)
         invalidateIntrinsicContentSize()
@@ -300,7 +312,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate func updateCounter() {
         guard let counterText = counterLabel.text else { return }
         let components = counterText.components(separatedBy: "/")
-        let characters = (text != nil) ? text!.characters.count : 0
+        let characters = (text != nil) ? text!.count : 0
         counterLabel.text = "\(characters)/\(components[1])"
     }
 
@@ -342,6 +354,7 @@ open class AnimatedTextInput: UIControl {
         placeholderLayer.fontSize = fontSize
         placeholderLayer.foregroundColor = foregroundColor
         placeholderLayer.string = text
+        textInput.view.accessibilityLabel = text
         layoutPlaceholderLayer()
     }
 
@@ -462,7 +475,7 @@ open class AnimatedTextInput: UIControl {
 
     open func showCharacterCounterLabel(with maximum: Int? = nil) {
         hasCounterLabel = true
-        let characters = (text != nil) ? text!.characters.count : 0
+        let characters = (text != nil) ? text!.count : 0
         if let maximumValue = maximum {
             counterLabel.text = "\(characters)/\(maximumValue)"
         } else {
@@ -559,7 +572,10 @@ public protocol TextInput {
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
+    var currentKeyboardAppearance: UIKeyboardAppearance { get set }
     var contentInset: UIEdgeInsets { get set }
+    var autocorrection: UITextAutocorrectionType {get set}
+
 
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)

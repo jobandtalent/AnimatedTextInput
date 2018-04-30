@@ -1,5 +1,5 @@
 PODS:
-  - AnimatedTextInput (0.5.1)
+  - AnimatedTextInput (0.5.2)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AnimatedTextInput: 3d25ab3d817084da6bf80eecbb8227f63136fb60
+  AnimatedTextInput: f54659e58059b2c1c116c4e633481449ee33eb26
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
 

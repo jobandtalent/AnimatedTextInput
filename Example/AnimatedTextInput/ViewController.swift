@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         textInputs[4].placeHolderText = "Multiline"
         textInputs[4].type = .multiline
         textInputs[4].showCharacterCounterLabel(with: 160)
-
-
+        textInputs[4].keyboardAppearance = .dark
+        
         // Text attributes (as well as any other property, can be configured using styles (AnimatedTextInputStyle) or using textInput's propoerties
         textInputs[4].lineSpacing = 15
         textInputs[4].font = UIFont.systemFont(ofSize: 13)
@@ -74,6 +74,7 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
     let inactiveColor = UIColor.gray.withAlphaComponent(0.3)
     let lineInactiveColor = UIColor.gray.withAlphaComponent(0.0)
     let lineActiveColor = UIColor.gray.withAlphaComponent(0.0)
+    let lineHeight: CGFloat = 1
     let errorColor = UIColor.red
     let textInputFont = UIFont.systemFont(ofSize: 14)
     let textInputFontColor = UIColor.black

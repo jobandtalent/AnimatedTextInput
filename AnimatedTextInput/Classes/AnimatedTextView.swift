@@ -59,11 +59,21 @@ extension AnimatedTextView: TextInput {
     public var currentBeginningOfDocument: UITextPosition? {
         return self.beginningOfDocument
     }
+    
+    public var currentKeyboardAppearance: UIKeyboardAppearance {
+        get { return self.keyboardAppearance }
+        set { self.keyboardAppearance = newValue}
+    }
 
+    public var autocorrection: UITextAutocorrectionType {
+        get { return self.autocorrectionType }
+        set { self.autocorrectionType = newValue }
+    }
+    
     public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }
-
+    
     public func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
