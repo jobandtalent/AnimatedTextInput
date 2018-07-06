@@ -53,7 +53,13 @@ open class AnimatedTextInput: UIControl {
             textInput.view.accessibilityLabel = placeHolderText
         }
     }
+    open var frameHeightCorrectionFactor : Double = 1.2 {
+        didSet {
+            layoutPlaceholderLayer()
+        }
 
+    }
+    
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
             placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
@@ -243,8 +249,8 @@ open class AnimatedTextInput: UIControl {
 
     fileprivate func layoutPlaceholderLayer() {
         // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
-        let frameHeightCorrectionFactor: CGFloat = 1.2
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: style.textInputFont.pointSize * frameHeightCorrectionFactor))
+ //       let frameHeightCorrectionFactor: CGFloat = 1.3
+        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: (style.textInputFont.pointSize * CGFloat(self.frameHeightCorrectionFactor)) ))
     }
 
     // mark: Configuration
