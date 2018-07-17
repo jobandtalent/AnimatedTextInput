@@ -551,6 +551,7 @@ extension AnimatedTextInput: TextInputDelegate {
 
     open func textInputDidChange(textInput: TextInput) {
         updateCounter()
+        sendActions(for: .editingChanged)
         delegate?.animatedTextInputDidChange?(animatedTextInput: self)
     }
 
