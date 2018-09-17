@@ -14,7 +14,6 @@
 		565B330D1ED5E96500EF70A1 /* AnimatedTextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B33061ED5E96500EF70A1 /* AnimatedTextInputStyle.swift */; };
 		565B330E1ED5E96500EF70A1 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B33071ED5E96500EF70A1 /* AnimatedTextView.swift */; };
 		565B330F1ED5E96500EF70A1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B33081ED5E96500EF70A1 /* UIViewExtensions.swift */; };
-		565B33131ED5E9F300EF70A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 565B33121ED5E9F300EF70A1 /* Info.plist */; };
 		565B331B1ED5EA2500EF70A1 /* cm_icon_input_eye_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B33141ED5EA2500EF70A1 /* cm_icon_input_eye_normal@2x.png */; };
 		565B331C1ED5EA2500EF70A1 /* cm_icon_input_eye_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B33151ED5EA2500EF70A1 /* cm_icon_input_eye_normal@3x.png */; };
 		565B331D1ED5EA2500EF70A1 /* cm_icon_input_eye_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B33161ED5EA2500EF70A1 /* cm_icon_input_eye_selected@2x.png */; };
@@ -166,7 +165,6 @@
 				565B331D1ED5EA2500EF70A1 /* cm_icon_input_eye_selected@2x.png in Resources */,
 				565B33201ED5EA2500EF70A1 /* disclosure@2x.png in Resources */,
 				565B331B1ED5EA2500EF70A1 /* cm_icon_input_eye_normal@2x.png in Resources */,
-				565B33131ED5E9F300EF70A1 /* Info.plist in Resources */,
 				565B331C1ED5EA2500EF70A1 /* cm_icon_input_eye_normal@3x.png in Resources */,
 				565B33211ED5EA2500EF70A1 /* disclosure@3x.png in Resources */,
 			);
