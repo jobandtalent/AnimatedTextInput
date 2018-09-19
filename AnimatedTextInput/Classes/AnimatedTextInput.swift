@@ -30,7 +30,7 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var clearButtonMode: UITextFieldViewMode = .whileEditing {
+    open var clearButtonMode: UITextField.ViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
         }
@@ -44,7 +44,7 @@ open class AnimatedTextInput: UIControl {
 
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
-            placeholderLayer.alignmentMode = String(describing: placeholderAlignment)
+            placeholderLayer.alignmentMode = CATextLayerAlignmentMode(rawValue: String(describing: placeholderAlignment))
         }
     }
 
@@ -75,67 +75,67 @@ open class AnimatedTextInput: UIControl {
 
     open var font: UIFont? {
         get { return textInput.font }
-        set { textAttributes = [NSAttributedStringKey.font: newValue as Any] }
+        set { textAttributes = [.font: newValue as Any] }
     }
 
     open var textColor: UIColor? {
         get { return textInput.textColor }
-        set { textAttributes = [NSAttributedStringKey.foregroundColor: newValue as Any] }
+        set { textAttributes = [.foregroundColor: newValue as Any] }
     }
 
     open var lineSpacing: CGFloat? {
         get {
-            guard let paragraph = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[.paragraphStyle] as? NSParagraphStyle else { return nil }
             return paragraph.lineSpacing
         }
         set {
             guard let spacing = newValue else { return }
-            let paragraphStyle = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = spacing
-            textAttributes = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+            textAttributes = [.paragraphStyle: paragraphStyle]
         }
     }
 
     open var textAlignment: NSTextAlignment? {
         get {
-            guard let paragraph = textInput.textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textInput.textAttributes?[.paragraphStyle] as? NSParagraphStyle else { return nil }
             return paragraph.alignment
         }
         set {
             guard let alignment = newValue else { return }
-            let paragraphStyle = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.alignment = alignment
-            textAttributes = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+            textAttributes = [.paragraphStyle: paragraphStyle]
         }
     }
 
     open var tailIndent: CGFloat? {
         get {
-            guard let paragraph = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[.paragraphStyle] as? NSParagraphStyle else { return nil }
             return paragraph.tailIndent
         }
         set {
             guard let indent = newValue else { return }
-            let paragraphStyle = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.tailIndent = indent
-            textAttributes = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+            textAttributes = [.paragraphStyle: paragraphStyle]
         }
     }
 
     open var headIndent: CGFloat? {
         get {
-            guard let paragraph = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSParagraphStyle else { return nil }
+            guard let paragraph = textAttributes?[.paragraphStyle] as? NSParagraphStyle else { return nil }
             return paragraph.headIndent
         }
         set {
             guard let indent = newValue else { return }
-            let paragraphStyle = textAttributes?[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+            let paragraphStyle = textAttributes?[.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
             paragraphStyle.headIndent = indent
-            textAttributes = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+            textAttributes = [.paragraphStyle: paragraphStyle]
         }
     }
 
-    open var textAttributes: [NSAttributedStringKey: Any]? {
+    open var textAttributes: [NSAttributedString.Key: Any]? {
         didSet {
             guard var textInputAttributes = textInput.textAttributes else {
                 textInput.textAttributes = textAttributes
@@ -214,7 +214,7 @@ open class AnimatedTextInput: UIControl {
 
     override open var intrinsicContentSize: CGSize {
         let normalHeight = textInput.view.intrinsicContentSize.height
-        return CGSize(width: UIViewNoIntrinsicMetric, height: normalHeight + style.topMargin + style.bottomMargin)
+        return CGSize(width: UIView.noIntrinsicMetric, height: normalHeight + style.topMargin + style.bottomMargin)
     }
 
     open override func updateConstraints() {
@@ -554,7 +554,7 @@ public protocol TextInput {
     var currentText: String? { get set }
     var font: UIFont? { get set }
     var textColor: UIColor? { get set }
-    var textAttributes: [NSAttributedStringKey: Any]? { get set }
+    var textAttributes: [NSAttributedString.Key: Any]? { get set }
     weak var textInputDelegate: TextInputDelegate? { get set }
     var currentSelectedTextRange: UITextRange? { get set }
     var currentBeginningOfDocument: UITextPosition? { get }
@@ -563,7 +563,7 @@ public protocol TextInput {
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
-    func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode)
+    func changeClearButtonMode(with newClearButtonMode: UITextField.ViewMode)
 }
 
 public extension TextInput where Self: UIView {

@@ -2,18 +2,18 @@ import UIKit
 
 final public class AnimatedTextView: UITextView {
 
-    public var textAttributes: [NSAttributedStringKey: Any]? {
+    public var textAttributes: [NSAttributedString.Key: Any]? {
         didSet {
             guard let attributes = textAttributes else { return }
-            typingAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { ($0.key.rawValue, $0.value) })
+            typingAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { ($0.key, $0.value) })
         }
     }
 
     public override var font: UIFont? {
         didSet {
             var attributes = typingAttributes
-            attributes[NSAttributedStringKey.font.rawValue] = font
-            textAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { (NSAttributedStringKey($0.key), $0.value)})
+            attributes[.font] = font
+            textAttributes = Dictionary(uniqueKeysWithValues: attributes.lazy.map { ($0.key, $0.value)})
         }
     }
 
@@ -68,7 +68,7 @@ extension AnimatedTextView: TextInput {
         return position(from: from, offset: offset)
     }
     
-    public func changeClearButtonMode(with newClearButtonMode: UITextFieldViewMode) {}
+    public func changeClearButtonMode(with newClearButtonMode: UITextField.ViewMode) {}
     
 }
 
