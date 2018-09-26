@@ -313,6 +313,7 @@ open class AnimatedTextInput: UIControl {
         textInput.font = style.textInputFont
         textInput.autocorrection = autocorrection
         textInput.view.translatesAutoresizingMaskIntoConstraints = false
+        configureRightView()
         addSubview(textInput.view)
         invalidateIntrinsicContentSize()
     }
@@ -372,6 +373,15 @@ open class AnimatedTextInput: UIControl {
         transactionAnimation(with: duration, timingFuncion: function, animations: applyConfiguration)
     }
 
+    fileprivate func configureRightView() {
+        if let button = textInput.rightView as? UIButton {
+            if let selectedImage = button.image(for: .selected) {
+                button.tintColor = style.activeColor
+                button.setImage(selectedImage.withRenderingMode(.alwaysTemplate), for: .selected)
+            }
+        }
+    }
+    
     // mark: Behaviours
 
     @objc fileprivate func viewWasTapped(sender: UIGestureRecognizer) {
@@ -391,6 +401,7 @@ open class AnimatedTextInput: UIControl {
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
+        configureRightView()
         invalidateIntrinsicContentSize()
         layoutIfNeeded()
     }
@@ -583,7 +594,8 @@ public protocol TextInput {
     var currentBeginningOfDocument: UITextPosition? { get }
     var currentKeyboardAppearance: UIKeyboardAppearance { get set }
     var contentInset: UIEdgeInsets { get set }
-    var autocorrection: UITextAutocorrectionType {get set}
+    var autocorrection: UITextAutocorrectionType { get set }
+    var rightView: UIView? { get set }
 
 
     func configureInputView(newInputView: UIView)
