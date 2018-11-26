@@ -1,6 +1,7 @@
 import UIKit
 
 final public class AnimatedTextView: UITextView {
+    
 
     public var textAttributes: [NSAttributedString.Key: Any]? {
         didSet {
@@ -19,6 +20,13 @@ final public class AnimatedTextView: UITextView {
 
     public weak var textInputDelegate: TextInputDelegate?
 
+    /// The maximum allowed height of a multiline label. When set, the TextView will not grow above this height.
+    var maximumHeightOfMultilineLabel: CGFloat?
+    
+    /// Constraint that limits the maximum height of a multiline textview.
+    fileprivate var heightConstraintForMultilineLabel: NSLayoutConstraint?
+    
+    
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
 
@@ -96,7 +104,41 @@ extension AnimatedTextView: UITextViewDelegate {
         let range = textView.selectedRange
         textView.attributedText = NSAttributedString(string: textView.text, attributes: textAttributes)
         textView.selectedRange = range
-
+        
+        // Force-refresh the layout as we need the contentSize based on the current amount of text.
+        textView.setNeedsLayout()
+        textView.layoutIfNeeded()
+        
+        // Perform a check to see if the TextView should have a maximum height. If so, check if the desired contentHeight is above the max height.
+        if let maxHeight = maximumHeightOfMultilineLabel, textView.contentSize.height >= maxHeight {
+            
+            // Check if the height constraint is not added, yet. Create and add it if so.
+            if heightConstraintForMultilineLabel == nil {
+                
+                // Enable scrolling:
+                textView.isScrollEnabled = true
+                
+                // Set new maximum height as current height constraint. Since the maximum allowed height is already reached, this constraint defines the current height of the text input to be the maximum height:
+                heightConstraintForMultilineLabel = NSLayoutConstraint(item: textView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: maxHeight)
+                heightConstraintForMultilineLabel!.identifier = "CurrentHeightOfTextView"
+                textView.addConstraint(heightConstraintForMultilineLabel!)
+                
+                // Scroll to the bottom as the user may enter even more text and want to see where the text ist put.
+                let bottomRect = CGRect(x: 0, y: textView.contentSize.height-1, width: textView.contentSize.width, height: 1)
+                textView.scrollRectToVisible(bottomRect, animated: true)
+            }
+        }
+        else {
+            // Remove the constraint and set it to nil in order to avoid re-adding it later.
+            if let existingConstraint = heightConstraintForMultilineLabel {
+                textView.removeConstraint(existingConstraint)
+                heightConstraintForMultilineLabel = nil
+                
+                // Disable scrolling:
+                textView.isScrollEnabled = false
+            }
+        }
+        
         textInputDelegate?.textInputDidChange(textInput: self)
     }
 

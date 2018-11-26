@@ -43,14 +43,14 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     //Multiline type
 
     func testNormalStateMultiline() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.placeHolderText = "Placeholder"
 
         verifySUT()
     }
 
     func testEmptyActiveStateMultiline() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.placeHolderText = "Placeholder"
         sut.becomeFirstResponder()
 
@@ -58,7 +58,7 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     }
 
     func testFilledActiveStateMultiline() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.placeHolderText = "Placeholder"
         sut.text = "A very long text to fill a few lines. A very long text to fill a few lines. A very long text to fill a few lines. A very long text to fill a few lines"
         sut.becomeFirstResponder()
@@ -67,7 +67,7 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     }
 
     func testFilledActiveStateMultilineWithCounter() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.placeHolderText = "Placeholder"
         sut.text = "A very long text to fill a few lines. A very long text to fill a few lines. A very long text to fill a few lines. A very long text to fill a few lines"
         sut.showCharacterCounterLabel()
@@ -77,7 +77,7 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     }
 
     func testInactiveFilledStateMultiline() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.placeHolderText = "Placeholder"
         sut.text = "Input text"
 
@@ -112,7 +112,7 @@ class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     }
 
     func testAnimatedTextFieldActiveCustomStyle() {
-        sut.type = .multiline
+        sut.type = .multiline(maxHeight: nil)
         sut.style = CustomTextInputStyle()
         sut.placeHolderText = "Placeholder"
         sut.text = "Input text"
