@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         textInputs[0].accessibilityLabel = "standard_text_input"
         textInputs[0].placeHolderText = "Normal text"
         textInputs[0].inputAccessoryView = inputAccessoryButton
+        if #available(iOS 11.0, *) {
+            textInputs[1].textContentType = .password
+        }
 
         textInputs[1].placeHolderText = "Password"
         textInputs[1].type = .password(toggleable: true)

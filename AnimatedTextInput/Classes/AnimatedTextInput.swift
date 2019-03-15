@@ -29,7 +29,13 @@ open class AnimatedTextInput: UIControl {
             textInput.autocorrection = autocorrection
         }
     }
-    
+
+    @available(iOS 10.0, *)
+    open var textContentType: UITextContentType {
+        get { return textInput.currentTextContentType }
+        set { textInput.currentTextContentType = newValue }
+    }
+
     open var returnKeyType: UIReturnKeyType = .default {
         didSet {
             textInput.changeReturnKeyType(with: returnKeyType)
@@ -584,7 +590,8 @@ public protocol TextInput {
     var currentKeyboardAppearance: UIKeyboardAppearance { get set }
     var contentInset: UIEdgeInsets { get set }
     var autocorrection: UITextAutocorrectionType {get set}
-
+    @available(iOS 10.0, *)
+    var currentTextContentType: UITextContentType { get set }
 
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
