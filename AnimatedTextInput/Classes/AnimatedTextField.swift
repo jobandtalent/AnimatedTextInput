@@ -20,7 +20,7 @@ final public class AnimatedTextField: UITextField {
 
     fileprivate var disclosureButtonAction: (() -> Void)?
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         self.rightViewPadding = defaultPadding
 
         super.init(frame: frame)
