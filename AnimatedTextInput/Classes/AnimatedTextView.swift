@@ -69,7 +69,13 @@ extension AnimatedTextView: TextInput {
         get { return self.autocorrectionType }
         set { self.autocorrectionType = newValue }
     }
-    
+
+    @available(iOS 10.0, *)
+    public var currentTextContentType: UITextContentType {
+        get { return self.textContentType }
+        set { self.textContentType = newValue }
+    }
+
     public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }
