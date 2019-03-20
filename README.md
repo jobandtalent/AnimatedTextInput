@@ -52,6 +52,7 @@ struct CustomTextInputStyle: AnimatedTextInputStyle {
     let inactiveColor = UIColor.grayColor().colorWithAlphaComponent(0.3)
     let errorColor = UIColor.redColor()
     let textInputFont = UIFont.systemFontOfSize(14)
+    let placeholderFont = UIFont.systemFont(ofSize: 14)
     let textInputFontColor = UIColor.blackColor()
     let placeholderMinFontSize: CGFloat = 9
     let counterLabelFont: UIFont? = UIFont.systemFontOfSize(9)

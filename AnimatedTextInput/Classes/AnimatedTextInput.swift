@@ -23,7 +23,7 @@ open class AnimatedTextInput: UIControl {
             configureType()
         }
     }
-    
+
     open var autocorrection: UITextAutocorrectionType = .no {
         didSet {
             textInput.autocorrection = autocorrection
@@ -46,7 +46,7 @@ open class AnimatedTextInput: UIControl {
         get { return textInput.currentKeyboardAppearance }
         set { textInput.currentKeyboardAppearance = newValue }
     }
-    
+
     open var clearButtonMode: UITextField.ViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -59,7 +59,7 @@ open class AnimatedTextInput: UIControl {
             textInput.view.accessibilityLabel = placeHolderText
         }
     }
-    
+
     // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
 
     open var frameHeightCorrectionFactor : Double = 1.2 {
@@ -68,7 +68,7 @@ open class AnimatedTextInput: UIControl {
         }
 
     }
-    
+
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
             placeholderLayer.alignmentMode = CATextLayerAlignmentMode(rawValue: String(describing: placeholderAlignment))
@@ -257,7 +257,7 @@ open class AnimatedTextInput: UIControl {
     }
 
     fileprivate func layoutPlaceholderLayer() {
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: (style.textInputFont.pointSize * CGFloat(self.frameHeightCorrectionFactor)) ))
+        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: (style.placeHolderFont.pointSize * CGFloat(self.frameHeightCorrectionFactor)) ))
     }
 
     // mark: Configuration
@@ -298,8 +298,8 @@ open class AnimatedTextInput: UIControl {
         placeholderLayer.masksToBounds = false
         placeholderLayer.string = placeHolderText
         placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
-        placeholderLayer.fontSize = style.textInputFont.pointSize
-        placeholderLayer.font = style.textInputFont
+        placeholderLayer.fontSize = style.placeHolderFont.pointSize
+        placeholderLayer.font = style.placeHolderFont
         placeholderLayer.contentsScale = UIScreen.main.scale
         placeholderLayer.backgroundColor = UIColor.clear.cgColor
         layoutPlaceholderLayer()
@@ -319,6 +319,7 @@ open class AnimatedTextInput: UIControl {
         textInput.font = style.textInputFont
         textInput.autocorrection = autocorrection
         textInput.view.translatesAutoresizingMaskIntoConstraints = false
+        configureRightView()
         addSubview(textInput.view)
         invalidateIntrinsicContentSize()
     }
@@ -350,7 +351,7 @@ open class AnimatedTextInput: UIControl {
 
     fileprivate func configurePlaceholderAsDefault() {
         isPlaceholderAsHint = false
-        configurePlaceholderWith(fontSize: style.textInputFont.pointSize,
+        configurePlaceholderWith(fontSize: style.placeHolderFont.pointSize,
                                  foregroundColor: style.placeholderInactiveColor.cgColor,
                                  text: placeHolderText)
         lineView.animateToInitialState()
@@ -378,6 +379,15 @@ open class AnimatedTextInput: UIControl {
         transactionAnimation(with: duration, timingFuncion: function, animations: applyConfiguration)
     }
 
+    fileprivate func configureRightView() {
+        if let button = textInput.rightView as? UIButton {
+            if let selectedImage = button.image(for: .selected) {
+                button.tintColor = style.activeColor
+                button.setImage(selectedImage.withRenderingMode(.alwaysTemplate), for: .selected)
+            }
+        }
+    }
+
     // mark: Behaviours
 
     @objc fileprivate func viewWasTapped(sender: UIGestureRecognizer) {
@@ -391,12 +401,13 @@ open class AnimatedTextInput: UIControl {
     fileprivate func styleDidChange() {
         lineView.defaultColor = style.lineInactiveColor
         placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
-        let fontSize = style.textInputFont.pointSize
+        let fontSize = style.placeHolderFont.pointSize
         placeholderLayer.fontSize = fontSize
-        placeholderLayer.font = style.textInputFont
+        placeholderLayer.font = style.placeHolderFont
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
+        configureRightView()
         invalidateIntrinsicContentSize()
         layoutIfNeeded()
     }
@@ -589,7 +600,8 @@ public protocol TextInput {
     var currentBeginningOfDocument: UITextPosition? { get }
     var currentKeyboardAppearance: UIKeyboardAppearance { get set }
     var contentInset: UIEdgeInsets { get set }
-    var autocorrection: UITextAutocorrectionType {get set}
+    var autocorrection: UITextAutocorrectionType { get set }
+    var rightView: UIView? { get set }
     @available(iOS 10.0, *)
     var currentTextContentType: UITextContentType { get set }
 
