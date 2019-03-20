@@ -10,7 +10,8 @@ public struct AnimatedTextInputFieldConfigurator {
         case phone
         case selection
         case customSelection(isRightViewEnabled: Bool, rightViewImage: UIImage?)
-        case multiline
+        case multiline()
+        case multilineRestricted(maxHeight: CGFloat)
         case generic(textInput: TextInput)
     }
     
@@ -28,8 +29,10 @@ public struct AnimatedTextInputFieldConfigurator {
             return AnimatedTextInputPhoneConfigurator.generate()
         case .selection:
             return AnimatedTextInputSelectionConfigurator.generate()
-        case .multiline:
-            return AnimatedTextInputMultilineConfigurator.generate()
+        case .multiline():
+            return AnimatedTextInputMultilineConfigurator.generate(using: nil)
+        case .multilineRestricted(let maxHeight):
+            return AnimatedTextInputMultilineConfigurator.generate(using: maxHeight)
         case .generic(let textInput):
             return textInput
         case .customSelection(let isRightViewEnabled, let rightViewImage):
@@ -138,12 +141,24 @@ fileprivate struct AnimatedTextInputCustomSelectionConfigurator {
 
 fileprivate struct AnimatedTextInputMultilineConfigurator {
     
-    static func generate() -> TextInput {
+    static func generate(using maxHeight: CGFloat?) -> TextInput {
         let textView = AnimatedTextView()
         textView.textContainerInset = .zero
         textView.backgroundColor = .clear
         textView.isScrollEnabled = false
         textView.autocorrectionType = .no
+
+        // Use the maximum allowed height if one is provided by the caller.
+        if let providedMaxHeight = maxHeight {
+            
+            // Pass the value along to the TextView.
+            textView.maximumHeightOfMultilineLabel = providedMaxHeight
+            
+            // Add a constraint to set the maximum height that must not be exeeded.
+            let constraint = NSLayoutConstraint(item: textView, attribute: .height, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .height, multiplier: 1, constant: providedMaxHeight)
+            constraint.identifier = "MaxHeightOfTextView"
+            textView.view.addConstraint(constraint)
+        }
         return textView
     }
 }
