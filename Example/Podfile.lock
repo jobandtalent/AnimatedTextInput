@@ -15,7 +15,7 @@ DEPENDENCIES:
   - KIF (~> 3.5)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs:
+  https://github.com/cocoapods/specs.git:
     - FBSnapshotTestCase
     - KIF
 

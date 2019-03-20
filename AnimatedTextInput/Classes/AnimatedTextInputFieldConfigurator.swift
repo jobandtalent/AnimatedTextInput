@@ -10,7 +10,8 @@ public struct AnimatedTextInputFieldConfigurator {
         case phone
         case selection
         case customSelection(isRightViewEnabled: Bool, rightViewImage: UIImage?)
-        case multiline(maxHeight: CGFloat?)
+        case multiline()
+        case multilineRestricted(maxHeight: CGFloat)
         case generic(textInput: TextInput)
     }
     
@@ -28,7 +29,9 @@ public struct AnimatedTextInputFieldConfigurator {
             return AnimatedTextInputPhoneConfigurator.generate()
         case .selection:
             return AnimatedTextInputSelectionConfigurator.generate()
-        case .multiline(let maxHeight):
+        case .multiline():
+            return AnimatedTextInputMultilineConfigurator.generate(using: nil)
+        case .multilineRestricted(let maxHeight):
             return AnimatedTextInputMultilineConfigurator.generate(using: maxHeight)
         case .generic(let textInput):
             return textInput

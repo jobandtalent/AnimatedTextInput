@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         } as (() -> Void)
 
         textInputs[4].placeHolderText = "Multiline"
-        textInputs[4].type = .multiline(maxHeight: 100)
+        textInputs[4].type = .multilineRestricted(maxHeight: 100)
         textInputs[4].showCharacterCounterLabel(with: 160)
         textInputs[4].keyboardAppearance = .dark
         
