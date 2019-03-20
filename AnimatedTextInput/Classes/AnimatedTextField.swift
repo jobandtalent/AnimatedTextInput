@@ -20,7 +20,7 @@ final public class AnimatedTextField: UITextField {
 
     fileprivate var disclosureButtonAction: (() -> Void)?
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         self.rightViewPadding = defaultPadding
 
         super.init(frame: frame)
@@ -127,6 +127,12 @@ extension AnimatedTextField: TextInput {
     public var autocorrection: UITextAutocorrectionType {
         get { return self.autocorrectionType }
         set { self.autocorrectionType = newValue }
+    }
+
+    @available(iOS 10.0, *)
+    public var currentTextContentType: UITextContentType {
+        get { return self.textContentType }
+        set { self.textContentType = newValue }
     }
 
     public var currentSelectedTextRange: UITextRange? {

@@ -23,13 +23,19 @@ open class AnimatedTextInput: UIControl {
             configureType()
         }
     }
-    
+
     open var autocorrection: UITextAutocorrectionType = .no {
         didSet {
             textInput.autocorrection = autocorrection
         }
     }
-    
+
+    @available(iOS 10.0, *)
+    open var textContentType: UITextContentType {
+        get { return textInput.currentTextContentType }
+        set { textInput.currentTextContentType = newValue }
+    }
+
     open var returnKeyType: UIReturnKeyType = .default {
         didSet {
             textInput.changeReturnKeyType(with: returnKeyType)
@@ -40,7 +46,7 @@ open class AnimatedTextInput: UIControl {
         get { return textInput.currentKeyboardAppearance }
         set { textInput.currentKeyboardAppearance = newValue }
     }
-    
+
     open var clearButtonMode: UITextField.ViewMode = .whileEditing {
         didSet {
             textInput.changeClearButtonMode(with: clearButtonMode)
@@ -53,7 +59,7 @@ open class AnimatedTextInput: UIControl {
             textInput.view.accessibilityLabel = placeHolderText
         }
     }
-    
+
     // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
 
     open var frameHeightCorrectionFactor : Double = 1.2 {
@@ -62,7 +68,7 @@ open class AnimatedTextInput: UIControl {
         }
 
     }
-    
+
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
         didSet {
             placeholderLayer.alignmentMode = CATextLayerAlignmentMode(rawValue: String(describing: placeholderAlignment))
@@ -381,7 +387,7 @@ open class AnimatedTextInput: UIControl {
             }
         }
     }
-    
+
     // mark: Behaviours
 
     @objc fileprivate func viewWasTapped(sender: UIGestureRecognizer) {
@@ -596,7 +602,8 @@ public protocol TextInput {
     var contentInset: UIEdgeInsets { get set }
     var autocorrection: UITextAutocorrectionType { get set }
     var rightView: UIView? { get set }
-
+    @available(iOS 10.0, *)
+    var currentTextContentType: UITextContentType { get set }
 
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)

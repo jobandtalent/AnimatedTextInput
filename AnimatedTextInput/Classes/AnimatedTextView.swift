@@ -59,7 +59,7 @@ extension AnimatedTextView: TextInput {
     public var currentBeginningOfDocument: UITextPosition? {
         return self.beginningOfDocument
     }
-    
+
     public var currentKeyboardAppearance: UIKeyboardAppearance {
         get { return self.keyboardAppearance }
         set { self.keyboardAppearance = newValue}
@@ -69,22 +69,28 @@ extension AnimatedTextView: TextInput {
         get { return self.autocorrectionType }
         set { self.autocorrectionType = newValue }
     }
-    
+
     public var rightView: UIView? {
         get { return nil }
         set { }
     }
-    
+
+    @available(iOS 10.0, *)
+    public var currentTextContentType: UITextContentType {
+        get { return self.textContentType }
+        set { self.textContentType = newValue }
+    }
+
     public func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType) {
         returnKeyType = newReturnKeyType
     }
-    
+
     public func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition? {
         return position(from: from, offset: offset)
     }
-    
+
     public func changeClearButtonMode(with newClearButtonMode: UITextField.ViewMode) {}
-    
+
 }
 
 extension AnimatedTextView: UITextViewDelegate {
