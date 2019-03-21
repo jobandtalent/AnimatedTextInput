@@ -195,7 +195,7 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    fileprivate let lineView = AnimatedLine()
+    public let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
     fileprivate let counterLabelRightMargin: CGFloat = 15
