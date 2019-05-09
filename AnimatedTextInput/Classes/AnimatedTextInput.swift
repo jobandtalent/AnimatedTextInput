@@ -257,7 +257,7 @@ open class AnimatedTextInput: UIControl {
     }
 
     fileprivate func layoutPlaceholderLayer() {
-        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: (style.textInputFont.pointSize * CGFloat(self.frameHeightCorrectionFactor)) ))
+        placeholderLayer.frame = CGRect(origin: placeholderPosition, size: CGSize(width: bounds.width, height: (style.placeHolderFont.pointSize * CGFloat(self.frameHeightCorrectionFactor)) ))
     }
 
     // mark: Configuration
@@ -298,8 +298,8 @@ open class AnimatedTextInput: UIControl {
         placeholderLayer.masksToBounds = false
         placeholderLayer.string = placeHolderText
         placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
-        placeholderLayer.fontSize = style.textInputFont.pointSize
-        placeholderLayer.font = style.textInputFont
+        placeholderLayer.fontSize = style.placeHolderFont.pointSize
+        placeholderLayer.font = style.placeHolderFont
         placeholderLayer.contentsScale = UIScreen.main.scale
         placeholderLayer.backgroundColor = UIColor.clear.cgColor
         layoutPlaceholderLayer()
@@ -350,7 +350,7 @@ open class AnimatedTextInput: UIControl {
 
     fileprivate func configurePlaceholderAsDefault() {
         isPlaceholderAsHint = false
-        configurePlaceholderWith(fontSize: style.textInputFont.pointSize,
+        configurePlaceholderWith(fontSize: style.placeHolderFont.pointSize,
                                  foregroundColor: style.placeholderInactiveColor.cgColor,
                                  text: placeHolderText)
         lineView.animateToInitialState()
@@ -391,9 +391,9 @@ open class AnimatedTextInput: UIControl {
     fileprivate func styleDidChange() {
         lineView.defaultColor = style.lineInactiveColor
         placeholderLayer.foregroundColor = style.placeholderInactiveColor.cgColor
-        let fontSize = style.textInputFont.pointSize
+        let fontSize = style.placeHolderFont.pointSize
         placeholderLayer.fontSize = fontSize
-        placeholderLayer.font = style.textInputFont
+        placeholderLayer.font = style.placeHolderFont
         textInput.view.tintColor = style.activeColor
         textInput.textColor = style.textInputFontColor
         textInput.font = style.textInputFont
