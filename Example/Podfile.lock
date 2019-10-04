@@ -15,7 +15,7 @@ DEPENDENCIES:
   - KIF (~> 3.5)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs:
+  https://github.com/CocoaPods/Specs.git:
     - FBSnapshotTestCase
     - KIF
 
@@ -24,10 +24,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AnimatedTextInput: 81da570f4e0ca74e3092dfe235781f8c2aa18c30
+  AnimatedTextInput: aadbdfa5a538a03cc9fbea700b43d2bb21a5d132
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
 
 PODFILE CHECKSUM: 24f7e98a4a8a1102c54d1de65b58fd857224cd7d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.0

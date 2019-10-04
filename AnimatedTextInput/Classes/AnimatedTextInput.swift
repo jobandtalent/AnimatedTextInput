@@ -541,6 +541,10 @@ open class AnimatedTextInput: UIControl {
     open func position(from: UITextPosition, offset: Int) -> UITextPosition? {
         return textInput.currentPosition(from: from, offset: offset)
     }
+
+    open func textRange(from fromPosition: UITextPosition, to toPosition: UITextPosition) -> UITextRange? {
+        return textInput.textRange(from: fromPosition, to: toPosition)
+    }
 }
 
 extension AnimatedTextInput: TextInputDelegate {
@@ -596,6 +600,7 @@ public protocol TextInput {
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
+    func textRange(from fromPosition: UITextPosition, to toPosition: UITextPosition) -> UITextRange?
     func changeClearButtonMode(with newClearButtonMode: UITextField.ViewMode)
 }
 
