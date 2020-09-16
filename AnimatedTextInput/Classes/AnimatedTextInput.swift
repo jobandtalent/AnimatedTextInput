@@ -58,7 +58,6 @@ open class AnimatedTextInput: UIControl {
             placeholderLayer.string as? String ?? ""
         }
         set {
-            guard newValue ?? "" != placeholderLayer.string as? String ?? "" else { return }
             placeholderLayer.string = newValue
             textInput.view.accessibilityLabel = newValue
         }
@@ -89,8 +88,7 @@ open class AnimatedTextInput: UIControl {
             return textInput.currentText
         }
         set {
-            guard newValue ?? "" != textInput.currentText ?? "" else { return }
-            isPlaceholderAsHint ? configurePlaceholderAsActiveHint() : configurePlaceholderAsDefault()
+            newValue?.isEmpty ?? true ? configurePlaceholderAsDefault() : configurePlaceholderAsInactiveHint()
             textInput.currentText = newValue
         }
     }
@@ -195,14 +193,17 @@ open class AnimatedTextInput: UIControl {
     open var contentInset: UIEdgeInsets {
         get {
             if let textInput = textInput as? UITextView {
-                return textInput.textContainerInset
+                var textContainerInset = textInput.contentInset
+                textContainerInset.left += 4
+                return textContainerInset
             } else {
                 return textInput.contentInset
             }
         }
         set {
             if let textInput = textInput as? UITextView {
-                textInput.textContainerInset = newValue
+                textInput.contentInset = newValue
+                textInput.contentInset.left -= 4
             } else {
                 textInput.contentInset = newValue
             }

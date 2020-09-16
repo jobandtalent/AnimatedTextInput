@@ -33,7 +33,6 @@ final public class AnimatedTextView: UITextView {
 
     fileprivate func setup() {
         contentInset.left = -4
-        textContainerInset.left = -4
         delegate = self
     }
 
