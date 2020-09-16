@@ -53,20 +53,23 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var placeHolderText = "Test" {
-        didSet {
-            placeholderLayer.string = placeHolderText
-            textInput.view.accessibilityLabel = placeHolderText
+    open var placeHolderText: String {
+        get {
+            placeholderLayer.string as? String ?? ""
+        }
+        set {
+            guard newValue ?? "" != placeholderLayer.string as? String ?? "" else { return }
+            placeholderLayer.string = newValue
+            textInput.view.accessibilityLabel = newValue
         }
     }
     
     // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
 
-    open var frameHeightCorrectionFactor : Double = 1.2 {
+    open var frameHeightCorrectionFactor: Double = 1.2 {
         didSet {
             layoutPlaceholderLayer()
         }
-
     }
     
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
@@ -86,7 +89,8 @@ open class AnimatedTextInput: UIControl {
             return textInput.currentText
         }
         set {
-            (newValue != nil && !newValue!.isEmpty) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
+            guard newValue ?? "" != textInput.currentText ?? "" else { return }
+            isPlaceholderAsHint ? configurePlaceholderAsActiveHint() : configurePlaceholderAsDefault()
             textInput.currentText = newValue
         }
     }
@@ -188,10 +192,20 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var contentInset: UIEdgeInsets? {
-        didSet {
-            guard let insets = contentInset else { return }
-            textInput.contentInset = insets
+    open var contentInset: UIEdgeInsets {
+        get {
+            if let textInput = textInput as? UITextView {
+                return textInput.textContainerInset
+            } else {
+                return textInput.contentInset
+            }
+        }
+        set {
+            if let textInput = textInput as? UITextView {
+                textInput.textContainerInset = newValue
+            } else {
+                textInput.contentInset = newValue
+            }
         }
     }
 

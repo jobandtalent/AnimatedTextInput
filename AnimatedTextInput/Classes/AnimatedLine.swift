@@ -9,7 +9,7 @@ open class AnimatedLine: UIView {
 
     fileprivate let lineLayer = CAShapeLayer()
 
-    var animationDuration: Double = 0.4
+    var animationDuration: Double = 0.35
 
     var defaultColor = UIColor.gray.withAlphaComponent(0.6) {
         didSet {
