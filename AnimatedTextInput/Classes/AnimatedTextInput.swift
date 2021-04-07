@@ -85,10 +85,14 @@ open class AnimatedTextInput: UIControl {
 
     open var text: String? {
         get {
+            semaphore.wait()
+            defer { semaphore.signal() }
             return textInput.currentText
         }
         set {
-            newValue?.isEmpty ?? true ? configurePlaceholderAsDefault() : configurePlaceholderAsInactiveHint()
+            semaphore.wait()
+            defer { semaphore.signal() }
+            (newValue != nil && !newValue!.isEmpty) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
             textInput.currentText = newValue
         }
     }
@@ -215,6 +219,8 @@ open class AnimatedTextInput: UIControl {
     fileprivate let counterLabel = UILabel()
     fileprivate let counterLabelRightMargin: CGFloat = 15
     fileprivate let counterLabelTopMargin: CGFloat = 5
+
+    fileprivate lazy var semaphore = DispatchSemaphore(value: 1)
 
     fileprivate var isResigningResponder = false
     fileprivate var isPlaceholderAsHint = false
