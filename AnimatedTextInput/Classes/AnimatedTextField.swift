@@ -19,6 +19,7 @@ final public class AnimatedTextField: UITextField {
     public var contentInset: UIEdgeInsets = .zero
 
     fileprivate var disclosureButtonAction: (() -> Void)?
+    fileprivate let semaphore = DispatchSemaphore(value: 1)
 
     override public init(frame: CGRect) {
         self.rightViewPadding = defaultPadding
@@ -120,8 +121,16 @@ extension AnimatedTextField: TextInput {
     }
 
     public var currentText: String? {
-        get { return text }
-        set { self.text = newValue }
+        get {
+            defer { semaphore.signal() }
+            semaphore.wait()
+            return text
+        }
+        set {
+            defer { semaphore.signal() }
+            semaphore.wait()
+            self.text = newValue
+        }
     }
     
     public var autocorrection: UITextAutocorrectionType {

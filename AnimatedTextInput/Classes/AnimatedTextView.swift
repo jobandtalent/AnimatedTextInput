@@ -19,6 +19,8 @@ final public class AnimatedTextView: UITextView {
 
     public weak var textInputDelegate: TextInputDelegate?
 
+    fileprivate let semaphore = DispatchSemaphore(value: 1)
+
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
 
@@ -47,8 +49,16 @@ extension AnimatedTextView: TextInput {
     }
 
     public var currentText: String? {
-        get { return text }
-        set { self.text = newValue }
+        get {
+            defer { semaphore.signal() }
+            semaphore.wait()
+            return text
+        }
+        set {
+            defer { semaphore.signal() }
+            semaphore.wait()
+            self.text = newValue
+        }
     }
 
     public var currentSelectedTextRange: UITextRange? {
