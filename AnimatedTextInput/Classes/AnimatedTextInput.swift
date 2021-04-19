@@ -85,9 +85,13 @@ open class AnimatedTextInput: UIControl {
 
     open var text: String? {
         get {
+            defer { semaphore.signal() }
+            semaphore.wait()
             return textInput.currentText
         }
         set {
+            defer { semaphore.signal() }
+            semaphore.wait()
             newValue?.isEmpty ?? true ? configurePlaceholderAsDefault() : configurePlaceholderAsInactiveHint()
             textInput.currentText = newValue
         }
@@ -225,6 +229,8 @@ open class AnimatedTextInput: UIControl {
     fileprivate var disclosureViewWidthConstraint: NSLayoutConstraint!
     fileprivate var disclosureView: UIView?
     fileprivate var placeholderErrorText: String?
+
+    fileprivate let semaphore = DispatchSemaphore(value: 1)
 
     fileprivate var placeholderPosition: CGPoint {
         let hintPosition = CGPoint(
