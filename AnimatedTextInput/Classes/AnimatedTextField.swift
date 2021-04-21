@@ -121,16 +121,8 @@ extension AnimatedTextField: TextInput {
     }
 
     public var currentText: String? {
-        get {
-            defer { semaphore.signal() }
-            semaphore.wait()
-            return text
-        }
-        set {
-            defer { semaphore.signal() }
-            semaphore.wait()
-            self.text = newValue
-        }
+        get { return text }
+        set { self.text = newValue }
     }
     
     public var autocorrection: UITextAutocorrectionType {
