@@ -4,7 +4,7 @@ import AnimatedTextInput
 
 class AnimatedTextInputSnapshotTests: FBSnapshotTestCase {
     private let sut = AnimatedTextInput()
-    private var containerView: UIView!
+    private var containerView = UIView()
 
     override func setUp() {
         super.setUp()

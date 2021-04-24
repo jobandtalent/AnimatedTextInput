@@ -53,20 +53,22 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var placeHolderText = "Test" {
-        didSet {
-            placeholderLayer.string = placeHolderText
-            textInput.view.accessibilityLabel = placeHolderText
+    open var placeHolderText: String {
+        get {
+            placeholderLayer.string as? String ?? ""
+        }
+        set {
+            placeholderLayer.string = newValue
+            textInput.view.accessibilityLabel = newValue
         }
     }
     
     // Some letters like 'g' or 'á' were not rendered properly, the frame need to be about 20% higher than the font size
 
-    open var frameHeightCorrectionFactor : Double = 1.2 {
+    open var frameHeightCorrectionFactor: Double = 1.2 {
         didSet {
             layoutPlaceholderLayer()
         }
-
     }
     
     open var placeholderAlignment: CATextLayer.Alignment = .natural {
@@ -83,11 +85,15 @@ open class AnimatedTextInput: UIControl {
 
     open var text: String? {
         get {
-            return textInput.currentText
+            textQueue.sync {
+                return textInput.currentText
+            }
         }
         set {
-            (newValue != nil && !newValue!.isEmpty) ? configurePlaceholderAsInactiveHint() : configurePlaceholderAsDefault()
-            textInput.currentText = newValue
+            textQueue.sync {
+                newValue?.isEmpty ?? true ? configurePlaceholderAsDefault() : configurePlaceholderAsInactiveHint()
+                textInput.currentText = newValue
+            }
         }
     }
 
@@ -188,16 +194,30 @@ open class AnimatedTextInput: UIControl {
         }
     }
 
-    open var contentInset: UIEdgeInsets? {
-        didSet {
-            guard let insets = contentInset else { return }
-            textInput.contentInset = insets
+    open var contentInset: UIEdgeInsets {
+        get {
+            if let textInput = textInput as? UITextView {
+                var textContainerInset = textInput.contentInset
+                textContainerInset.left += 4
+                return textContainerInset
+            } else {
+                return textInput.contentInset
+            }
+        }
+        set {
+            if let textInput = textInput as? UITextView {
+                textInput.contentInset = newValue
+                textInput.contentInset.left -= 4
+            } else {
+                textInput.contentInset = newValue
+            }
         }
     }
 
     fileprivate let lineView = AnimatedLine()
     fileprivate let placeholderLayer = CATextLayer()
     fileprivate let counterLabel = UILabel()
+    fileprivate let textQueue = DispatchQueue(label: "AnimatedTextInput.text")
     fileprivate let counterLabelRightMargin: CGFloat = 15
     fileprivate let counterLabelTopMargin: CGFloat = 5
 
@@ -210,6 +230,7 @@ open class AnimatedTextInput: UIControl {
     fileprivate var disclosureViewWidthConstraint: NSLayoutConstraint!
     fileprivate var disclosureView: UIView?
     fileprivate var placeholderErrorText: String?
+
 
     fileprivate var placeholderPosition: CGPoint {
         let hintPosition = CGPoint(
@@ -541,6 +562,10 @@ open class AnimatedTextInput: UIControl {
     open func position(from: UITextPosition, offset: Int) -> UITextPosition? {
         return textInput.currentPosition(from: from, offset: offset)
     }
+
+    open func textRange(from fromPosition: UITextPosition, to toPosition: UITextPosition) -> UITextRange? {
+        return textInput.textRange(from: fromPosition, to: toPosition)
+    }
 }
 
 extension AnimatedTextInput: TextInputDelegate {
@@ -596,6 +621,7 @@ public protocol TextInput {
     func configureInputView(newInputView: UIView)
     func changeReturnKeyType(with newReturnKeyType: UIReturnKeyType)
     func currentPosition(from: UITextPosition, offset: Int) -> UITextPosition?
+    func textRange(from fromPosition: UITextPosition, to toPosition: UITextPosition) -> UITextRange?
     func changeClearButtonMode(with newClearButtonMode: UITextField.ViewMode)
 }
 
